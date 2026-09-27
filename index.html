@@ -4,98 +4,197 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shreyash Gondane</title>
-<meta name="description" content="Shreyash Gondane: independent research on verifiable AI agents for finance: claim-level provenance, point-in-time evaluation and tamper-evident records of every call.">
+<meta name="description" content="I build and study AI agents for financial research that can be checked: every number traced to its source, only data that existed at the time of a call, and every call recorded before its outcome is known.">
+<link rel="canonical" href="https://shreyashgondane.com/">
+<link rel="alternate" type="application/atom+xml" title="Shreyash Gondane: track record" href="https://shreyashgondane.com/record.xml">
+<meta property="og:title" content="Shreyash Gondane">
+<meta property="og:description" content="I build and study AI agents for financial research that can be checked: every number traced to its source, only data that existed at the time of a call, and every call recorded before its outcome is known.">
+<meta property="og:url" content="https://shreyashgondane.com/">
+<meta property="og:type" content="profile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Shreyash Gondane","url":"https://shreyashgondane.com/","description":"I build and study AI agents for financial research that can be checked: every number traced to its source, only data that existed at the time of a call, and every call recorded before its outcome is known.","sameAs":["https://github.com/Shreyasg13","https://github.com/Shreyasg13/glassbox-trading-agents"]}</script>
 <style>
 :root{
-  --bg:#FAFAF8; --surface:#FFFFFF; --ink:#16181D; --muted:#5B6270; --line:#E2E4E8; --accent:#1F5AA6; --accent-soft:#E8EFF9;
+  --bg:#F8F8F6; --surface:#FFFFFF; --ink:#16181D; --muted:#5B6270; --faint:#8A909B; --line:#E3E4E8;
+  --accent:#1F5AA6; --accent-soft:#E7EEF8; --ok:#1D7A4B; --ok-soft:#E4F3EA; --wait:#8A5A0E; --wait-soft:#FAF0DC;
   --serif:"Newsreader",Georgia,"Times New Roman",serif;
   --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){
-  :root{--bg:#101318; --surface:#161A21; --ink:#E6E8EC; --muted:#9AA2B1; --line:#262C37; --accent:#8AB4F8; --accent-soft:#1B2638; color-scheme:dark}
+  :root{--bg:#0F1217; --surface:#151920; --ink:#E6E8EC; --muted:#9AA2B1; --faint:#6E7684; --line:#252B35;
+        --accent:#8AB4F8; --accent-soft:#1A2537; --ok:#6CCB97; --ok-soft:#14291E; --wait:#E3B460; --wait-soft:#2E2412; color-scheme:dark}
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);padding-inline:20px;padding-block:56px 72px}
-main{max-width:720px;margin:0 auto;display:grid;gap:48px}
+main{max-width:760px;margin:0 auto;display:grid;gap:56px}
 h1,h2{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0;text-wrap:balance}
-h1{font-size:clamp(34px,6vw,46px)}
-h2{font-size:24px}
-h3{font-size:16px;font-weight:600;margin:0}
+h1{font-size:clamp(36px,6vw,50px)}
+h2{font-size:25px}
+h3{font-size:16.5px;font-weight:600;margin:0;line-height:1.35}
 p{margin:0}
 a{color:var(--accent);text-underline-offset:3px}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
-.lede{font-size:18px;color:var(--ink);max-width:62ch}
-.muted{color:var(--muted)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
 .eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-header{display:grid;gap:16px}
-nav{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px}
-section{display:grid;gap:16px}
-.item{display:grid;gap:6px;padding-block:14px;border-top:1px solid var(--line)}
-.item:first-of-type{border-top:0;padding-top:0}
-.meta{font:13px/1.4 var(--mono);color:var(--muted)}
-.tag{display:inline-block;font:500 12px/1 var(--mono);color:var(--accent);background:var(--accent-soft);padding:4px 8px;border-radius:4px;margin-right:6px}
-ul{margin:0;padding-left:20px;display:grid;gap:6px}
-footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+.muted{color:var(--muted)}
+header{display:grid;gap:14px}
+.role{color:var(--muted);font-size:15px}
+.lede{font-size:18.5px;max-width:62ch}
+nav{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14.5px;padding-top:4px}
+section{display:grid;gap:18px}
+.statement{display:grid;gap:12px;max-width:66ch}
+.focus{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:6px;align-content:start}
+.list{display:grid}
+.item{display:grid;gap:6px;padding-block:16px;border-top:1px solid var(--line)}
+.item:first-child{border-top:0;padding-top:0}
+.meta{font:13px/1.5 var(--mono);color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
+.tag{font:500 11.5px/1 var(--mono);color:var(--accent);background:var(--accent-soft);padding:4px 7px;border-radius:4px}
+.status{font:500 11.5px/1 var(--mono);padding:4px 7px;border-radius:4px}
+.s-active,.s-published,.s-accepted{color:var(--ok);background:var(--ok-soft)}
+.s-in-preparation,.s-submitted,.s-under-review,.s-earlier,.s-preprint{color:var(--wait);background:var(--wait-soft)}
+.evidence{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{font:500 13px/1 var(--sans);color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer}
+.filters button[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.timeline{list-style:none;margin:0;padding:0;display:grid}
+.timeline li{display:grid;grid-template-columns:112px 1fr;gap:14px;padding-block:14px;border-top:1px solid var(--line)}
+.timeline li:first-child{border-top:0;padding-top:0}
+.timeline time{font:13px/1.6 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.timeline .type{font:500 11.5px/1 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.timeline .body{display:grid;gap:4px}
+.empty{color:var(--faint);font-size:15px}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;display:grid;gap:4px}
+@media (max-width:540px){.timeline li{grid-template-columns:1fr;gap:4px}}
 </style>
 </head>
 <body>
 <main>
 
 <header>
-  <div class="eyebrow">Independent researcher · AI/ML</div>
+  <div class="eyebrow">Research profile</div>
   <h1>Shreyash Gondane</h1>
+  <div class="role">Independent researcher · Software engineer, New York</div>
   <p class="lede">I build and study AI agents for financial research that can be checked: every number traced to its source, only data that existed at the time of a call, and every call recorded before its outcome is known.</p>
-  <nav aria-label="Profiles">
-    <a href="https://github.com/Shreyasg13">GitHub</a>
-    <a href="https://github.com/Shreyasg13/glassbox-trading-agents">GlassBox (open source)</a>
-    <!-- Add when available: ORCID, Google Scholar, OpenReview, Hugging Face -->
-  </nav>
+  <nav aria-label="Profiles"><a href="https://github.com/Shreyasg13">GitHub</a>
+    <a href="https://github.com/Shreyasg13/glassbox-trading-agents">GlassBox</a>
+    <a href="/record.xml">Track record feed</a></nav>
 </header>
 
-<section aria-labelledby="focus">
-  <h2 id="focus">Research focus</h2>
-  <ul>
-    <li><strong>Claim-level provenance for LLM agents.</strong> Turning every number an agent reports into a structured claim that points at the exact value in a stored source snapshot, and verifying it before anything is published.</li>
-    <li><strong>Point-in-time evaluation.</strong> Preventing look-ahead leakage: an agent may only see data fetched before its decision time, and its record is scored only on calls made in advance.</li>
-    <li><strong>Tamper-evident records.</strong> Append-only, hash-chained ledgers of agent calls, so a track record cannot be edited after the fact.</li>
-    <li><strong>Distilling coding agents.</strong> A builder/critic "twin" loop in which cheap models build and a strong model reviews, recording labelled trajectories and corrections for later distillation.</li>
-  </ul>
-</section>
-
-<section aria-labelledby="projects">
-  <h2 id="projects">Projects</h2>
-  <div class="item">
-    <h3><a href="https://github.com/Shreyasg13/glassbox-trading-agents">GlassBox</a></h3>
-    <div class="meta">Open source · MIT · Python, FastAPI, Next.js, Postgres</div>
-    <p>A multi-agent investment-research committee built around verification. Its first milestone (<a href="https://github.com/Shreyasg13/glassbox-trading-agents/releases/tag/s3-part1">release s3-part1</a>) adds a point-in-time snapshot store for every data fetch, structured claims with exact source pointers, a verification gate that re-checks every number against its source (with snapshot integrity and unit checks), a compliance filter, and an append-only hash-chained ledger.</p>
-    <p><span class="tag">research preview</span><span class="tag">no investment advice</span></p>
-  </div>
-  <div class="item">
-    <h3>Twin-agent build lab</h3>
-    <div class="meta">Ongoing · agent orchestration, trajectory datasets</div>
-    <p>An experiment in building real software with a free model as the builder and a strong model as planner and reviewer. Every run is traced; accepted runs, rejected runs and before/after correction pairs form a labelled dataset for studying agent distillation. Includes CPU benchmarks of small local coding models.</p>
+<section aria-labelledby="statement">
+  <h2 id="statement">Research statement</h2>
+  <div class="statement"><p>LLM agents are increasingly asked to read markets and explain their calls, but their outputs are hard to audit: numbers appear in prose with no source, backtests quietly use data that did not exist yet, and track records can be edited after the fact.</p>
+    <p>My work treats verifiability as the core design constraint. I turn every number an agent reports into a structured claim that points at the exact value in a stored, point-in-time source snapshot, check each claim before anything is published, and record every call in an append-only, hash-chained ledger so the record can be scored forward only.</p>
+    <p>I also study how to build such systems cheaply and reliably with agents themselves: a builder/critic loop in which low-cost models write code and a stronger model plans and reviews, recording every attempt as labelled data for distillation.</p></div>
+  <div class="focus">
+    <div class="card"><h3>Claim-level provenance</h3><p class="muted">Every reported number is a claim with a JSON pointer into a hashed source snapshot, verified before publication.</p></div>
+    <div class="card"><h3>Point-in-time evaluation</h3><p class="muted">Agents only see data fetched before their decision time; calls are scored only after they are recorded. No look-ahead leakage.</p></div>
+    <div class="card"><h3>Tamper-evident records</h3><p class="muted">Append-only, hash-chained call ledgers with database-level guards, so a track record cannot be edited after the outcome.</p></div>
+    <div class="card"><h3>Distilling coding agents</h3><p class="muted">Builder/critic twin loops that produce labelled trajectories, corrections and failure modes for training smaller models.</p></div>
   </div>
 </section>
 
 <section aria-labelledby="writing">
   <h2 id="writing">Writing</h2>
-  <div class="item">
-    <h3>Receipts for every number: claim-level provenance and point-in-time verification for LLM trading agents</h3>
-    <div class="meta">Working paper · in preparation</div>
-    <p class="muted">Method and early results from GlassBox: the baseline discrepancy audit, the verification gate, and the live forward-only record.</p>
+  <div class="list">
+    <div class="item">
+      <h3>Receipts for every number: claim-level provenance and point-in-time verification for LLM trading agents</h3>
+      <div class="meta"><span class="status s-in-preparation">in preparation</span></div>
+      <p class="muted">Method and early results from GlassBox: the baseline discrepancy audit, the verification gate, and the live forward-only record.</p>
+    </div>
   </div>
 </section>
 
+<section aria-labelledby="projects">
+  <h2 id="projects">Projects</h2>
+  <div class="list">
+    <div class="item">
+      <h3><a href="https://github.com/Shreyasg13/glassbox-trading-agents">GlassBox</a></h3>
+      <div class="meta"><span>2026 – present</span><span class="status s-active">active</span><span class="tag">LLM agents</span><span class="tag">verification</span><span class="tag">quant finance</span><span class="tag">open source (MIT)</span></div>
+      <p>An evidence-first multi-agent investment-research committee. Release s3-part1 adds a point-in-time snapshot store for every data fetch, structured claims with exact source pointers, a verification gate that re-checks every number (source match, point in time, staleness, snapshot integrity, units), a compliance filter, a gate-health dashboard and an append-only hash-chained ledger. Research preview only; not investment advice.</p>
+      <div class="evidence"><a href="https://github.com/Shreyasg13/glassbox-trading-agents/releases/tag/s3-part1">Release s3-part1</a><a href="https://github.com/Shreyasg13/glassbox-trading-agents/blob/main/CHANGELOG.md">Changelog</a></div>
+    </div>
+    <div class="item">
+      <h3>Twin-agent build lab</h3>
+      <div class="meta"><span>2026 – present</span><span class="status s-active">active</span><span class="tag">agent orchestration</span><span class="tag">distillation</span><span class="tag">datasets</span></div>
+      <p>Building production software with a free model as builder and a strong model as planner and reviewer. Every run is traced; accepted runs, rejections and before/after correction pairs form a labelled dataset. Includes CPU benchmarks of small local coding models (Qwen2.5-Coder 1.5B at ~42 tokens/s on a 4-core laptop CPU).</p>
+      
+    </div>
+    <div class="item">
+      <h3><a href="https://github.com/Shreyasg13/multi-agent-trading-system">Multi-agent trading system</a></h3>
+      <div class="meta"><span>2026</span><span class="status s-earlier">earlier</span><span class="tag">multi-agent</span><span class="tag">value function</span></div>
+      <p>An earlier multi-agent investment system built around a V(n) value function, with dashboards and analytics. The groundwork that GlassBox's verification-first design grew out of.</p>
+      
+    </div>
+    <div class="item">
+      <h3><a href="https://github.com/Shreyasg13/sci-discovery-agent">Scientific discovery agent</a></h3>
+      <div class="meta"><span>2025</span><span class="status s-earlier">earlier</span><span class="tag">agents</span><span class="tag">research automation</span></div>
+      <p>Infrastructure for an agent that assists scientific discovery workflows.</p>
+      
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="record">
+  <h2 id="record">Track record</h2>
+  <p class="muted">A dated log of releases, results and service, each linked to evidence where it exists. Newest first. <a href="/record.xml">Follow via feed</a>.</p>
+  <div class="filters" role="group" aria-label="Filter the track record" hidden>
+    <button type="button" data-type="all" aria-pressed="true">All</button>
+    <button type="button" data-type="release" aria-pressed="false">Release</button>
+    <button type="button" data-type="milestone" aria-pressed="false">Milestone</button>
+    <button type="button" data-type="benchmark" aria-pressed="false">Benchmark</button>
+    <button type="button" data-type="open-source" aria-pressed="false">Open source</button>
+  </div>
+  <ol class="timeline">
+    <li data-type="release">
+      <time datetime="2026-09-27">Sep 27, 2026</time>
+      <div class="body"><span class="type">Release</span><h3><a href="https://github.com/Shreyasg13/glassbox-trading-agents/blob/main/CHANGELOG.md">GlassBox: gate-health dashboard, stricter verification gate, compliance filter</a></h3><p class="muted">Snapshot-integrity and unit checks added to the verification gate; an A7 compliance filter with 113 rule tests; a dashboard of the daily verification pass rate.</p></div>
+    </li>
+    <li data-type="milestone">
+      <time datetime="2026-09-26">Sep 26, 2026</time>
+      <div class="body"><span class="type">Milestone</span><h3>First verification-gate results on live production data</h3><p class="muted">Every number in the first live committee decisions re-checked against its source snapshot; decisions provably unchanged by the verification layer.</p></div>
+    </li>
+    <li data-type="release">
+      <time datetime="2026-09-26">Sep 26, 2026</time>
+      <div class="body"><span class="type">Release</span><h3><a href="https://github.com/Shreyasg13/glassbox-trading-agents/releases/tag/s3-part1">GlassBox s3-part1: verification foundations</a></h3><p class="muted">Point-in-time snapshot store, structured claims, A6 verification gate, hash-chained call ledger, feature flags and kill switches.</p></div>
+    </li>
+    <li data-type="benchmark">
+      <time datetime="2026-09-26">Sep 26, 2026</time>
+      <div class="body"><span class="type">Benchmark</span><h3>Local coding-model benchmark on a laptop CPU</h3><p class="muted">Qwen2.5-Coder 0.5B and 1.5B (Q4_K_M, llama.cpp): ~68 and ~42 tokens/s generation on an i7-1165G7.</p></div>
+    </li>
+    <li data-type="open-source">
+      <time datetime="2026-09-25">Sep 25, 2026</time>
+      <div class="body"><span class="type">Open source</span><h3><a href="https://github.com/Shreyasg13/glassbox-trading-agents">GlassBox made public under the MIT license</a></h3><p class="muted">Repository opened with a README comparing it honestly with TradingAgents.</p></div>
+    </li>
+  </ol>
+</section>
+
+<section aria-labelledby="service">
+  <h2 id="service">Service</h2>
+  <p class="empty">Reviewing and talks will appear here.</p>
+</section>
+
 <footer>
-  <p>Research only. Nothing on this site is investment advice.</p>
+  <p>Updated Sep 27, 2026. Research only; nothing here is investment advice.</p>
+  <p><a href="https://github.com/Shreyasg13/shreyashgondane.com">Source of this page</a></p>
 </footer>
 
 </main>
+<script>
+(function () {
+  var bar = document.querySelector(".filters"); if (!bar) return;
+  bar.hidden = false;
+  bar.addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    var t = b.getAttribute("data-type");
+    bar.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+    document.querySelectorAll(".timeline li").forEach(function (li) { li.hidden = t !== "all" && li.getAttribute("data-type") !== t; });
+  });
+})();
+</script>
 </body>
 </html>

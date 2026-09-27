@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Shreyash Gondane: track record</title>
+  <link href="https://shreyashgondane.com/record.xml" rel="self"/>
+  <link href="https://shreyashgondane.com/#record"/>
+  <id>https://shreyashgondane.com/record.xml</id>
+  <updated>2026-09-27T00:00:00Z</updated>
+  <author><name>Shreyash Gondane</name></author>
+  <entry>
+    <title>Release: GlassBox: gate-health dashboard, stricter verification gate, compliance filter</title>
+    <id>https://shreyashgondane.com/#2026-09-27-glassbox-gate-health-dashboard-stricter-verification-gate-co</id>
+    <updated>2026-09-27T00:00:00Z</updated>
+    <link href="https://github.com/Shreyasg13/glassbox-trading-agents/blob/main/CHANGELOG.md"/>
+    <summary>Snapshot-integrity and unit checks added to the verification gate; an A7 compliance filter with 113 rule tests; a dashboard of the daily verification pass rate.</summary>
+  </entry>
+  <entry>
+    <title>Milestone: First verification-gate results on live production data</title>
+    <id>https://shreyashgondane.com/#2026-09-26-first-verification-gate-results-on-live-production-data</id>
+    <updated>2026-09-26T00:00:00Z</updated>
+    
+    <summary>Every number in the first live committee decisions re-checked against its source snapshot; decisions provably unchanged by the verification layer.</summary>
+  </entry>
+  <entry>
+    <title>Release: GlassBox s3-part1: verification foundations</title>
+    <id>https://shreyashgondane.com/#2026-09-26-glassbox-s3-part1-verification-foundations</id>
+    <updated>2026-09-26T00:00:00Z</updated>
+    <link href="https://github.com/Shreyasg13/glassbox-trading-agents/releases/tag/s3-part1"/>
+    <summary>Point-in-time snapshot store, structured claims, A6 verification gate, hash-chained call ledger, feature flags and kill switches.</summary>
+  </entry>
+  <entry>
+    <title>Benchmark: Local coding-model benchmark on a laptop CPU</title>
+    <id>https://shreyashgondane.com/#2026-09-26-local-coding-model-benchmark-on-a-laptop-cpu</id>
+    <updated>2026-09-26T00:00:00Z</updated>
+    
+    <summary>Qwen2.5-Coder 0.5B and 1.5B (Q4_K_M, llama.cpp): ~68 and ~42 tokens/s generation on an i7-1165G7.</summary>
+  </entry>
+  <entry>
+    <title>Open source: GlassBox made public under the MIT license</title>
+    <id>https://shreyashgondane.com/#2026-09-25-glassbox-made-public-under-the-mit-license</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <link href="https://github.com/Shreyasg13/glassbox-trading-agents"/>
+    <summary>Repository opened with a README comparing it honestly with TradingAgents.</summary>
+  </entry>
+</feed>

@@ -1,0 +1,81 @@
+{
+  "_how_to_update": "Edit this file, run `node build.mjs`, commit and push. Add new track-record entries at the TOP of `record`. Every entry needs a date (YYYY-MM-DD), a type, a title, and ideally an evidence link. Never list anything that did not happen.",
+  "name": "Shreyash Gondane",
+  "role": "Independent researcher · Software engineer, New York",
+  "tagline": "I build and study AI agents for financial research that can be checked: every number traced to its source, only data that existed at the time of a call, and every call recorded before its outcome is known.",
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/Shreyasg13" },
+    { "label": "GlassBox", "url": "https://github.com/Shreyasg13/glassbox-trading-agents" },
+    { "label": "Track record feed", "url": "/record.xml" }
+  ],
+  "_links_to_add_when_ready": ["ORCID", "Google Scholar", "OpenReview", "Semantic Scholar", "Hugging Face", "arXiv"],
+  "statement": [
+    "LLM agents are increasingly asked to read markets and explain their calls, but their outputs are hard to audit: numbers appear in prose with no source, backtests quietly use data that did not exist yet, and track records can be edited after the fact.",
+    "My work treats verifiability as the core design constraint. I turn every number an agent reports into a structured claim that points at the exact value in a stored, point-in-time source snapshot, check each claim before anything is published, and record every call in an append-only, hash-chained ledger so the record can be scored forward only.",
+    "I also study how to build such systems cheaply and reliably with agents themselves: a builder/critic loop in which low-cost models write code and a stronger model plans and reviews, recording every attempt as labelled data for distillation."
+  ],
+  "focus": [
+    { "title": "Claim-level provenance", "body": "Every reported number is a claim with a JSON pointer into a hashed source snapshot, verified before publication." },
+    { "title": "Point-in-time evaluation", "body": "Agents only see data fetched before their decision time; calls are scored only after they are recorded. No look-ahead leakage." },
+    { "title": "Tamper-evident records", "body": "Append-only, hash-chained call ledgers with database-level guards, so a track record cannot be edited after the outcome." },
+    { "title": "Distilling coding agents", "body": "Builder/critic twin loops that produce labelled trajectories, corrections and failure modes for training smaller models." }
+  ],
+  "projects": [
+    {
+      "title": "GlassBox",
+      "url": "https://github.com/Shreyasg13/glassbox-trading-agents",
+      "period": "2026 – present",
+      "status": "active",
+      "tags": ["LLM agents", "verification", "quant finance", "open source (MIT)"],
+      "summary": "An evidence-first multi-agent investment-research committee. Release s3-part1 adds a point-in-time snapshot store for every data fetch, structured claims with exact source pointers, a verification gate that re-checks every number (source match, point in time, staleness, snapshot integrity, units), a compliance filter, a gate-health dashboard and an append-only hash-chained ledger. Research preview only; not investment advice.",
+      "evidence": [
+        { "label": "Release s3-part1", "url": "https://github.com/Shreyasg13/glassbox-trading-agents/releases/tag/s3-part1" },
+        { "label": "Changelog", "url": "https://github.com/Shreyasg13/glassbox-trading-agents/blob/main/CHANGELOG.md" }
+      ]
+    },
+    {
+      "title": "Twin-agent build lab",
+      "url": "",
+      "period": "2026 – present",
+      "status": "active",
+      "tags": ["agent orchestration", "distillation", "datasets"],
+      "summary": "Building production software with a free model as builder and a strong model as planner and reviewer. Every run is traced; accepted runs, rejections and before/after correction pairs form a labelled dataset. Includes CPU benchmarks of small local coding models (Qwen2.5-Coder 1.5B at ~42 tokens/s on a 4-core laptop CPU).",
+      "evidence": []
+    },
+    {
+      "title": "Multi-agent trading system",
+      "url": "https://github.com/Shreyasg13/multi-agent-trading-system",
+      "period": "2026",
+      "status": "earlier",
+      "tags": ["multi-agent", "value function"],
+      "summary": "An earlier multi-agent investment system built around a V(n) value function, with dashboards and analytics. The groundwork that GlassBox's verification-first design grew out of.",
+      "evidence": []
+    },
+    {
+      "title": "Scientific discovery agent",
+      "url": "https://github.com/Shreyasg13/sci-discovery-agent",
+      "period": "2025",
+      "status": "earlier",
+      "tags": ["agents", "research automation"],
+      "summary": "Infrastructure for an agent that assists scientific discovery workflows.",
+      "evidence": []
+    }
+  ],
+  "writing": [
+    {
+      "title": "Receipts for every number: claim-level provenance and point-in-time verification for LLM trading agents",
+      "status": "in preparation",
+      "venue": "",
+      "url": "",
+      "note": "Method and early results from GlassBox: the baseline discrepancy audit, the verification gate, and the live forward-only record."
+    }
+  ],
+  "service": [],
+  "record": [
+    { "date": "2026-09-27", "type": "release", "title": "GlassBox: gate-health dashboard, stricter verification gate, compliance filter", "detail": "Snapshot-integrity and unit checks added to the verification gate; an A7 compliance filter with 113 rule tests; a dashboard of the daily verification pass rate.", "url": "https://github.com/Shreyasg13/glassbox-trading-agents/blob/main/CHANGELOG.md" },
+    { "date": "2026-09-26", "type": "milestone", "title": "First verification-gate results on live production data", "detail": "Every number in the first live committee decisions re-checked against its source snapshot; decisions provably unchanged by the verification layer.", "url": "" },
+    { "date": "2026-09-26", "type": "release", "title": "GlassBox s3-part1: verification foundations", "detail": "Point-in-time snapshot store, structured claims, A6 verification gate, hash-chained call ledger, feature flags and kill switches.", "url": "https://github.com/Shreyasg13/glassbox-trading-agents/releases/tag/s3-part1" },
+    { "date": "2026-09-26", "type": "benchmark", "title": "Local coding-model benchmark on a laptop CPU", "detail": "Qwen2.5-Coder 0.5B and 1.5B (Q4_K_M, llama.cpp): ~68 and ~42 tokens/s generation on an i7-1165G7.", "url": "" },
+    { "date": "2026-09-25", "type": "open-source", "title": "GlassBox made public under the MIT license", "detail": "Repository opened with a README comparing it honestly with TradingAgents.", "url": "https://github.com/Shreyasg13/glassbox-trading-agents" }
+  ]
+}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shreyash Gondane</title>
+<meta name="description" content="Shreyash Gondane: independent research on verifiable AI agents for finance: claim-level provenance, point-in-time evaluation and tamper-evident records of every call.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#FAFAF8; --surface:#FFFFFF; --ink:#16181D; --muted:#5B6270; --line:#E2E4E8; --accent:#1F5AA6; --accent-soft:#E8EFF9;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#101318; --surface:#161A21; --ink:#E6E8EC; --muted:#9AA2B1; --line:#262C37; --accent:#8AB4F8; --accent-soft:#1B2638; color-scheme:dark}
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);padding-inline:20px;padding-block:56px 72px}
+main{max-width:720px;margin:0 auto;display:grid;gap:48px}
+h1,h2{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0;text-wrap:balance}
+h1{font-size:clamp(34px,6vw,46px)}
+h2{font-size:24px}
+h3{font-size:16px;font-weight:600;margin:0}
+p{margin:0}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.lede{font-size:18px;color:var(--ink);max-width:62ch}
+.muted{color:var(--muted)}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{display:grid;gap:16px}
+nav{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px}
+section{display:grid;gap:16px}
+.item{display:grid;gap:6px;padding-block:14px;border-top:1px solid var(--line)}
+.item:first-of-type{border-top:0;padding-top:0}
+.meta{font:13px/1.4 var(--mono);color:var(--muted)}
+.tag{display:inline-block;font:500 12px/1 var(--mono);color:var(--accent);background:var(--accent-soft);padding:4px 8px;border-radius:4px;margin-right:6px}
+ul{margin:0;padding-left:20px;display:grid;gap:6px}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div class="eyebrow">Independent researcher · AI/ML</div>
+  <h1>Shreyash Gondane</h1>
+  <p class="lede">I build and study AI agents for financial research that can be checked: every number traced to its source, only data that existed at the time of a call, and every call recorded before its outcome is known.</p>
+  <nav aria-label="Profiles">
+    <a href="https://github.com/Shreyasg13">GitHub</a>
+    <a href="https://github.com/Shreyasg13/glassbox-trading-agents">GlassBox (open source)</a>
+    <!-- Add when available: ORCID, Google Scholar, OpenReview, Hugging Face -->
+  </nav>
+</header>
+
+<section aria-labelledby="focus">
+  <h2 id="focus">Research focus</h2>
+  <ul>
+    <li><strong>Claim-level provenance for LLM agents.</strong> Turning every number an agent reports into a structured claim that points at the exact value in a stored source snapshot, and verifying it before anything is published.</li>
+    <li><strong>Point-in-time evaluation.</strong> Preventing look-ahead leakage: an agent may only see data fetched before its decision time, and its record is scored only on calls made in advance.</li>
+    <li><strong>Tamper-evident records.</strong> Append-only, hash-chained ledgers of agent calls, so a track record cannot be edited after the fact.</li>
+    <li><strong>Distilling coding agents.</strong> A builder/critic "twin" loop in which cheap models build and a strong model reviews, recording labelled trajectories and corrections for later distillation.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="projects">
+  <h2 id="projects">Projects</h2>
+  <div class="item">
+    <h3><a href="https://github.com/Shreyasg13/glassbox-trading-agents">GlassBox</a></h3>
+    <div class="meta">Open source · MIT · Python, FastAPI, Next.js, Postgres</div>
+    <p>A multi-agent investment-research committee built around verification. Its first milestone (<a href="https://github.com/Shreyasg13/glassbox-trading-agents/releases/tag/s3-part1">release s3-part1</a>) adds a point-in-time snapshot store for every data fetch, structured claims with exact source pointers, a verification gate that re-checks every number against its source (with snapshot integrity and unit checks), a compliance filter, and an append-only hash-chained ledger.</p>
+    <p><span class="tag">research preview</span><span class="tag">no investment advice</span></p>
+  </div>
+  <div class="item">
+    <h3>Twin-agent build lab</h3>
+    <div class="meta">Ongoing · agent orchestration, trajectory datasets</div>
+    <p>An experiment in building real software with a free model as the builder and a strong model as planner and reviewer. Every run is traced; accepted runs, rejected runs and before/after correction pairs form a labelled dataset for studying agent distillation. Includes CPU benchmarks of small local coding models.</p>
+  </div>
+</section>
+
+<section aria-labelledby="writing">
+  <h2 id="writing">Writing</h2>
+  <div class="item">
+    <h3>Receipts for every number: claim-level provenance and point-in-time verification for LLM trading agents</h3>
+    <div class="meta">Working paper · in preparation</div>
+    <p class="muted">Method and early results from GlassBox: the baseline discrepancy audit, the verification gate, and the live forward-only record.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Research only. Nothing on this site is investment advice.</p>
+</footer>
+
+</main>
+</body>
+</html>

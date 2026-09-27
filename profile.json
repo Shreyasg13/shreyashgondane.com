@@ -128,6 +128,38 @@
       "venue": "",
       "url": "",
       "note": "Method and early results from GlassBox: the baseline discrepancy audit, the verification gate, and the live forward-only record."
+    },
+    {
+      "title": "A Machine Learning-Based Approach to Password Authentication Using Keystroke Biometrics",
+      "status": "published",
+      "venue": "Lecture Notes in Electrical Engineering, Springer",
+      "year": "2021",
+      "url": "https://doi.org/10.1007/978-981-16-0289-4_30",
+      "note": "A. Thakare, S. Gondane, N. Prasad, S. Chigale."
+    },
+    {
+      "title": "A Convolution Neural Networks and IoT-Based Approach to Surveillance System",
+      "status": "published",
+      "venue": "Advances in Intelligent Systems and Computing (ICICCD 2020), Springer",
+      "year": "2021",
+      "url": "https://doi.org/10.1007/978-981-16-1510-8_3",
+      "note": "S. Gondane, A. Thakare, C. Deshpande, O. Gupta."
+    },
+    {
+      "title": "PDF-Driven Q&A: A Review",
+      "status": "published",
+      "venue": "IJRASET",
+      "year": "2024",
+      "url": "https://doi.org/10.22214/ijraset.2024.58670",
+      "note": "S. R. Sontakke, S. V. Gondane, A. S. Nandedkar, S. T. Chauhan, N. Z. Choudhari."
+    },
+    {
+      "title": "Contract/Tendering System Using Blockchain",
+      "status": "published",
+      "venue": "IJRASET",
+      "year": "2023",
+      "url": "https://doi.org/10.22214/ijraset.2023.49144",
+      "note": "R. Pawar, R. Pohare, S. Gondane, S. Jengthe, S. Paunikar, S. Wasnik."
     }
   ],
   "service": [],

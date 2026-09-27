@@ -9,6 +9,10 @@
       "url": "https://github.com/Shreyasg13"
     },
     {
+      "label": "ORCID",
+      "url": "https://orcid.org/0009-0006-4282-4800"
+    },
+    {
       "label": "LinkedIn",
       "url": "https://www.linkedin.com/in/shreyash130197"
     },
@@ -26,7 +30,6 @@
     }
   ],
   "_links_to_add_when_ready": [
-    "ORCID",
     "Google Scholar",
     "OpenReview",
     "Semantic Scholar",
@@ -129,6 +132,13 @@
   ],
   "service": [],
   "record": [
+    {
+      "date": "2026-09-27",
+      "type": "milestone",
+      "title": "ORCID iD registered: 0009-0006-4282-4800",
+      "detail": "Persistent researcher identifier linking publications to this profile.",
+      "url": "https://orcid.org/0009-0006-4282-4800"
+    },
     {
       "date": "2026-09-27",
       "type": "release",

@@ -5,7 +5,7 @@ Research profile of Shreyash Gondane. Static HTML built from one data file and s
 ## Update it (about 2 minutes)
 
 1. Edit `profile.json`.
-2. Run `node build.mjs` (rebuilds `index.html` and the `record.xml` feed; it refuses bad dates, unknown types or statuses).
+2. Run `node build.mjs` (rebuilds `index.html` and the `record.xml` feed from `template.mjs`; it refuses bad dates, unknown types or statuses). Design changes go in `template.mjs`, content in `profile.json`.
 3. Commit and push. The site updates within a minute.
 
 A GitHub check (`.github/workflows/check.yml`) fails if you forget step 2.

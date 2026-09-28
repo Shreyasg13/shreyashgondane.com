@@ -123,6 +123,24 @@
   ],
   "writing": [
     {
+      "title": "Superhuman Scores, Sub-Human Adaptation: A Multi-Dimensional, Growth-Aware Comparison of Frontier AI Models and Human Intelligence",
+      "status": "preprint",
+      "venue": "White paper",
+      "year": "2026",
+      "url": "/papers/Gondane_2026_Superhuman_Scores_SubHuman_Adaptation.pdf",
+      "note": "Frontier models now post IQ-style scores above 99% of people yet stay far below humans on learning new tasks (ARC-AGI-3), long-horizon autonomy and continual learning. A growth-aware, multi-dimensional comparison with an interactive companion. Data snapshot 27 Sep 2026.",
+      "links": [
+        {
+          "label": "PDF",
+          "url": "/papers/Gondane_2026_Superhuman_Scores_SubHuman_Adaptation.pdf"
+        },
+        {
+          "label": "Interactive companion",
+          "url": "/research/machine-vs-human-minds.html"
+        }
+      ]
+    },
+    {
       "title": "Receipts for every number: claim-level provenance and point-in-time verification for LLM trading agents",
       "status": "in preparation",
       "venue": "",
@@ -148,6 +166,13 @@
   ],
   "service": [],
   "record": [
+    {
+      "date": "2026-09-27",
+      "type": "preprint",
+      "title": "White paper: Superhuman Scores, Sub-Human Adaptation",
+      "detail": "A multi-dimensional, growth-aware comparison of frontier AI models and human intelligence, with an interactive companion of charts and projections.",
+      "url": "https://shreyashgondane.com/papers/Gondane_2026_Superhuman_Scores_SubHuman_Adaptation.pdf"
+    },
     {
       "date": "2026-09-27",
       "type": "milestone",

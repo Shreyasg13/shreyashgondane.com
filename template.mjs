@@ -181,6 +181,7 @@ footer{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:
       <div class="meta"><span class="status s-${esc(w.status.replace(/ /g, "-"))}">${esc(w.status)}</span>${w.venue ? `<span>${esc(w.venue)}</span>` : ""}${w.year ? `<span>${esc(w.year)}</span>` : ""}</div>
       <h3>${link(w.title, w.url)}</h3>
       ${w.note ? `<p>${esc(w.note)}</p>` : ""}
+      ${w.links && w.links.length ? `<div class="evidence">${w.links.map((e) => link(e.label, e.url)).join("")}</div>` : ""}
     </div>`).join("\n    ") : `<p class="empty">Nothing yet.</p>`}
   </div>
 </section>

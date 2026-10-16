@@ -4,8 +4,29 @@
   <link href="https://shreyashgondane.com/record.xml" rel="self"/>
   <link href="https://shreyashgondane.com/#record"/>
   <id>https://shreyashgondane.com/record.xml</id>
-  <updated>2026-09-27T00:00:00Z</updated>
+  <updated>2026-10-16T00:00:00Z</updated>
   <author><name>Shreyash Gondane</name></author>
+  <entry>
+    <title>Preprint: Technical note: one in eight Terminal-Bench 2.0 reference solutions fail their own tests</title>
+    <id>https://shreyashgondane.com/#2026-10-16-technical-note-one-in-eight-terminal-bench-2-0-reference-sol</id>
+    <updated>2026-10-16T00:00:00Z</updated>
+    <link href="https://shreyashgondane.com/research/tb2-oracle-audit.html"/>
+    <summary>Oracle audit of 65 tasks: what breaks, what TB 2.1 fixes, and a check to run before every agent evaluation.</summary>
+  </entry>
+  <entry>
+    <title>Milestone: Agent harness study: design frozen before the main data</title>
+    <id>https://shreyashgondane.com/#2026-10-15-agent-harness-study-design-frozen-before-the-main-data</id>
+    <updated>2026-10-15T00:00:00Z</updated>
+    
+    <summary>57 oracle-checked Terminal-Bench 2.1 tasks × 4 harness variants × 5 trials on Claude Sonnet 5.5, after pilots of 94 trials.</summary>
+  </entry>
+  <entry>
+    <title>Open source: Merged into the official MCP Go SDK</title>
+    <id>https://shreyashgondane.com/#2026-10-14-merged-into-the-official-mcp-go-sdk</id>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <link href="https://github.com/modelcontextprotocol/go-sdk/pull/1366"/>
+    <summary>Fixed the client conformance script on Windows and with a relative results directory.</summary>
+  </entry>
   <entry>
     <title>Preprint: White paper: Superhuman Scores, Sub-Human Adaptation</title>
     <id>https://shreyashgondane.com/#2026-09-27-white-paper-superhuman-scores-sub-human-adaptation</id>

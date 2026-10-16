@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shreyash Gondane</title>
-<meta name="description" content="I build and study AI agents for financial research that can be checked: every number traced to its source, only data that existed at the time of a call, and every call recorded before its outcome is known.">
+<meta name="description" content="I build and study AI agents that can be checked: in finance, every number traced to its source and every call recorded before its outcome; in agent evaluation, benchmarks and harnesses whose scores measure the agent, not the plumbing.">
 <link rel="canonical" href="https://shreyashgondane.com/">
 <link rel="alternate" type="application/atom+xml" title="Shreyash Gondane: track record" href="https://shreyashgondane.com/record.xml">
 <meta property="og:title" content="Shreyash Gondane · Research">
-<meta property="og:description" content="I build and study AI agents for financial research that can be checked: every number traced to its source, only data that existed at the time of a call, and every call recorded before its outcome is known.">
+<meta property="og:description" content="I build and study AI agents that can be checked: in finance, every number traced to its source and every call recorded before its outcome; in agent evaluation, benchmarks and harnesses whose scores measure the agent, not the plumbing.">
 <meta property="og:url" content="https://shreyashgondane.com/">
 <meta property="og:type" content="profile">
 <meta name="theme-color" content="#F7F7F4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Shreyash Gondane","url":"https://shreyashgondane.com/","description":"I build and study AI agents for financial research that can be checked: every number traced to its source, only data that existed at the time of a call, and every call recorded before its outcome is known.","sameAs":["https://github.com/Shreyasg13","https://orcid.org/0009-0006-4282-4800","https://www.linkedin.com/in/shreyash130197","https://shreyashportfolio.netlify.app/","https://github.com/Shreyasg13/glassbox-trading-agents"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Shreyash Gondane","url":"https://shreyashgondane.com/","description":"I build and study AI agents that can be checked: in finance, every number traced to its source and every call recorded before its outcome; in agent evaluation, benchmarks and harnesses whose scores measure the agent, not the plumbing.","sameAs":["https://github.com/Shreyasg13","https://orcid.org/0009-0006-4282-4800","https://www.linkedin.com/in/shreyash130197","https://shreyashportfolio.netlify.app/","https://github.com/Shreyasg13/glassbox-trading-agents"]}</script>
 <style>
 :root{
   --bg:#F7F7F4; --ink:#1B1D22; --text:#2C3038; --muted:#5B6270; --label:#6A7080; --faint:#8A909B;
@@ -114,7 +114,7 @@ footer{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:
   <div class="label">Research profile</div>
   <h1>Shreyash Gondane</h1>
   <p class="role">Independent researcher · Software engineer, New York</p>
-  <p class="tagline">I build and study AI agents for financial research that can be checked: every number traced to its source, only data that existed at the time of a call, and every call recorded before its outcome is known.</p>
+  <p class="tagline">I build and study AI agents that can be checked: in finance, every number traced to its source and every call recorded before its outcome; in agent evaluation, benchmarks and harnesses whose scores measure the agent, not the plumbing.</p>
   <nav class="links rule" aria-label="Profiles"><a href="https://github.com/Shreyasg13">GitHub</a>
     <a href="https://orcid.org/0009-0006-4282-4800">ORCID</a>
     <a href="https://www.linkedin.com/in/shreyash130197">LinkedIn</a>
@@ -122,8 +122,8 @@ footer{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:
     <a href="https://github.com/Shreyasg13/glassbox-trading-agents">GlassBox</a>
     <a href="/record.xml">Track record feed</a></nav>
   <div class="stats rule" aria-label="At a glance">
-    <div><b>3</b><span>Publications</span></div>
-    <div><b>1</b><span>Paper in preparation</span></div>
+    <div><b>4</b><span>Publications</span></div>
+    <div><b>2</b><span>Papers in preparation</span></div>
     <div><b>3</b><span>Open-source projects</span></div>
     <div><b>5+</b><span>Years building AI systems</span></div>
   </div>
@@ -136,12 +136,14 @@ footer{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:
   <h2 id="h-statement">Research statement</h2>
   <div class="prose"><p>LLM agents are increasingly asked to read markets and explain their calls, but their outputs are hard to audit: numbers appear in prose with no source, backtests quietly use data that did not exist yet, and track records can be edited after the fact.</p>
     <p>My work treats verifiability as the core design constraint. I turn every number an agent reports into a structured claim that points at the exact value in a stored, point-in-time source snapshot, check each claim before anything is published, and record every call in an append-only, hash-chained ledger so the record can be scored forward only.</p>
+    <p>The same standard applies to how agents are measured. I run a pre-registered study of coding-agent harnesses on Terminal-Bench 2.1, and before any agent ran I checked every task's own reference solution: 8 of 65 Terminal-Bench 2.0 tasks fail their own tests. A score is only as good as the environment that produced it.</p>
     <p>I also study how to build such systems cheaply and reliably with agents themselves: a builder/critic loop in which low-cost models write code and a stronger model plans and reviews, recording every attempt as labelled data for distillation.</p></div>
   <ol class="focus">
     <li><span class="n">01</span><h3>Claim-level provenance</h3><p>Every reported number is a claim with a JSON pointer into a hashed source snapshot, verified before publication.</p></li>
     <li><span class="n">02</span><h3>Point-in-time evaluation</h3><p>Agents only see data fetched before their decision time; calls are scored only after they are recorded. No look-ahead leakage.</p></li>
     <li><span class="n">03</span><h3>Tamper-evident records</h3><p>Append-only, hash-chained call ledgers with database-level guards, so a track record cannot be edited after the outcome.</p></li>
-    <li><span class="n">04</span><h3>Distilling coding agents</h3><p>Builder/critic twin loops that produce labelled trajectories, corrections and failure modes for training smaller models.</p></li>
+    <li><span class="n">04</span><h3>Benchmark integrity</h3><p>Oracle-checking every task before an agent run, so broken environments are dropped and reported instead of being scored as agent failures.</p></li>
+    <li><span class="n">05</span><h3>Distilling coding agents</h3><p>Builder/critic twin loops that produce labelled trajectories, corrections and failure modes for training smaller models.</p></li>
   </ol>
 </section>
 
@@ -149,10 +151,22 @@ footer{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:
   <h2 id="h-writing">Writing</h2>
   <div class="entries">
     <article class="entry">
+      <div class="meta"><span class="status s-preprint">preprint</span><span>Technical note</span><span>2026</span></div>
+      <h3><a href="/research/tb2-oracle-audit.html">One in eight: Terminal-Bench 2.0 tasks whose own reference solution fails</a></h3>
+      <p>8 of 65 candidate tasks fail their own tests (verifier tools that no longer install, package rot, a breaking dependency release, a too-slow reference, live data). TB 2.1 fixes 3 of them; 4 still fail. Recommends an oracle check before every run.</p>
+      <div class="more"><a href="/research/tb2-oracle-audit.html">Read</a></div>
+    </article>
+    <article class="entry">
       <div class="meta"><span class="status s-preprint">preprint</span><span>White paper</span><span>2026</span></div>
       <h3><a href="/papers/Gondane_2026_Superhuman_Scores_SubHuman_Adaptation.pdf">Superhuman Scores, Sub-Human Adaptation: A Multi-Dimensional, Growth-Aware Comparison of Frontier AI Models and Human Intelligence</a></h3>
       <p>Frontier models now post IQ-style scores above 99% of people yet stay far below humans on learning new tasks (ARC-AGI-3), long-horizon autonomy and continual learning. A growth-aware, multi-dimensional comparison with an interactive companion. Data snapshot 27 Sep 2026.</p>
       <div class="more"><a href="/papers/Gondane_2026_Superhuman_Scores_SubHuman_Adaptation.pdf">PDF</a><a href="/research/machine-vs-human-minds.html">Interactive companion</a></div>
+    </article>
+    <article class="entry">
+      <div class="meta"><span class="status s-in-preparation">in preparation</span></div>
+      <h3>Does the harness matter? A pre-registered comparison of reviewer, memory and self-check harnesses for coding agents on Terminal-Bench 2.1</h3>
+      <p>Design frozen 15 October 2026 before the main data; results after the last replicate block (spring 2027).</p>
+      
     </article>
     <article class="entry">
       <div class="meta"><span class="status s-in-preparation">in preparation</span></div>
@@ -178,6 +192,13 @@ footer{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:
 <section id="projects" aria-labelledby="h-projects">
   <h2 id="h-projects">Projects</h2>
   <div class="projects">
+    <article class="project">
+      <div class="meta"><span class="status s-active">active</span><span>2026 – present</span></div>
+      <h3>Agent harness study (R1)</h3>
+      <p>Does adding a reviewer, a memory window or a self-check round to a coding agent's loop raise its success rate? Four harness variants on one model (Claude Sonnet 5.5), 57 oracle-checked Terminal-Bench 2.1 tasks, 5 trials each, run through Harbor. Design frozen before the main data (15 Oct 2026); task-level bootstrap and permutation tests; infrastructure failures classified and retried, never scored. Main results expected spring 2027.</p>
+      <div class="tags"><span class="tag">agent evaluation</span><span class="tag">Terminal-Bench</span><span class="tag">pre-registered</span></div>
+      <div class="more"><a href="/research/tb2-oracle-audit.html">Oracle audit</a><a href="https://github.com/harbor-framework/harbor/pull/3593">Harbor PR #3593</a></div>
+    </article>
     <article class="project">
       <div class="meta"><span class="status s-active">active</span><span>2026 – present</span></div>
       <h3><a href="https://github.com/Shreyasg13/glassbox-trading-agents">GlassBox</a></h3>
@@ -211,16 +232,28 @@ footer{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:
 
 <section id="record" aria-labelledby="h-record">
   <h2 id="h-record">Track record</h2>
-  <p class="intro">Dated releases, results and service, each linked to evidence where it exists. Newest first; updated Sep 27, 2026. Entries are never edited after the fact; corrections are new entries. <a href="/record.xml">Follow via feed</a>.</p>
+  <p class="intro">Dated releases, results and service, each linked to evidence where it exists. Newest first; updated Oct 16, 2026. Entries are never edited after the fact; corrections are new entries. <a href="/record.xml">Follow via feed</a>.</p>
   <div class="filters" role="group" aria-label="Filter the track record" hidden>
     <button type="button" data-type="all" aria-pressed="true">All</button>
     <button type="button" data-type="preprint" aria-pressed="false">Preprint</button>
     <button type="button" data-type="milestone" aria-pressed="false">Milestone</button>
+    <button type="button" data-type="open-source" aria-pressed="false">Open source</button>
     <button type="button" data-type="release" aria-pressed="false">Release</button>
     <button type="button" data-type="benchmark" aria-pressed="false">Benchmark</button>
-    <button type="button" data-type="open-source" aria-pressed="false">Open source</button>
   </div>
   <ol class="record">
+    <li data-type="preprint">
+      <time datetime="2026-10-16">2026-10-16</time>
+      <div><span class="type">Preprint</span><h4><a href="https://shreyashgondane.com/research/tb2-oracle-audit.html">Technical note: one in eight Terminal-Bench 2.0 reference solutions fail their own tests</a></h4><p class="detail">Oracle audit of 65 tasks: what breaks, what TB 2.1 fixes, and a check to run before every agent evaluation.</p></div>
+    </li>
+    <li data-type="milestone">
+      <time datetime="2026-10-15">2026-10-15</time>
+      <div><span class="type">Milestone</span><h4>Agent harness study: design frozen before the main data</h4><p class="detail">57 oracle-checked Terminal-Bench 2.1 tasks × 4 harness variants × 5 trials on Claude Sonnet 5.5, after pilots of 94 trials.</p></div>
+    </li>
+    <li data-type="open-source">
+      <time datetime="2026-10-14">2026-10-14</time>
+      <div><span class="type">Open source</span><h4><a href="https://github.com/modelcontextprotocol/go-sdk/pull/1366">Merged into the official MCP Go SDK</a></h4><p class="detail">Fixed the client conformance script on Windows and with a relative results directory.</p></div>
+    </li>
     <li data-type="preprint">
       <time datetime="2026-09-27">2026-09-27</time>
       <div><span class="type">Preprint</span><h4><a href="https://shreyashgondane.com/papers/Gondane_2026_Superhuman_Scores_SubHuman_Adaptation.pdf">White paper: Superhuman Scores, Sub-Human Adaptation</a></h4><p class="detail">A multi-dimensional, growth-aware comparison of frontier AI models and human intelligence, with an interactive companion of charts and projections.</p></div>

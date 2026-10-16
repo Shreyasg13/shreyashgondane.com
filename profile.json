@@ -2,7 +2,7 @@
   "_how_to_update": "Edit this file, run `node build.mjs`, commit and push. Add new track-record entries at the TOP of `record`. Every entry needs a date (YYYY-MM-DD), a type, a title, and ideally an evidence link. Never list anything that did not happen.",
   "name": "Shreyash Gondane",
   "role": "Independent researcher · Software engineer, New York",
-  "tagline": "I build and study AI agents for financial research that can be checked: every number traced to its source, only data that existed at the time of a call, and every call recorded before its outcome is known.",
+  "tagline": "I build and study AI agents that can be checked: in finance, every number traced to its source and every call recorded before its outcome; in agent evaluation, benchmarks and harnesses whose scores measure the agent, not the plumbing.",
   "links": [
     {
       "label": "GitHub",
@@ -39,6 +39,7 @@
   "statement": [
     "LLM agents are increasingly asked to read markets and explain their calls, but their outputs are hard to audit: numbers appear in prose with no source, backtests quietly use data that did not exist yet, and track records can be edited after the fact.",
     "My work treats verifiability as the core design constraint. I turn every number an agent reports into a structured claim that points at the exact value in a stored, point-in-time source snapshot, check each claim before anything is published, and record every call in an append-only, hash-chained ledger so the record can be scored forward only.",
+    "The same standard applies to how agents are measured. I run a pre-registered study of coding-agent harnesses on Terminal-Bench 2.1, and before any agent ran I checked every task's own reference solution: 8 of 65 Terminal-Bench 2.0 tasks fail their own tests. A score is only as good as the environment that produced it.",
     "I also study how to build such systems cheaply and reliably with agents themselves: a builder/critic loop in which low-cost models write code and a stronger model plans and reviews, recording every attempt as labelled data for distillation."
   ],
   "focus": [
@@ -55,11 +56,37 @@
       "body": "Append-only, hash-chained call ledgers with database-level guards, so a track record cannot be edited after the outcome."
     },
     {
+      "title": "Benchmark integrity",
+      "body": "Oracle-checking every task before an agent run, so broken environments are dropped and reported instead of being scored as agent failures."
+    },
+    {
       "title": "Distilling coding agents",
       "body": "Builder/critic twin loops that produce labelled trajectories, corrections and failure modes for training smaller models."
     }
   ],
   "projects": [
+    {
+      "title": "Agent harness study (R1)",
+      "url": "",
+      "period": "2026 – present",
+      "status": "active",
+      "tags": [
+        "agent evaluation",
+        "Terminal-Bench",
+        "pre-registered"
+      ],
+      "summary": "Does adding a reviewer, a memory window or a self-check round to a coding agent's loop raise its success rate? Four harness variants on one model (Claude Sonnet 5.5), 57 oracle-checked Terminal-Bench 2.1 tasks, 5 trials each, run through Harbor. Design frozen before the main data (15 Oct 2026); task-level bootstrap and permutation tests; infrastructure failures classified and retried, never scored. Main results expected spring 2027.",
+      "evidence": [
+        {
+          "label": "Oracle audit",
+          "url": "/research/tb2-oracle-audit.html"
+        },
+        {
+          "label": "Harbor PR #3593",
+          "url": "https://github.com/harbor-framework/harbor/pull/3593"
+        }
+      ]
+    },
     {
       "title": "GlassBox",
       "url": "https://github.com/Shreyasg13/glassbox-trading-agents",
@@ -123,6 +150,20 @@
   ],
   "writing": [
     {
+      "title": "One in eight: Terminal-Bench 2.0 tasks whose own reference solution fails",
+      "status": "preprint",
+      "venue": "Technical note",
+      "year": "2026",
+      "url": "/research/tb2-oracle-audit.html",
+      "note": "8 of 65 candidate tasks fail their own tests (verifier tools that no longer install, package rot, a breaking dependency release, a too-slow reference, live data). TB 2.1 fixes 3 of them; 4 still fail. Recommends an oracle check before every run.",
+      "links": [
+        {
+          "label": "Read",
+          "url": "/research/tb2-oracle-audit.html"
+        }
+      ]
+    },
+    {
       "title": "Superhuman Scores, Sub-Human Adaptation: A Multi-Dimensional, Growth-Aware Comparison of Frontier AI Models and Human Intelligence",
       "status": "preprint",
       "venue": "White paper",
@@ -139,6 +180,13 @@
           "url": "/research/machine-vs-human-minds.html"
         }
       ]
+    },
+    {
+      "title": "Does the harness matter? A pre-registered comparison of reviewer, memory and self-check harnesses for coding agents on Terminal-Bench 2.1",
+      "status": "in preparation",
+      "venue": "",
+      "url": "",
+      "note": "Design frozen 15 October 2026 before the main data; results after the last replicate block (spring 2027)."
     },
     {
       "title": "Receipts for every number: claim-level provenance and point-in-time verification for LLM trading agents",
@@ -166,6 +214,27 @@
   ],
   "service": [],
   "record": [
+    {
+      "date": "2026-10-16",
+      "type": "preprint",
+      "title": "Technical note: one in eight Terminal-Bench 2.0 reference solutions fail their own tests",
+      "detail": "Oracle audit of 65 tasks: what breaks, what TB 2.1 fixes, and a check to run before every agent evaluation.",
+      "url": "https://shreyashgondane.com/research/tb2-oracle-audit.html"
+    },
+    {
+      "date": "2026-10-15",
+      "type": "milestone",
+      "title": "Agent harness study: design frozen before the main data",
+      "detail": "57 oracle-checked Terminal-Bench 2.1 tasks × 4 harness variants × 5 trials on Claude Sonnet 5.5, after pilots of 94 trials.",
+      "url": ""
+    },
+    {
+      "date": "2026-10-14",
+      "type": "open-source",
+      "title": "Merged into the official MCP Go SDK",
+      "detail": "Fixed the client conformance script on Windows and with a relative results directory.",
+      "url": "https://github.com/modelcontextprotocol/go-sdk/pull/1366"
+    },
     {
       "date": "2026-09-27",
       "type": "preprint",

@@ -28,6 +28,13 @@
     <summary>Fixed the client conformance script on Windows and with a relative results directory.</summary>
   </entry>
   <entry>
+    <title>Milestone: GlassBox: evaluation pre-registered before outcome data, after an openly reported null study</title>
+    <id>https://shreyashgondane.com/#2026-10-12-glassbox-evaluation-pre-registered-before-outcome-data-after</id>
+    <updated>2026-10-12T00:00:00Z</updated>
+    <link href="https://github.com/Shreyasg13/glassbox-trading-agents/blob/main/docs/s3/PREREGISTRATION.md"/>
+    <summary>Five claims, α = 0.01, block bootstrap, fixed before any outcome existed. The first forward-only study (150 calls) was 149 HOLD and 1 BUY, so skill could not be measured; reported as such.</summary>
+  </entry>
+  <entry>
     <title>Preprint: White paper: Superhuman Scores, Sub-Human Adaptation</title>
     <id>https://shreyashgondane.com/#2026-09-27-white-paper-superhuman-scores-sub-human-adaptation</id>
     <updated>2026-09-27T00:00:00Z</updated>
@@ -75,5 +82,12 @@
     <updated>2026-09-25T00:00:00Z</updated>
     <link href="https://github.com/Shreyasg13/glassbox-trading-agents"/>
     <summary>Repository opened with a README comparing it honestly with TradingAgents.</summary>
+  </entry>
+  <entry>
+    <title>Milestone: GlassBox baseline audit: 2.3% of numbers in model prose traced to no source</title>
+    <id>https://shreyashgondane.com/#2026-09-25-glassbox-baseline-audit-2-3-of-numbers-in-model-prose-traced</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <link href="https://github.com/Shreyasg13/glassbox-trading-agents/blob/main/docs/s3/baseline.md"/>
+    <summary>69 of 2,948 numbers across 534 analyst write-ups in 77 stored runs, most from the first day; the 'before' figure the verification gate is measured against.</summary>
   </entry>
 </feed>

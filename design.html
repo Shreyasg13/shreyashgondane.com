@@ -996,14 +996,25 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
     if(run.disabled){ wasBusy=true; return; }
     if(wasBusy){ wasBusy=false; if(auto) schedule(); }
   }).observe(run,{attributes:true,attributeFilter:['disabled']});
+  // A visitor's click pauses the tour; it resumes after RESUME ms without interaction, so the tour
+  // keeps looping. It stays off only if the visitor turns it off or prefers reduced motion.
+  var RESUME=12000, resumeT=null, userOff=reduce;
+  function resumeLater(){
+    clearTimeout(resumeT); if(userOff) return;
+    resumeT=setTimeout(function(){
+      if(userOff) return; setAuto(true);
+      if(!run.disabled){ if(cur().dataset.mode==='claims' && !hovering) startCurrent(); else schedule(); }
+    },RESUME);
+  }
   card.addEventListener('click',function(e){
     if(!e.isTrusted) return;
     if(e.target.closest('#rcAuto')) return;
-    if(e.target.closest('.rc-tab,.rc-n,#rcRun')) setAuto(false);
+    if(e.target.closest('.rc-tab,.rc-n,#rcRun')){ setAuto(false); resumeLater(); }
   },true);
   autoBtn.addEventListener('click',function(){
-    if(auto){ setAuto(false); return; }
-    setAuto(true);
+    clearTimeout(resumeT);
+    if(auto){ userOff=true; setAuto(false); return; }
+    userOff=false; setAuto(true);
     if(!run.disabled){ if(cur().dataset.mode==='claims') startCurrent(); else schedule(); }
   });
   card.addEventListener('mouseenter',function(){ hovering=true; if(holdT){ clearHold(); } });

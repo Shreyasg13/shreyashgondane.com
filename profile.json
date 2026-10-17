@@ -220,6 +220,13 @@
   "record": [
     {
       "date": "2026-10-17",
+      "type": "preprint",
+      "title": "White paper archived on Zenodo with a DOI: Superhuman Scores, Sub-Human Adaptation",
+      "detail": "DOI 10.5281/zenodo.23050143 (all versions), CC BY 4.0, with the evidence table and replication files; linked to ORCID.",
+      "url": "https://doi.org/10.5281/zenodo.23050143"
+    },
+    {
+      "date": "2026-10-17",
       "type": "milestone",
       "title": "GlassBox planted-error evaluation corrected to 550/550: stale-data plants re-targeted to claims not already stale",
       "detail": "Same 287-run export and deployed gate. Only the stale-data plants changed: 31/50 became 50/50, because the 19 earlier misses were plants on claims already stale, which could not add a new flag. Controls still 0/200 false alarms.",

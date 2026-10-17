@@ -390,7 +390,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
 <div class="hero-id">
 <h1 class="hero-name">Shreyash Gondane</h1>
-<div class="hero-role"><span>Independent researcher</span><span>Software engineer</span><span>New York</span></div>
+<div class="hero-role"><span>Independent researcher &amp; research engineer</span><span>AI evaluation, oversight &amp; agentic systems</span><span>New York</span></div>
 </div>
 <p class="hero-thesis">AI agents you can <em>check</em>.</p>
 <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #2C3038; max-width: 600px">I build and study agents whose outputs can be audited. In finance, every number is traced to its source and every call is recorded before its outcome. In agent evaluation, benchmarks and harnesses produce scores that measure the agent, not the plumbing.</p>
@@ -463,7 +463,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 <li style="background: #16181D; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FC4BD">02</span><h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Point-in-time evaluation</h3><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #B9B7AF">Agents only see data fetched before their decision time; calls are scored only after they are recorded.</p></li>
 <li style="background: #16181D; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FC4BD">03</span><h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Tamper-evident records</h3><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #B9B7AF">Append-only, hash-chained call ledgers with database-level guards.</p></li>
 <li style="background: #16181D; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FC4BD">04</span><h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Benchmark integrity</h3><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #B9B7AF">Oracle-checking every task before an agent run, so broken environments are dropped, not scored.</p></li>
-<li style="background: #16181D; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FC4BD">05</span><h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Distilling coding agents</h3><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #B9B7AF">Builder/critic twin loops that produce labelled trajectories for training smaller models.</p></li>
+<li style="background: #16181D; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FC4BD">05</span><h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Agent orchestration &amp; runtimes</h3><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #B9B7AF">Builder/reviewer twin loops and durable runtimes with classified failures and spend guards; traced runs become labelled data for training smaller models.</p></li>
 <li style="background: #16181D; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FC4BD">06</span><h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Auditing the auditors</h3><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #B9B7AF">Known reward hacks planted into real agent traces give trace auditors a ground truth: what they catch, miss and falsely flag.</p></li>
 </ol>
 </div>
@@ -692,7 +692,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
     { keys: ['publication', 'paper', 'springer', 'published', 'keystroke', 'surveillance', 'cite'],
       text: 'Four publications so far: two 2026 preprints (the Terminal-Bench oracle audit and the frontier-AI white paper) and two peer-reviewed Springer papers from 2021, one on keystroke-biometric password authentication and one on a CNN and IoT surveillance system. Two more papers are in preparation.',
       src: ['audit', 'paper', 'doi1', 'doi2'] },
-    { keys: ['distill', 'twin', 'builder', 'critic', 'qwen', 'local model'],
+    { keys: ['distill', 'twin', 'builder', 'critic', 'qwen', 'local model', 'orchestrat', 'runtime', 'agentic'],
       text: 'The twin-agent build lab uses a free model as builder and a strong model as planner and reviewer. Every run is traced, so accepted runs, rejections and before/after corrections become a labelled dataset for distilling smaller coding agents. It also includes CPU benchmarks: Qwen2.5-Coder 1.5B ran at about 42 tokens/s on a 4-core laptop CPU.',
       src: [] },
     { keys: ['open source', 'mcp', 'contribut', 'merged'],
@@ -701,8 +701,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
     { keys: ['contact', 'collaborat', 'hire', 'reach', 'email', 'talk', 'touch'],
       text: 'The best ways to reach Shreyash are LinkedIn or GitHub. His ORCID links his publications, and the record feed lets you follow new results as they land.',
       src: ['linkedin', 'github', 'orcid', 'feed'] },
-    { keys: ['who', 'about', 'background', 'summary', 'focus', 'research'],
-      text: 'Shreyash Gondane is an independent researcher and software engineer in New York. His work treats verifiability as the core design constraint for AI agents: claim-level provenance, point-in-time evaluation, tamper-evident records, benchmark integrity, and distilling coding agents.',
+    { keys: ['who', 'about', 'background', 'summary', 'focus', 'research', 'role', 'title', 'engineer', 'scientist'],
+      text: 'Shreyash Gondane is an independent researcher and research engineer in New York, working on AI evaluation, oversight and agentic systems. His work treats verifiability as the core design constraint for AI agents: claim-level provenance, point-in-time evaluation, tamper-evident records, benchmark integrity, agent orchestration and runtimes, and auditing the judges that check agents for reward hacking.',
       src: ['orcid', 'github'] }
   ];
   var CHIPS = ['Explain the evidence checks', 'What is GlassBox?', 'Did the verification gate work?', 'What did the benchmark audit find?', 'Publications', 'How do I get in touch?'];

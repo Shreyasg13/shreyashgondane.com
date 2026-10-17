@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shreyash Gondane · Research</title>
+<meta name="description" content="I build and study AI agents that can be checked: in finance, every number traced to its source and every call recorded before its outcome; in agent evaluation, benchmarks and harnesses whose scores measure the agent, not the plumbing.">
+<link rel="canonical" href="https://shreyashgondane.com/">
+<link rel="alternate" type="application/atom+xml" title="Shreyash Gondane: track record" href="https://shreyashgondane.com/record.xml">
+<meta property="og:title" content="Shreyash Gondane · Research">
+<meta property="og:description" content="I build and study AI agents that can be checked: in finance, every number traced to its source and every call recorded before its outcome; in agent evaluation, benchmarks and harnesses whose scores measure the agent, not the plumbing.">
+<meta property="og:url" content="https://shreyashgondane.com/">
+<meta property="og:type" content="profile">
+<meta name="theme-color" content="#F6F5F0">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Shreyash Gondane","url":"https://shreyashgondane.com/","description":"I build and study AI agents that can be checked: in finance, every number traced to its source and every call recorded before its outcome; in agent evaluation, benchmarks and harnesses whose scores measure the agent, not the plumbing.","sameAs":["https://github.com/Shreyasg13","https://orcid.org/0009-0006-4282-4800","https://www.linkedin.com/in/shreyash130197","https://shreyashportfolio.netlify.app/","https://github.com/Shreyasg13/glassbox-trading-agents"]}</script>
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F6F5F0}
+a{color:#1F5F5B;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:#123B38}
+input::placeholder{color:#7A7E87}
+@keyframes sg-blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(0.1)}}
+@keyframes sg-check{0%,8%{opacity:0;transform:scale(0.4)}16%,86%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(1)}}
+@keyframes sg-lens{0%,100%{transform:translate(0,0)}33%{transform:translate(80px,0)}66%{transform:translate(160px,0)}}
+@keyframes sg-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.sg-eyes{transform-box:fill-box;transform-origin:center;animation:sg-blink 4.5s infinite}
+.sg-lens{animation:sg-lens 6s ease-in-out infinite}
+.sg-head{animation:sg-bob 3s ease-in-out infinite}
+.sg-c1,.sg-c2,.sg-c3{transform-box:fill-box;transform-origin:center;opacity:0;animation:sg-check 6s infinite}
+.sg-c2{animation-delay:2s}.sg-c3{animation-delay:4s}
+@keyframes sg-talk{0%{transform:scaleY(0.25)}50%{transform:scaleY(1)}100%{transform:scaleY(0.55)}}
+@keyframes sg-brow{0%,100%{transform:translateY(0)}40%{transform:translateY(-4px)}}
+@keyframes sg-breathe{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.015)}}
+@keyframes sg-caret{0%,100%{opacity:1}50%{opacity:0}}
+.sg-open{transform-box:fill-box;transform-origin:center top;opacity:0}
+.sg-smile{opacity:1}
+.sg-face.is-talking .sg-open{opacity:1;animation:sg-talk 0.18s infinite alternate}
+.sg-face.is-talking .sg-smile{opacity:0}
+.sg-brows{transform-box:fill-box}
+.sg-face.is-talking .sg-brows{animation:sg-brow 1.1s ease-in-out infinite}
+.sg-body{transform-box:fill-box;transform-origin:center bottom;animation:sg-breathe 3.2s ease-in-out infinite}
+.sg-caret{display:inline-block;width:2px;height:1em;background:#16181D;margin-left:2px;vertical-align:-2px;animation:sg-caret 0.8s steps(1) infinite}
+@media (prefers-reduced-motion: reduce){.sg-eyes,.sg-lens,.sg-head,.sg-c1,.sg-c2,.sg-c3,.sg-body,.sg-brows,.sg-caret{animation:none;opacity:1}.sg-face.is-talking .sg-open{animation:none}}
+
+:root{--accent:#1F5F5B;--bg:#F6F5F0;--ink:#16181D;color-scheme:light}
+body{background:var(--bg);color:var(--ink)}
+html{scroll-behavior:smooth}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.msg-user{align-self:flex-end;max-width:82%;background:#16181D;color:#FFFFFF;padding:10px 14px;font-size:14px;line-height:1.5}
+.msg-bot{align-self:flex-start;max-width:92%;display:flex;flex-direction:column;gap:8px}
+.msg-bot-text{background:#FFFFFF;border:1px solid #DCDAD2;padding:12px 14px;font-size:14px;line-height:1.6;white-space:pre-line;color:#16181D}
+.msg-src{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.msg-src-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5A5F6B;text-transform:uppercase;letter-spacing:0.06em}
+.msg-src a{font-family:'IBM Plex Mono',monospace;font-size:12px;padding:4px 8px;border:1px solid #C9C6BC;text-decoration:none;color:var(--accent);background:#FFFFFF}
+.msg-thinking{align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5A5F6B;padding:6px 0}
+.chip{min-height:36px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;padding:6px 12px;background:#F6F5F0;border:1px solid #DCDAD2;color:#2C3038;cursor:pointer}
+.chip:hover{border-color:#16181D}
+@media (max-width:520px){h1{font-size:44px!important}#top dl{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+
+.pt-img{display:block;width:168px;height:168px;max-width:100%;border-radius:50%;object-fit:cover;border:3px solid #16181D;background:#FFFFFF;animation:sg-bob 3.2s ease-in-out infinite}
+.pt-ring{position:absolute;inset:-6px;border-radius:50%;border:3px solid var(--accent);opacity:0;pointer-events:none}
+@keyframes pt-pulse{0%{transform:scale(0.96);opacity:0.85}100%{transform:scale(1.14);opacity:0}}
+@keyframes pt-talk{0%{transform:rotate(-1.5deg) translateY(0)}100%{transform:rotate(1.5deg) translateY(-3px)}}
+@keyframes pt-bar{from{height:4px}to{height:14px}}
+.sg-face.is-talking .pt-ring{animation:pt-pulse 0.9s ease-out infinite}
+.sg-face.is-talking .pt-img{animation:pt-talk 0.55s ease-in-out infinite alternate}
+.pt-wave{position:absolute;bottom:6px;right:-6px;display:flex;gap:3px;align-items:flex-end;height:24px;padding:5px 8px;background:#16181D;border-radius:12px;opacity:0;transition:opacity 0.2s}
+.pt-wave span{width:3px;height:5px;background:#FFFFFF;border-radius:2px}
+.sg-face.is-talking .pt-wave{opacity:1}
+.sg-face.is-talking .pt-wave span{animation:pt-bar 0.45s ease-in-out infinite alternate}
+.pt-wave span:nth-child(2){animation-delay:0.1s!important}.pt-wave span:nth-child(3){animation-delay:0.2s!important}.pt-wave span:nth-child(4){animation-delay:0.05s!important}.pt-wave span:nth-child(5){animation-delay:0.15s!important}
+.pt-bubble{background:#FFFFFF;border:2px solid #16181D;border-radius:14px;padding:12px 14px;min-height:52px;font-family:'Newsreader',Georgia,serif;font-size:17px;line-height:1.35;color:#16181D;box-shadow:4px 4px 0 rgba(22,24,29,0.12)}
+@media (prefers-reduced-motion: reduce){.pt-img,.sg-face.is-talking .pt-img,.sg-face.is-talking .pt-ring,.sg-face.is-talking .pt-wave span{animation:none}}
+
+.lab{position:relative;overflow:hidden;background:radial-gradient(circle at 70% 30%,#1B3550 0%,#0E1626 62%);background-color:#0E1626;border-bottom:1px solid #16181D;padding:22px 18px 16px;display:flex;flex-direction:column;gap:14px}
+.lab::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(139,233,255,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(139,233,255,0.07) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.lab>*{position:relative}
+.duo{display:flex;align-items:center;justify-content:center}
+.pt-wrap{position:relative;flex:0 0 auto}
+.lab .pt-img{width:clamp(104px,30vw,150px);height:clamp(104px,30vw,150px);border-color:#8BE9FF;box-shadow:0 0 22px rgba(139,233,255,0.35)}
+.beam{flex:0 1 60px;width:60px;min-width:28px;height:40px;overflow:visible}
+.holo{flex:0 0 auto;width:clamp(96px,28vw,140px);height:auto;overflow:visible;animation:holo-float 4s ease-in-out infinite}
+@keyframes holo-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes holo-scan{0%{transform:translateY(0);opacity:0}10%{opacity:0.3}90%{opacity:0.3}100%{transform:translateY(185px);opacity:0}}
+@keyframes holo-core{0%,100%{opacity:0.45}50%{opacity:1}}
+@keyframes beam-flow{to{stroke-dashoffset:-16}}
+@keyframes beam-dot{0%{transform:translateX(0);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateX(-56px);opacity:0}}
+.holo-scan{animation:holo-scan 3.2s linear infinite}
+.holo-core,.holo-tip{animation:holo-core 2.2s ease-in-out infinite}
+.beam-line{animation:beam-flow 1.4s linear infinite}
+.beam-dot{animation:beam-dot 1.8s linear infinite}
+.beam-dot.d2{animation-delay:0.6s}.beam-dot.d3{animation-delay:1.2s}
+.sg-face.is-talking .holo-core,.sg-face.is-talking .holo-tip,.sg-face.is-talking .holo-eye{animation:holo-core 0.35s ease-in-out infinite}
+.sg-face.is-talking .beam-line{animation-duration:0.4s}
+.sg-face.is-talking .beam-dot{animation-duration:0.7s}
+.lab .pt-bubble{border-color:#8BE9FF;box-shadow:0 0 18px rgba(139,233,255,0.18)}
+.lab .sg-caret{background:#16181D}
+@media (prefers-reduced-motion: reduce){.holo,.holo-scan,.holo-core,.holo-tip,.holo-eye,.beam-line,.beam-dot,.sg-face.is-talking .holo-core,.sg-face.is-talking .holo-tip,.sg-face.is-talking .holo-eye{animation:none}}
+
+.mx-wrap{margin-top:36px;overflow-x:auto;border:1px solid #16181D;background:#FFFFFF}
+.mx{border-collapse:collapse;width:100%;min-width:860px;font-size:14px}
+.mx-cap{caption-side:bottom;text-align:left;padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5A5F6B;border-top:1px solid #DCDAD2}
+.mx th,.mx td{border-bottom:1px solid #E6E4DC;padding:10px 8px;text-align:center;vertical-align:middle}
+.mx thead th{background:#F6F5F0;border-bottom:1px solid #16181D;vertical-align:bottom;padding:14px 8px}
+.mx-colh{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;color:#3F444E;line-height:1.35}
+.mx-corner{text-align:left!important;font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#5A5F6B;font-weight:500}
+.mx tbody th{text-align:left;padding:14px 16px;min-width:200px}
+.mx-proj{display:block;font-family:'Newsreader',Georgia,serif;font-size:18px;font-weight:500;color:#16181D}
+.mx-sub{display:block;font-size:12px;color:#5A5F6B;margin-top:2px;font-weight:400}
+.mx tbody tr:hover{background:#FBFAF7}
+.mx-cell{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;cursor:pointer;padding:0}
+.mx-v{background:var(--accent);color:#FFFFFF;border:1px solid var(--accent)}
+.mx-p{background:#FFF6E5;color:#8A5A00;border:1px solid #D9A441}
+.mx-cell:hover{transform:translateY(-1px);box-shadow:0 3px 0 #16181D}
+.mx-cell[aria-pressed="true"]{outline:3px solid #16181D;outline-offset:2px}
+.mx-mini{width:22px;height:22px;border-radius:5px;cursor:default;margin-right:6px;vertical-align:middle}
+.mx-mini:hover{transform:none;box-shadow:none}
+.mx-leg{display:inline-flex;align-items:center}
+.mx-na{display:inline-block;width:22px;color:#B5B2A8;font-size:18px;text-align:center}
+.mx-detail{margin-top:16px;border:1px solid #16181D;background:#FFFFFF;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.mx-d-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5A5F6B;text-transform:uppercase;letter-spacing:0.05em}
+.mx-d-state{padding:3px 8px;background:var(--accent);color:#FFFFFF}
+.mx-d-state.is-p{background:#FFF6E5;color:#8A5A00;border:1px solid #D9A441}
+.mx-d-text{margin:0;font-size:16px;line-height:1.6;color:#16181D;max-width:760px}
+.mx-d-link{font-size:14px;align-self:flex-start}
+.mx-illus{display:block;width:100%;height:auto}
+@keyframes mx-ink{from{stroke-dashoffset:120}to{stroke-dashoffset:0}}
+@keyframes mx-pop{0%,40%{transform:scale(0);opacity:0}55%{transform:scale(1.15);opacity:1}65%,90%{transform:scale(1);opacity:1}100%{transform:scale(1);opacity:0}}
+@keyframes mx-tip{0%,100%{opacity:0.4}50%{opacity:1}}
+.mx-ink{stroke-dasharray:120;animation:mx-ink 4s ease-in-out infinite alternate}
+.mx-seal{transform-box:fill-box;transform-origin:center;animation:mx-pop 4s ease-in-out infinite}
+.mx-tip{animation:mx-tip 1.4s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.mx-ink,.mx-seal,.mx-tip{animation:none}.mx-cell:hover{transform:none}}
+
+.nav-ask{font:inherit;font-size:14px;font-weight:600;color:var(--accent);background:none;border:none;padding:10px 0;cursor:pointer}
+.sgw-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.sgw-m{display:block;overflow:visible}
+.sgw-m .m-body{transform-box:fill-box;transform-origin:center bottom;transform:scale(calc(1 + var(--sq,0) * 0.06),calc(1 - var(--sq,0) * 0.08)) rotate(var(--tilt,0deg));transition:transform 0.18s ease-out}
+.sgw-m .m-pupils{transform:translate(var(--lx,0px),var(--ly,0px));transition:transform 0.2s ease-out}
+.sgw-m .m-lids{transform-box:fill-box;transform-origin:center;animation:sg-blink 4.2s infinite}
+.sgw-m .m-open{opacity:0;transform-box:fill-box;transform-origin:center top}
+.sgw-m .m-tag{transform-box:fill-box;transform-origin:50% 100%;animation:m-sway 3s ease-in-out infinite}
+@keyframes m-sway{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+.is-talking .sgw-m .m-open{opacity:1;animation:sg-talk 0.18s infinite alternate}
+.is-talking .sgw-m .m-smile{opacity:0}
+.sgw-fab{position:fixed;right:calc(20px + env(safe-area-inset-right, 0px));bottom:calc(20px + env(safe-area-inset-bottom, 0px));z-index:50;width:72px;height:72px;border-radius:50%;border:none;background:#FFFFFF;box-shadow:0 8px 24px rgba(22,24,29,0.18),0 0 0 1px #16181D;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:transform 0.25s cubic-bezier(.3,1.6,.5,1)}
+.sgw-fab:hover{transform:scale(1.07)}
+.sgw-fab .sgw-m{width:48px;height:48px}
+.sgw-ring{position:absolute;inset:0;width:72px;height:72px;pointer-events:none}
+.sgw-fab.is-open{transform:scale(0.86)}
+.sgw-hint{position:fixed;right:calc(100px + env(safe-area-inset-right, 0px));bottom:calc(36px + env(safe-area-inset-bottom, 0px));z-index:50;display:flex;align-items:stretch;max-width:min(300px,calc(100vw - 132px));background:#16181D;color:#FFFFFF;border-radius:14px 14px 4px 14px;box-shadow:0 8px 24px rgba(22,24,29,0.22);animation:hint-in 0.35s cubic-bezier(.3,1.5,.5,1)}
+.sgw-hint-btn{font:inherit;font-size:14px;line-height:1.35;color:#FFFFFF;background:none;border:none;text-align:left;padding:10px 4px 10px 14px;cursor:pointer;min-height:44px}
+.sgw-hint-x{font:inherit;font-size:18px;color:#A8ACB5;background:none;border:none;padding:0 12px;cursor:pointer;min-width:36px}
+@keyframes hint-in{from{opacity:0;transform:translateY(8px) scale(0.92)}to{opacity:1;transform:none}}
+.sgw-panel{position:fixed;right:calc(20px + env(safe-area-inset-right, 0px));bottom:calc(104px + env(safe-area-inset-bottom, 0px));z-index:60;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 140px));background:#FFFFFF;border:1px solid #16181D;border-radius:18px;box-shadow:0 18px 50px rgba(22,24,29,0.25);display:flex;flex-direction:column;overflow:hidden;transform-origin:calc(100% - 36px) calc(100% + 48px);animation:panel-pop 0.32s cubic-bezier(.3,1.4,.5,1)}
+.sgw-panel[hidden]{display:none!important}
+@keyframes panel-pop{from{opacity:0;transform:scale(0.4)}to{opacity:1;transform:none}}
+.sgw-head{display:flex;align-items:center;gap:10px;padding:12px 10px 12px 14px;border-bottom:1px solid #DCDAD2;background:#F6F5F0}
+.sgw-head-m .sgw-m{width:36px;height:36px}
+.sgw-title{font-weight:600;font-size:15px;color:#16181D}
+.sgw-subtitle{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#5A5F6B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sgw-icon{min-width:40px;min-height:40px;background:none;border:1px solid transparent;border-radius:10px;color:#3F444E;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sgw-icon:hover{border-color:#DCDAD2;background:#FFFFFF}
+.sgw-icon[aria-pressed="true"]{background:var(--accent);color:#FFFFFF}
+.sgw-log{flex:1 1 auto;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;background:#FBFAF7}
+.sgw-log .msg-user,.sgw-log .msg-bot-text{border-radius:12px}
+.sgw-log .msg-user{border-bottom-right-radius:4px}
+.sgw-log .msg-bot-text{border-bottom-left-radius:4px}
+.sgw-log>*{animation:msg-in 0.25s ease-out}
+@keyframes msg-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.sgw-chips{display:flex;gap:6px;padding:10px 12px 0;overflow-x:auto;border-top:1px solid #DCDAD2;scrollbar-width:none}
+.sgw-chips .chip{flex:0 0 auto;border-radius:999px}
+.sgw-form{display:flex;gap:8px;padding:10px 12px 12px}
+.sgw-form input{flex:1 1 auto;min-width:0;min-height:44px;padding:0 14px;font:inherit;font-size:15px;border:1px solid #16181D;border-radius:12px;background:#FFFFFF;color:#16181D}
+.sgw-send{min-width:44px;min-height:44px;border:none;border-radius:12px;background:var(--accent);color:#FFFFFF;cursor:pointer;display:flex;align-items:center;justify-content:center}
+@media (prefers-reduced-motion: reduce){.sgw-panel,.sgw-hint,.sgw-log>*{animation:none}.sgw-m .m-body,.sgw-m .m-pupils{transition:none}.sgw-m .m-lids,.sgw-m .m-tag,.is-talking .sgw-m .m-open{animation:none}.sgw-fab{transition:none}}
+
+.ox{--ox-bg:#05070B;--ox-ink:#F2F5F8;--ox-dim:#8A94A3;--ox-line:rgba(255,255,255,0.08);--ox-cy:#5FE1FF;--ox-am:#FFB547;background:var(--ox-bg);color:var(--ox-ink);position:relative;overflow:hidden;margin-top:56px}
+.ox::before{content:"";position:absolute;inset:-20% -10% auto;height:70%;background:radial-gradient(ellipse at 70% 40%,rgba(95,225,255,0.10),transparent 60%),radial-gradient(ellipse at 20% 0%,rgba(160,110,255,0.10),transparent 55%);pointer-events:none}
+.ox-in{position:relative;max-width:1240px;margin:0 auto;padding:96px 24px 88px}
+.ox-top{display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+.ox-intro{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.ox-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ox-cy)}
+.ox-h{margin:0;font-family:'Outfit','IBM Plex Sans',system-ui,sans-serif;font-weight:200;font-size:clamp(40px,6vw,72px);line-height:1.02;letter-spacing:-0.03em;text-wrap:balance}
+.ox-stats{display:flex;flex-wrap:wrap;gap:36px}
+.ox-stats>div{display:flex;flex-direction:column;gap:4px}
+.ox-num{font-family:'Outfit','IBM Plex Sans',sans-serif;font-weight:200;font-size:56px;line-height:1;font-variant-numeric:tabular-nums;background:linear-gradient(180deg,#FFFFFF,#7FD8F0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ox-num.ox-amber{background:linear-gradient(180deg,#FFE2A8,#FFB547);-webkit-background-clip:text;background-clip:text}
+.ox-numl{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ox-dim)}
+.ox-lede{margin:0;font-size:15px;line-height:1.7;color:#B9C1CC;max-width:460px}
+.ox-stage{flex:1 1 460px;min-width:0;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:center}
+.ox-orbwrap{position:relative;width:min(240px,60vw);aspect-ratio:1;max-width:100%;flex:0 0 auto}
+.ox-orb{width:100%;height:100%;display:block}
+.ox-orb-ring{position:absolute;inset:6%;border-radius:50%;border:1px solid rgba(95,225,255,0.18);animation:ox-spin 18s linear infinite}
+.ox-orb-ring::after{content:"";position:absolute;top:-3px;left:50%;width:6px;height:6px;border-radius:50%;background:var(--ox-cy);box-shadow:0 0 12px var(--ox-cy)}
+@keyframes ox-spin{to{transform:rotate(360deg)}}
+.ox-card{flex:1 1 300px;min-width:0;background:rgba(255,255,255,0.04);border:1px solid var(--ox-line);border-radius:20px;padding:22px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;flex-direction:column;gap:14px}
+.ox-card-top{display:flex;flex-direction:column;gap:12px}
+.ox-cardproj{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ox-dim)}
+.ox-tabs{display:flex;flex-wrap:wrap;gap:6px;padding:4px;background:rgba(255,255,255,0.05);border-radius:999px;align-self:flex-start}
+.ox-tab{font:inherit;font-size:13px;color:#B9C1CC;background:none;border:none;border-radius:999px;padding:8px 14px;min-height:36px;cursor:pointer}
+.ox-tab[aria-selected="true"]{background:#F2F5F8;color:#05070B}
+.ox-say{margin:0;min-height:132px;font-family:'Outfit','IBM Plex Sans',sans-serif;font-weight:300;font-size:21px;line-height:1.45;color:#F2F5F8}
+.ox-say::after{content:"";display:inline-block;width:2px;height:1em;margin-left:3px;vertical-align:-3px;background:var(--ox-cy);animation:sg-caret 0.8s steps(1) infinite}
+.ox-note{margin:0;font-size:12px;color:var(--ox-dim)}
+.ox-gridwrap{margin-top:64px;overflow-x:auto;border-top:1px solid var(--ox-line)}
+.ox-grid{border-collapse:collapse;width:100%;min-width:880px}
+.ox-cap{caption-side:bottom;text-align:left;padding:18px 0 0;display:flex;flex-wrap:wrap;gap:22px;font-size:12px;color:var(--ox-dim)}
+.ox-key{display:inline-flex;align-items:center;gap:8px}
+.ox-grid th,.ox-grid td{border-bottom:1px solid var(--ox-line);padding:6px 4px;text-align:center}
+.ox-grid thead th{padding:18px 4px 14px;vertical-align:bottom}
+.ox-colh{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ox-dim);font-weight:400}
+.ox-corner{text-align:left!important;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ox-dim);font-weight:400}
+.ox-grid tbody th{text-align:left;padding:4px 0}
+.ox-proj{font:inherit;text-align:left;background:none;border:none;color:inherit;cursor:pointer;padding:12px 12px 12px 0;display:flex;flex-direction:column;gap:3px;min-width:220px;border-left:2px solid transparent;padding-left:12px}
+.ox-proj[aria-pressed="true"]{border-left-color:var(--ox-cy)}
+.ox-pname{font-family:'Outfit','IBM Plex Sans',sans-serif;font-size:18px;font-weight:400}
+.ox-psub{font-size:12px;color:var(--ox-dim)}
+.ox-proj:hover .ox-pname{color:var(--ox-cy)}
+.ox-node{width:44px;height:44px;border:none;background:none;border-radius:50%;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.ox-node:hover{background:rgba(255,255,255,0.06)}
+.ox-node[aria-pressed="true"]{background:rgba(95,225,255,0.12);box-shadow:inset 0 0 0 1px rgba(95,225,255,0.5)}
+.ox-dot{display:inline-block;width:12px;height:12px;border-radius:50%}
+.ox-v .ox-dot,.ox-kv{background:var(--ox-cy);box-shadow:0 0 10px rgba(95,225,255,0.9),0 0 22px rgba(95,225,255,0.35)}
+.ox-p .ox-dot,.ox-kp{background:transparent;border:2px solid var(--ox-am);box-shadow:0 0 10px rgba(255,181,71,0.5);animation:ox-pulse 1.8s ease-in-out infinite}
+.ox-none{display:inline-block;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.18)}
+@keyframes ox-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.25);opacity:0.6}}
+.ox-grid tbody tr.is-active{background:rgba(95,225,255,0.04)}
+.ox-detail{margin-top:24px;border:1px solid var(--ox-line);border-radius:16px;padding:20px 22px;background:rgba(255,255,255,0.03);display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;animation:msg-in 0.25s ease-out}
+.ox-detail[hidden]{display:none!important}
+.ox-dstate{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(95,225,255,0.15);color:var(--ox-cy)}
+.ox-dstate.is-p{background:rgba(255,181,71,0.15);color:var(--ox-am)}
+.ox-dwhere{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ox-dim)}
+.ox-dtext{flex:1 1 100%;margin:0;font-size:16px;line-height:1.6;color:#E3E8EE;max-width:820px}
+.ox-dlink{color:var(--ox-cy);font-size:14px}
+.ox-dlink:hover{color:#FFFFFF}
+.ox a:focus-visible,.ox button:focus-visible{outline:2px solid var(--ox-cy);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ox-orb-ring,.ox-p .ox-dot,.ox-kp,.ox-say::after{animation:none}}
+
+.rc{flex:1 1 440px;min-width:0;max-width:600px;background:#FFFFFF;border:1px solid #16181D;box-shadow:8px 8px 0 #E4E2DA;display:flex;flex-direction:column}
+.rc-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #DCDAD2;background:#F6F5F0}
+.rc-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:#3F444E}
+.rc-live{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(31,95,91,0.5);animation:rc-live 1.8s infinite}
+@keyframes rc-live{0%{box-shadow:0 0 0 0 rgba(31,95,91,0.45)}70%{box-shadow:0 0 0 8px rgba(31,95,91,0)}100%{box-shadow:0 0 0 0 rgba(31,95,91,0)}}
+.rc-run{font:inherit;font-size:13px;font-weight:600;color:#FFFFFF;background:#16181D;border:none;padding:10px 14px;min-height:40px;cursor:pointer}
+.rc-run:hover{background:var(--accent)}
+.rc-run[disabled]{opacity:0.6;cursor:default}
+.rc-text{margin:0;padding:20px 18px 6px;font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.75;color:#16181D}
+.rc-n{font:inherit;font-family:'IBM Plex Mono',monospace;font-size:0.82em;font-weight:500;color:#16181D;background:#EEF3F1;border:none;border-bottom:2px dotted var(--accent);padding:1px 5px;margin:0 1px;cursor:pointer;transition:background 0.2s,color 0.2s}
+.rc-n:hover,.rc-n.is-sel{background:#16181D;color:#FFFFFF}
+.rc-n.is-scan{background:#FFF6E5;border-bottom-color:#D9A441}
+.rc-n.is-ok{background:#E3F2EF;border-bottom:2px solid var(--accent)}
+.rc-n.is-bad{background:#FBE5E1;color:#8A1F11;border-bottom:2px solid #C0392B;text-decoration:line-through;text-decoration-thickness:1.5px}
+.rc-n.is-ok.is-sel,.rc-n.is-bad.is-sel{background:#16181D;color:#FFFFFF;text-decoration:none}
+.rc-receipt{margin:12px 18px 0;border:1px dashed #9AA1AB;background:repeating-linear-gradient(0deg,#FCFBF8 0 22px,#F7F6F1 22px 23px);padding:14px 16px;font-size:13px}
+.rc-r-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.rc-r-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#5A5F6B}
+.rc-verdict{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:3px 8px;background:#ECEBE6;color:#3F444E}
+.rc-verdict.ok{background:var(--accent);color:#FFFFFF}
+.rc-verdict.bad{background:#C0392B;color:#FFFFFF}
+.rc-dl{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px}
+.rc-dl div{min-width:0}
+.rc-dl dt{font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;color:#5A5F6B}
+.rc-dl dd{margin:2px 0 0;color:#16181D;overflow-wrap:anywhere}
+.rc-mono{font-family:'IBM Plex Mono',monospace;font-size:12px}
+.rc-checks{list-style:none;margin:12px 0 0;padding:10px 0 0;border-top:1px dashed #C9C6BC;display:flex;flex-direction:column;gap:6px}
+.rc-checks li{display:flex;gap:8px;align-items:baseline;font-size:13px}
+.rc-mark{font-family:'IBM Plex Mono',monospace;font-weight:600;width:14px;flex:0 0 14px}
+.rc-checks .pass .rc-mark{color:var(--accent)}
+.rc-checks .fail .rc-mark{color:#C0392B}
+.rc-checks .fail{color:#8A1F11}
+.rc-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;padding:14px 18px;font-size:12px;color:#5A5F6B}
+#rcCount{font-family:'IBM Plex Mono',monospace;color:#16181D}
+.ep{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.ep span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.03em;padding:3px 8px;border:1px solid #DCDAD2;color:#3F444E;background:#FFFFFF}
+.ep .ep-good{border-color:var(--accent);color:var(--accent)}
+.ep .ep-warn{border-color:#D9A441;color:#8A5A00;background:#FFF9EE}
+@media (prefers-reduced-motion: reduce){.rc-live{animation:none}.rc-n{transition:none}}
+
+.rc-tabs{display:flex;gap:2px;padding:0 10px;border-bottom:1px solid #DCDAD2;overflow-x:auto;scrollbar-width:none;background:#F6F5F0}
+.rc-tab{flex:0 0 auto;font:inherit;font-size:13px;color:#5A5F6B;background:none;border:none;border-bottom:2px solid transparent;padding:10px 10px 9px;min-height:42px;cursor:pointer}
+.rc-tab:hover{color:#16181D}
+.rc-tab[aria-selected="true"]{color:#16181D;font-weight:600;border-bottom-color:var(--accent)}
+.rc-pane{animation:rc-fade 0.3s ease-out}
+@keyframes rc-fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.rc-sim{padding:16px 18px 4px;display:flex;flex-direction:column;gap:14px;animation:rc-fade 0.3s ease-out}
+.rc-sim[hidden]{display:none!important}
+.rc-sim-title{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#3F444E}
+.rc-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#DCDAD2;border:1px solid #DCDAD2}
+.rc-m{background:#FFFFFF;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.rc-mv{font-family:'Newsreader',Georgia,serif;font-size:30px;line-height:1.05;font-variant-numeric:tabular-nums;color:#16181D;display:inline-block;transform-origin:left center}
+.rc-mv.bump{animation:rc-bump 0.45s cubic-bezier(.3,1.8,.5,1)}
+@keyframes rc-bump{0%{transform:scale(1)}40%{transform:scale(1.22);color:var(--accent)}100%{transform:scale(1)}}
+.rc-ml{font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:#5A5F6B}
+.rc-wfwrap{position:relative;background:#0F141C;border-radius:4px;padding:10px 12px 8px;min-height:248px}
+.rc-wf{display:flex;flex-direction:column;gap:5px}
+.rc-row{display:grid;grid-template-columns:minmax(0,38%) minmax(0,1fr);gap:10px;align-items:center;animation:rc-row-in 0.25s ease-out}
+@keyframes rc-row-in{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+.rc-rl{min-width:0;display:flex;flex-direction:column}
+.rc-rn{font-size:12px;color:#E8ECF1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rc-ra{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7D8794;text-transform:uppercase;letter-spacing:0.06em}
+.rc-track{position:relative;height:22px;background:repeating-linear-gradient(90deg,rgba(255,255,255,0.04) 0 1px,transparent 1px 12.5%)}
+.rc-bar{position:absolute;top:3px;height:16px;border-radius:3px;width:0;transition-property:width;transition-timing-function:linear}
+.rc-bar.info{background:#5B6B80}.rc-bar.ok{background:#2FB8A6}.rc-bar.warn{background:#E6A23C}.rc-bar.bad{background:#E5533D}
+.rc-bar.run{box-shadow:0 0 0 1px rgba(255,255,255,0.35),0 0 12px rgba(255,255,255,0.25)}
+.rc-note{position:absolute;top:3px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:16px;color:#C9D1DB;white-space:nowrap;opacity:0;transition:opacity 0.25s;padding-left:6px}
+.rc-note.show{opacity:1}
+.rc-note.bad{color:#FF9A88}.rc-note.warn{color:#F5C77A}.rc-note.ok{color:#7FE0D2}
+.rc-axis{display:flex;justify-content:space-between;margin-top:6px;margin-left:calc(38% + 10px);font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7D8794}
+.rc-stamp{position:absolute;right:14px;bottom:30px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:8px 12px;border:2px solid currentColor;transform:rotate(-6deg);background:rgba(15,20,28,0.85);animation:rc-stamp 0.45s cubic-bezier(.2,1.6,.4,1)}
+.rc-stamp.ok{color:#2FB8A6}.rc-stamp.warn{color:#E6A23C}
+@keyframes rc-stamp{0%{opacity:0;transform:rotate(-6deg) scale(2.2)}100%{opacity:1;transform:rotate(-6deg) scale(1)}}
+@media (prefers-reduced-motion: reduce){.rc-pane,.rc-sim,.rc-row,.rc-stamp,.rc-mv.bump{animation:none}.rc-bar{transition:none!important}}
+
+.ev{list-style:none;margin:0;padding:0}
+.ev-row{display:grid;grid-template-columns:minmax(200px,260px) minmax(0,1fr) auto;gap:10px 24px;align-items:center;padding:18px 0;border-bottom:1px solid #DCDAD2}
+.ev-name{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ev-pn{font-family:'Newsreader',Georgia,serif;font-size:20px;font-weight:500;color:#16181D}
+.ev-ps{font-size:12.5px;color:#5A5F6B}
+.ev-chips{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.ev-chip{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:5px 11px;border-radius:999px;cursor:pointer;transition:background 0.15s,color 0.15s}
+.ev-v{background:#E8F1EF;color:#123B38;border:1px solid #BFD6D1}
+.ev-p{background:#FFF8EA;color:#7A4E00;border:1px dashed #D9A441}
+.ev-chip:hover{border-color:#16181D}
+.ev-chip[aria-expanded="true"]{background:#16181D;color:#FFFFFF;border-color:#16181D}
+.ev-mark{font-size:12px}
+.ev-score{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5A5F6B;font-variant-numeric:tabular-nums}
+.ev-detail{grid-column:1/-1;border-left:2px solid var(--accent);padding:4px 0 4px 16px;margin-left:0;animation:msg-in 0.2s ease-out}
+.ev-detail[hidden]{display:none!important}
+.ev-dt{margin:0 0 6px;font-size:15px;line-height:1.6;color:#16181D;max-width:760px}
+.ev-dl{font-size:14px}
+@media (max-width:760px){.ev-row{grid-template-columns:minmax(0,1fr) auto}.ev-chips{grid-column:1/-1;grid-row:2}}
+
+.hero-id{display:flex;flex-direction:column;gap:14px}
+.hero-name{margin:0;font-family:'Source Serif 4','Newsreader',Georgia,serif;font-optical-sizing:auto;font-weight:600;font-size:clamp(44px,6.2vw,72px);line-height:1;letter-spacing:-0.025em;color:#16181D}
+.hero-role{display:flex;flex-wrap:wrap;align-items:center;gap:6px 0;font-family:'IBM Plex Sans',sans-serif;font-size:15px;color:#3F444E}
+.hero-role span+span::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:#9AA1AB;margin:0 12px;vertical-align:middle}
+.hero-thesis{margin:6px 0 0;padding-top:18px;border-top:1px solid #DCDAD2;font-family:'Source Serif 4','Newsreader',Georgia,serif;font-weight:400;font-size:clamp(24px,2.6vw,30px);line-height:1.2;color:#16181D}
+.hero-thesis em{color:var(--accent)}
+.refs{list-style:none;margin:4px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;max-width:640px}
+.ref{display:flex;align-items:center;gap:12px;padding:10px 12px;min-height:52px;border:1px solid #DCDAD2;background:#FFFFFF;color:#16181D;text-decoration:none;transition:border-color 0.15s,transform 0.15s}
+.ref:hover{border-color:#16181D;color:#16181D;transform:translateY(-1px)}
+.ref-ic{flex:0 0 30px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:1px solid #DCDAD2;color:#16181D;font-family:'IBM Plex Sans',sans-serif;font-size:12px}
+.ref-ic b{font-weight:700;letter-spacing:-0.02em}
+.ref-t{flex:1 1 auto;min-width:0;display:flex;flex-direction:column}
+.ref-l{font-size:14px;font-weight:600}
+.ref-h{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#5A5F6B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ref-arrow{color:#9AA1AB;font-size:13px}
+.ref:hover .ref-arrow{color:var(--accent)}
+.brand-name{font-family:'Source Serif 4','Newsreader',Georgia,serif;font-weight:600;font-size:18px;letter-spacing:-0.01em}
+@media (prefers-reduced-motion: reduce){.ref{transition:none}}
+
+.rc-head{position:relative}
+.rc-auto{font:inherit;font-size:12px;display:inline-flex;align-items:center;gap:7px;color:#3F444E;background:#FFFFFF;border:1px solid #DCDAD2;padding:6px 10px;min-height:34px;cursor:pointer;margin-left:auto}
+.rc-auto:hover{border-color:#16181D}
+.rc-auto-i{width:8px;height:10px;border-left:2.5px solid currentColor;border-right:2.5px solid currentColor}
+.rc-auto[aria-pressed="false"] .rc-auto-i{width:0;height:0;border:none;border-left:8px solid currentColor;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.rc-tab{position:relative}
+.rc-tprog{position:absolute;left:10px;right:10px;bottom:-1px;height:2px;background:transparent;overflow:hidden;pointer-events:none}
+.rc-tprog i{display:block;height:100%;width:0;background:#16181D}
+.rc-sim:not([hidden]){animation:rc-slide 0.45s cubic-bezier(.2,.8,.2,1)}
+.rc-text.rc-pane,.rc-receipt.rc-pane{animation:rc-slide 0.45s cubic-bezier(.2,.8,.2,1)}
+@keyframes rc-slide{from{opacity:0;transform:translateX(18px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
+@media (prefers-reduced-motion: reduce){.rc-sim:not([hidden]),.rc-text.rc-pane,.rc-receipt.rc-pane{animation:none}}
+</style>
+<div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #16181D; background: #F6F5F0; min-height: 100vh">
+
+<header style="border-bottom: 1px solid #DCDAD2">
+<nav aria-label="Primary" style="max-width: 1240px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #16181D">
+<span style="width: 36px; height: 36px; border: 1.5px solid #16181D; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500">SG</span>
+<span class="brand-name">Shreyash Gondane</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 14px">
+<a href="#statement" style="color: #3F444E; text-decoration: none; padding: 10px 0">Research</a>
+<a href="#matrix" style="color: #3F444E; text-decoration: none; padding: 10px 0">Evidence</a>
+<a href="#writing" style="color: #3F444E; text-decoration: none; padding: 10px 0">Writing</a>
+<a href="#projects" style="color: #3F444E; text-decoration: none; padding: 10px 0">Projects</a>
+<a href="#record" style="color: #3F444E; text-decoration: none; padding: 10px 0">Track record</a>
+<button type="button" id="navAsk" class="nav-ask">Ask the assistant</button>
+</div>
+</nav>
+</header>
+
+<section id="top" style="max-width: 1240px; margin: 0 auto; padding: 64px 24px 56px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<div class="hero-id">
+<h1 class="hero-name">Shreyash Gondane</h1>
+<div class="hero-role"><span>Independent researcher</span><span>Software engineer</span><span>New York</span></div>
+</div>
+<p class="hero-thesis">AI agents you can <em>check</em>.</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #2C3038; max-width: 600px">I build and study agents whose outputs can be audited. In finance, every number is traced to its source and every call is recorded before its outcome. In agent evaluation, benchmarks and harnesses produce scores that measure the agent, not the plumbing.</p>
+<ul class="refs"><li><a class="ref" href="https://github.com/Shreyasg13" target="_blank" rel="noopener"><span class="ref-ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6"></path><path d="M16 6l6 6-6 6"></path></svg></span><span class="ref-t"><span class="ref-l">GitHub</span><span class="ref-h">Shreyasg13</span></span><span class="ref-arrow" aria-hidden="true">↗</span></a></li><li><a class="ref" href="https://orcid.org/0009-0006-4282-4800" target="_blank" rel="noopener"><span class="ref-ic" aria-hidden="true"><b>iD</b></span><span class="ref-t"><span class="ref-l">ORCID</span><span class="ref-h">0009-0006-4282-4800</span></span><span class="ref-arrow" aria-hidden="true">↗</span></a></li><li><a class="ref" href="https://www.linkedin.com/in/shreyash130197" target="_blank" rel="noopener"><span class="ref-ic" aria-hidden="true"><b>in</b></span><span class="ref-t"><span class="ref-l">LinkedIn</span><span class="ref-h">shreyash130197</span></span><span class="ref-arrow" aria-hidden="true">↗</span></a></li><li><a class="ref" href="https://shreyashportfolio.netlify.app/" target="_blank" rel="noopener"><span class="ref-ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"></path></svg></span><span class="ref-t"><span class="ref-l">Portfolio</span><span class="ref-h">shreyashportfolio.netlify.app</span></span><span class="ref-arrow" aria-hidden="true">↗</span></a></li><li><a class="ref" href="https://github.com/Shreyasg13/glassbox-trading-agents" target="_blank" rel="noopener"><span class="ref-ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M9 12l2 2 4-4"></path></svg></span><span class="ref-t"><span class="ref-l">GlassBox</span><span class="ref-h">open-source repo</span></span><span class="ref-arrow" aria-hidden="true">↗</span></a></li><li><a class="ref" href="https://shreyashgondane.com/record.xml" target="_blank" rel="noopener"><span class="ref-ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11a8 8 0 0 1 8 8"></path><path d="M5 5a14 14 0 0 1 14 14"></path><circle cx="6" cy="18" r="1.4"></circle></svg></span><span class="ref-t"><span class="ref-l">Track record feed</span><span class="ref-h">Atom · append-only</span></span><span class="ref-arrow" aria-hidden="true">↗</span></a></li></ul>
+<dl style="margin: 16px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid #16181D">
+<div style="padding: 14px 12px 0 0"><dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #5A5F6B">Publications</dt><dd style="margin: 4px 0 0; font-family: 'Newsreader', Georgia, serif; font-size: 36px">4</dd></div>
+<div style="padding: 14px 12px 0 0"><dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #5A5F6B">In preparation</dt><dd style="margin: 4px 0 0; font-family: 'Newsreader', Georgia, serif; font-size: 36px">3</dd></div>
+<div style="padding: 14px 12px 0 0"><dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #5A5F6B">Open source</dt><dd style="margin: 4px 0 0; font-family: 'Newsreader', Georgia, serif; font-size: 36px">3</dd></div>
+<div style="padding: 14px 0 0 0"><dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #5A5F6B">Years in AI</dt><dd style="margin: 4px 0 0; font-family: 'Newsreader', Georgia, serif; font-size: 36px">5+</dd></div>
+</dl>
+</div>
+
+
+
+<div class="rc" id="receipts">
+<div class="rc-head">
+<span class="rc-eyebrow"><span class="rc-live"></span>Try it · hover or tap a number</span>
+<button type="button" id="rcAuto" class="rc-auto" aria-pressed="true"><span class="rc-auto-i" aria-hidden="true"></span><span id="rcAutoL">Auto-play</span></button>
+<button type="button" id="rcRun" class="rc-run">Run the verification gate</button>
+</div>
+<div class="rc-tabs" role="tablist" aria-label="Observability views">
+<button type="button" role="tab" class="rc-tab" data-mode="claims" aria-selected="true">Claims</button>
+<button type="button" role="tab" class="rc-tab" data-mode="harness" aria-selected="false">Harness</button>
+<button type="button" role="tab" class="rc-tab" data-mode="guard" aria-selected="false">Guardrails</button>
+<button type="button" role="tab" class="rc-tab" data-mode="hack" aria-selected="false">Reward hacking</button>
+<button type="button" role="tab" class="rc-tab" data-mode="twin" aria-selected="false">Twin pairing</button>
+</div>
+
+<p class="rc-text">Analyst note on <b>Acme Robotics</b>: revenue rose <button type="button" class="rc-n" data-i="0">18.2%</button> to <button type="button" class="rc-n" data-i="1">$4.71B</button> this quarter, with gross margin at <button type="button" class="rc-n" data-i="2">61.3%</button>. Free cash flow reached <button type="button" class="rc-n" data-i="3">$812M</button>. Shares trade at <button type="button" class="rc-n" data-i="4">34.1×</button> earnings, and management guides next quarter to <button type="button" class="rc-n" data-i="5">$5.02B</button>.</p>
+<div class="rc-receipt" id="rcReceipt" aria-live="polite">
+<div class="rc-r-top"><span class="rc-r-label">Receipt</span><span id="rcVerdict" class="rc-verdict">Select a number</span></div>
+<dl class="rc-dl">
+<div><dt>Claim</dt><dd id="rcClaim">–</dd></div>
+<div><dt>Source</dt><dd id="rcSrc">–</dd></div>
+<div><dt>Pointer</dt><dd id="rcPtr" class="rc-mono">–</dd></div>
+<div><dt>Stored value</dt><dd id="rcStored" class="rc-mono">–</dd></div>
+<div><dt>Snapshot</dt><dd id="rcHash" class="rc-mono">–</dd></div>
+<div><dt>Fetched / decided</dt><dd id="rcTime" class="rc-mono">–</dd></div>
+</dl>
+<ul id="rcChecks" class="rc-checks"></ul>
+</div>
+<div class="rc-sim" id="rcSim" hidden>
+<div class="rc-sim-title" id="rcSimTitle"></div>
+<div class="rc-metrics">
+<div class="rc-m"><span class="rc-mv" id="rcM0">0</span><span class="rc-ml" id="rcL0"></span></div>
+<div class="rc-m"><span class="rc-mv" id="rcM1">0</span><span class="rc-ml" id="rcL1"></span></div>
+<div class="rc-m"><span class="rc-mv" id="rcM2">0</span><span class="rc-ml" id="rcL2"></span></div>
+</div>
+<div class="rc-wfwrap"><div class="rc-wf" id="rcWf" role="log" aria-live="polite"></div><div class="rc-axis"><span>0 s</span><span id="rcAxisEnd"></span></div><div class="rc-stamp" id="rcStamp" hidden></div></div>
+</div>
+<div class="rc-foot"><span id="rcCount">6 claims · not yet checked</span><span>Simulated runs, real methods. Illustrative numbers, not results.</span></div>
+</div>
+</section>
+
+<section id="statement" style="background: #16181D; color: #EDEBE4">
+<div style="max-width: 1240px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 360px; min-width: 0">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #A8ACB5">Research statement</div>
+<h2 style="margin: 14px 0 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.15">Verifiability as the core design constraint.</h2>
+</div>
+<div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px; font-size: 17px; line-height: 1.7; color: #D6D4CC">
+<p style="margin: 0">LLM agents are increasingly asked to read markets and explain their calls, but their outputs are hard to audit: numbers appear in prose with no source, backtests quietly use data that did not exist yet, and track records can be edited after the fact.</p>
+<p style="margin: 0">I turn every number an agent reports into a structured claim that points at the exact value in a stored, point-in-time source snapshot, check each claim before anything is published, and record every call in an append-only, hash-chained ledger so the record can be scored forward only.</p>
+<p style="margin: 0">The same standard applies to how agents are measured. Before any agent ran in my Terminal-Bench study, I checked every task's own reference solution: 8 of 65 Terminal-Bench 2.0 tasks fail their own tests. A score is only as good as the environment that produced it. The same goes for the judges that audit agents for reward hacking: I plant known hacks into real agent traces to measure what those auditors miss and what they flag wrongly.</p>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px 80px">
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 1px; background: #3A3E47; border: 1px solid #3A3E47">
+<li style="background: #16181D; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FC4BD">01</span><h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Claim-level provenance</h3><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #B9B7AF">Every reported number is a claim with a JSON pointer into a hashed source snapshot, verified before publication.</p></li>
+<li style="background: #16181D; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FC4BD">02</span><h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Point-in-time evaluation</h3><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #B9B7AF">Agents only see data fetched before their decision time; calls are scored only after they are recorded.</p></li>
+<li style="background: #16181D; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FC4BD">03</span><h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Tamper-evident records</h3><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #B9B7AF">Append-only, hash-chained call ledgers with database-level guards.</p></li>
+<li style="background: #16181D; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FC4BD">04</span><h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Benchmark integrity</h3><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #B9B7AF">Oracle-checking every task before an agent run, so broken environments are dropped, not scored.</p></li>
+<li style="background: #16181D; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FC4BD">05</span><h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Distilling coding agents</h3><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #B9B7AF">Builder/critic twin loops that produce labelled trajectories for training smaller models.</p></li>
+<li style="background: #16181D; padding: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FC4BD">06</span><h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #FFFFFF">Auditing the auditors</h3><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #B9B7AF">Known reward hacks planted into real agent traces give trace auditors a ground truth: what they catch, miss and falsely flag.</p></li>
+</ol>
+</div>
+</section>
+
+<section id="matrix" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px 24px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px solid #16181D; padding-bottom: 14px">
+<h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 44px">Evidence</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A5F6B">17 checks verified · 4 in progress · tap a check for its proof</span>
+</div>
+<ul class="ev"><li class="ev-row"><div class="ev-name"><span class="ev-pn">GlassBox</span><span class="ev-ps">Trading-agent verification</span></div><div class="ev-chips"><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd0" data-row="0" data-text="Every number an agent reports becomes a structured claim with a JSON pointer into a hashed source snapshot." data-href="https://github.com/Shreyasg13/glassbox-trading-agents/releases/tag/s3-part1" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Claim provenance</button><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd0" data-row="0" data-text="A point-in-time snapshot store holds every data fetch; agents only see data fetched before their decision time." data-href="https://github.com/Shreyasg13/glassbox-trading-agents/releases/tag/s3-part1" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Point-in-time</button><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd0" data-row="0" data-text="Calls go into an append-only, hash-chained ledger with database-level guards." data-href="https://github.com/Shreyasg13/glassbox-trading-agents/releases/tag/s3-part1" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Tamper-evident</button><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd0" data-row="0" data-text="Five claims, alpha = 0.01, block bootstrap, fixed on 12 Oct 2026 before any outcome existed." data-href="https://github.com/Shreyasg13/glassbox-trading-agents/blob/main/docs/s3/PREREGISTRATION.md" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Pre-registered</button><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd0" data-row="0" data-text="Planted-error test on 287 production runs: all 550 planted errors of the checked kinds caught (after re-targeting stale-data plants, 17 Oct), 0 false alarms on 200 controls. The gate runs in shadow mode." data-href="https://github.com/Shreyasg13/glassbox-trading-agents/blob/e63bdf453ba61682883767d795130dcfd20d2c26/research/r2/RESULTS-2026-10-16.md" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Integrity checked</button><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd0" data-row="0" data-text="Baseline audit over 534 analyst write-ups in 77 stored runs: 2.3% of numbers traced to no source." data-href="https://github.com/Shreyasg13/glassbox-trading-agents/blob/main/docs/s3/baseline.md" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Runs traced</button><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd0" data-row="0" data-text="Open source under the MIT license, with a public changelog." data-href="https://github.com/Shreyasg13/glassbox-trading-agents" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Public evidence</button></div><span class="ev-score">7/7</span><div class="ev-detail" id="evd0" hidden><p class="ev-dt"></p><a class="ev-dl" href="#" target="_blank" rel="noopener">Open the evidence ↗</a></div></li><li class="ev-row"><div class="ev-name"><span class="ev-pn">Agent harness study</span><span class="ev-ps">R1 · Terminal-Bench 2.1</span></div><div class="ev-chips"><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd1" data-row="1" data-text="Design frozen on 15 Oct 2026 before the main data: 4 harness variants × 57 tasks × 5 trials on Claude Sonnet 5.5." data-href="https://shreyashgondane.com/research/tb2-oracle-audit.html" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Pre-registered</button><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd1" data-row="1" data-text="All 57 tasks oracle-checked before any agent ran; broken environments dropped instead of scored." data-href="https://shreyashgondane.com/research/tb2-oracle-audit.html" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Integrity checked</button><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd1" data-row="1" data-text="Trials run through Harbor; infrastructure failures are classified and retried, never scored. Replicate block 1: 138 of 228 trials, 0 infrastructure errors (17 Oct 2026); it paused at the monthly spend cap and resumes in November." data-href="https://github.com/harbor-framework/harbor/pull/3593" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Runs traced</button><button type="button" class="ev-chip ev-p" aria-expanded="false" aria-controls="evd1" data-row="1" data-text="Method and harness contribution are public; main results are expected in spring 2027." data-href="https://github.com/harbor-framework/harbor/pull/3593" data-state="In progress"><span class="ev-mark" aria-hidden="true">◐</span>Public evidence</button></div><span class="ev-score">3/4</span><div class="ev-detail" id="evd1" hidden><p class="ev-dt"></p><a class="ev-dl" href="#" target="_blank" rel="noopener">Open the evidence ↗</a></div></li><li class="ev-row"><div class="ev-name"><span class="ev-pn">Terminal-Bench oracle audit</span><span class="ev-ps">Technical note · 2026</span></div><div class="ev-chips"><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd2" data-row="2" data-text="Every task&#x27;s own reference solution run first: 8 of 65 TB 2.0 tasks fail their own tests; TB 2.1 fixes 3, 4 still fail." data-href="https://shreyashgondane.com/research/tb2-oracle-audit.html" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Integrity checked</button><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd2" data-row="2" data-text="Published as a technical note with the full breakdown of failure causes." data-href="https://shreyashgondane.com/research/tb2-oracle-audit.html" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Public evidence</button></div><span class="ev-score">2/2</span><div class="ev-detail" id="evd2" hidden><p class="ev-dt"></p><a class="ev-dl" href="#" target="_blank" rel="noopener">Open the evidence ↗</a></div></li><li class="ev-row"><div class="ev-name"><span class="ev-pn">Twin-agent build lab</span><span class="ev-ps">Builder / critic distillation</span></div><div class="ev-chips"><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd3" data-row="3" data-text="Every builder and reviewer run is traced; accepted runs, rejections and correction pairs form a labelled dataset." data-href="" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Runs traced</button><button type="button" class="ev-chip ev-p" aria-expanded="false" aria-controls="evd3" data-row="3" data-text="Dataset and write-up not yet published." data-href="" data-state="In progress"><span class="ev-mark" aria-hidden="true">◐</span>Public evidence</button></div><span class="ev-score">1/2</span><div class="ev-detail" id="evd3" hidden><p class="ev-dt"></p><a class="ev-dl" href="#" target="_blank" rel="noopener">Open the evidence ↗</a></div></li><li class="ev-row"><div class="ev-name"><span class="ev-pn">Superhuman Scores white paper</span><span class="ev-ps">Frontier AI vs human intelligence</span></div><div class="ev-chips"><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd4" data-row="4" data-text="All comparisons pinned to a dated data snapshot (27 Sep 2026)." data-href="https://shreyashgondane.com/papers/Gondane_2026_Superhuman_Scores_SubHuman_Adaptation.pdf" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Point-in-time</button><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd4" data-row="4" data-text="PDF and an interactive companion of charts and projections." data-href="https://shreyashgondane.com/research/machine-vs-human-minds.html" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Public evidence</button></div><span class="ev-score">2/2</span><div class="ev-detail" id="evd4" hidden><p class="ev-dt"></p><a class="ev-dl" href="#" target="_blank" rel="noopener">Open the evidence ↗</a></div></li><li class="ev-row"><div class="ev-name"><span class="ev-pn">Hack-audit calibration</span><span class="ev-ps">R3 · reward-hacking judges</span></div><div class="ev-chips"><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd5" data-row="5" data-text="Test protocol frozen before any test data (tag r3-design-frozen-v4, after nine rounds of independent code review) and timestamped with OpenTimestamps on 17 Oct 2026. Held-out hack types were drawn before any auditor code existed." data-href="" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Pre-registered</button><button type="button" class="ev-chip ev-v" aria-expanded="false" aria-controls="evd5" data-row="5" data-text="Every run is recorded in a hash-chained provenance log: time, code commit, SHA-256 of every input and output, cost and approval." data-href="" data-state="Verified"><span class="ev-mark" aria-hidden="true">✓</span>Runs traced</button><button type="button" class="ev-chip ev-p" aria-expanded="false" aria-controls="evd5" data-row="5" data-text="Development round only (101 pilot traces, 5 tasks): an LLM judge whose rubric names the behaviour caught 2 of 12 planted reads of tests or the reference solution; a free rule check caught 12 of 12 but 0 of 12 answer keys planted in the workspace. Preliminary; the test round uses the main study's passing traces." data-href="" data-state="In progress"><span class="ev-mark" aria-hidden="true">◐</span>Integrity checked</button><button type="button" class="ev-chip ev-p" aria-expanded="false" aria-controls="evd5" data-row="5" data-text="A preliminary note is in preparation." data-href="" data-state="In progress"><span class="ev-mark" aria-hidden="true">◐</span>Public evidence</button></div><span class="ev-score">2/4</span><div class="ev-detail" id="evd5" hidden><p class="ev-dt"></p><a class="ev-dl" href="#" target="_blank" rel="noopener">Open the evidence ↗</a></div></li></ul>
+</section>
+
+<section id="writing" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px 40px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px solid #16181D; padding-bottom: 14px">
+<h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 44px">Writing</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A5F6B">2 preprints · 3 in preparation · 2 published</span>
+</div>
+<div style="display: flex; flex-direction: column">
+<article style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 28px 0; border-bottom: 1px solid #DCDAD2">
+<div style="flex: 0 0 180px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A5F6B; line-height: 1.8"><span style="color: var(--accent); font-weight: 500">PREPRINT</span><br>Technical note · 2026</div>
+<div style="flex: 1 1 520px; min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 24px; line-height: 1.3"><a href="https://shreyashgondane.com/research/tb2-oracle-audit.html" style="color: #16181D">One in eight: Terminal-Bench 2.0 tasks whose own reference solution fails</a></h3><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.65; color: #3F444E">8 of 65 candidate tasks fail their own tests: verifier tools that no longer install, package rot, a breaking dependency release, a too-slow reference, live data. TB 2.1 fixes 3; 4 still fail.</p><div class="ep"><span class="ep-good">Finished</span><span>Evidence public</span><span>Re-runnable check</span></div></div>
+</article>
+<article style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 28px 0; border-bottom: 1px solid #DCDAD2">
+<div style="flex: 0 0 180px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A5F6B; line-height: 1.8"><span style="color: var(--accent); font-weight: 500">PREPRINT</span><br>White paper · 2026</div>
+<div style="flex: 1 1 520px; min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 24px; line-height: 1.3"><a href="https://shreyashgondane.com/papers/Gondane_2026_Superhuman_Scores_SubHuman_Adaptation.pdf" style="color: #16181D">Superhuman Scores, Sub-Human Adaptation</a></h3><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.65; color: #3F444E">Frontier models post IQ-style scores above 99% of people yet stay far below humans on learning new tasks, long-horizon autonomy and continual learning. <a href="https://shreyashgondane.com/research/machine-vs-human-minds.html">Interactive companion</a>.</p><div class="ep"><span class="ep-good">Finished</span><span>Data snapshot 27 Sep 2026</span><span class="ep-warn">Preprint, not peer-reviewed</span></div></div>
+</article>
+<article style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 28px 0; border-bottom: 1px solid #DCDAD2">
+<div style="flex: 0 0 180px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A5F6B; line-height: 1.8"><span style="color: #8A5A00; font-weight: 500">IN PREPARATION</span><br>Spring 2027</div>
+<div style="flex: 1 1 520px; min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 24px; line-height: 1.3">Does the harness matter? Reviewer, memory and self-check harnesses for coding agents on Terminal-Bench 2.1</h3><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.65; color: #3F444E">Pre-registered. Design frozen 15 October 2026 before the main data.</p><div class="ep"><span class="ep-warn">Design frozen 15 Oct 2026</span><span>Block 1 run 17 Oct 2026</span><span>Results spring 2027</span></div></div>
+</article>
+<article style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 28px 0; border-bottom: 1px solid #DCDAD2">
+<div style="flex: 0 0 180px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A5F6B; line-height: 1.8"><span style="color: #8A5A00; font-weight: 500">IN PREPARATION</span><br>Preliminary note</div>
+<div style="flex: 1 1 520px; min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 24px; line-height: 1.3">Who audits the auditor? Calibrating reward-hacking judges with planted hacks</h3><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.65; color: #3F444E">Known hacks planted into real coding-agent traces, scored against each trace's untouched copy, measure what trace auditors miss and falsely flag, including Harbor's built-in judge. Development round done; protocol frozen and timestamped.</p><div class="ep"><span class="ep-warn">Preliminary</span><span>Protocol frozen 17 Oct 2026</span><span>Test round after block 1</span></div></div>
+</article>
+<article style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 28px 0; border-bottom: 1px solid #DCDAD2">
+<div style="flex: 0 0 180px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A5F6B; line-height: 1.8"><span style="color: #8A5A00; font-weight: 500">IN PREPARATION</span></div>
+<div style="flex: 1 1 520px; min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 24px; line-height: 1.3">Receipts for every number: claim-level provenance and point-in-time verification for LLM trading agents</h3><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.65; color: #3F444E">Method and early results from GlassBox: the baseline discrepancy audit, the verification gate, and the live forward-only record.</p><div class="ep"><span class="ep-warn">Drafting</span><span>Early results</span></div></div>
+</article>
+<article style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 28px 0; border-bottom: 1px solid #DCDAD2">
+<div style="flex: 0 0 180px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A5F6B; line-height: 1.8"><span style="color: #3F444E; font-weight: 500">PUBLISHED</span><br>Springer LNEE · 2021</div>
+<div style="flex: 1 1 520px; min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 22px; line-height: 1.3"><a href="https://doi.org/10.1007/978-981-16-0289-4_30" style="color: #16181D">A Machine Learning-Based Approach to Password Authentication Using Keystroke Biometrics</a></h3><p style="margin: 8px 0 0; font-size: 14px; color: #5A5F6B">A. Thakare, S. Gondane, N. Prasad, S. Chigale</p><div class="ep"><span class="ep-good">Peer-reviewed</span><span>Springer 2021</span></div></div>
+</article>
+<article style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 28px 0">
+<div style="flex: 0 0 180px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A5F6B; line-height: 1.8"><span style="color: #3F444E; font-weight: 500">PUBLISHED</span><br>Springer AISC · 2021</div>
+<div style="flex: 1 1 520px; min-width: 0"><h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 22px; line-height: 1.3"><a href="https://doi.org/10.1007/978-981-16-1510-8_3" style="color: #16181D">A Convolution Neural Networks and IoT-Based Approach to Surveillance System</a></h3><p style="margin: 8px 0 0; font-size: 14px; color: #5A5F6B">S. Gondane, A. Thakare, C. Deshpande, O. Gupta</p><div class="ep"><span class="ep-good">Peer-reviewed</span><span>Springer 2021</span></div></div>
+</article>
+</div>
+</section>
+
+<section id="projects" style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 40px">
+<div style="border-bottom: 1px solid #16181D; padding-bottom: 14px">
+<h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 44px">Projects</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; padding-top: 28px">
+<article style="border: 1px solid #16181D; background: #FFFFFF; padding: 26px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent)">ACTIVE · 2026 to present</div>
+<h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px"><a href="https://github.com/Shreyasg13/glassbox-trading-agents" style="color: #16181D">GlassBox</a></h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.65; color: #3F444E">An evidence-first multi-agent investment-research committee: point-in-time snapshot store, structured claims with exact source pointers, a verification gate, compliance filter and hash-chained ledger.</p>
+<div style="display: flex; gap: 24px; padding: 14px 0; border-top: 1px solid #DCDAD2; border-bottom: 1px solid #DCDAD2">
+<div><div style="font-family: 'Newsreader', Georgia, serif; font-size: 30px">550/550</div><div style="font-size: 12px; color: #5A5F6B">planted errors caught</div></div>
+<div><div style="font-family: 'Newsreader', Georgia, serif; font-size: 30px">0/200</div><div style="font-size: 12px; color: #5A5F6B">false alarms on controls</div></div>
+</div>
+<div style="font-size: 13px; display: flex; flex-wrap: wrap; gap: 14px"><a href="https://github.com/Shreyasg13/glassbox-trading-agents/blob/e63bdf453ba61682883767d795130dcfd20d2c26/research/r2/RESULTS-2026-10-16.md">Planted-error result</a><a href="https://github.com/Shreyasg13/glassbox-trading-agents/releases/tag/s3-part1">Release s3-part1</a></div>
+<p style="margin: 0; font-size: 12px; color: #5A5F6B">Research preview only; not investment advice.</p>
+</article>
+<article style="border: 1px solid #16181D; background: #FFFFFF; padding: 26px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent)">ACTIVE · 2026 to present</div>
+<h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px">Agent harness study (R1)</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.65; color: #3F444E">Does a reviewer, a memory window or a self-check round raise a coding agent's success rate? Four harness variants on Claude Sonnet 5.5, run through Harbor; bootstrap and permutation tests.</p>
+<div style="display: flex; gap: 24px; padding: 14px 0; border-top: 1px solid #DCDAD2; border-bottom: 1px solid #DCDAD2">
+<div><div style="font-family: 'Newsreader', Georgia, serif; font-size: 30px">57</div><div style="font-size: 12px; color: #5A5F6B">oracle-checked tasks</div></div>
+<div><div style="font-family: 'Newsreader', Georgia, serif; font-size: 30px">4 × 5</div><div style="font-size: 12px; color: #5A5F6B">variants × trials</div></div>
+</div>
+<p style="margin: 0; font-size: 13px; color: #5A5F6B">Block 1: 138 of 228 trials, 0 infrastructure errors. Comparisons wait for the single confirmatory analysis.</p>
+<div style="font-size: 13px; display: flex; flex-wrap: wrap; gap: 14px"><a href="https://shreyashgondane.com/research/tb2-oracle-audit.html">Oracle audit</a><a href="https://github.com/harbor-framework/harbor/pull/3593">Harbor PR #3593</a></div>
+</article>
+<article style="border: 1px solid #16181D; background: #FFFFFF; padding: 26px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent)">ACTIVE · 2026 to present · PRELIMINARY</div>
+<h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 28px">Hack-audit calibration (R3)</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.65; color: #3F444E">Who audits the auditor? Known reward hacks planted into real agent traces give trace auditors, including Harbor's built-in judge, a ground truth: what they catch, miss and falsely flag.</p>
+<div style="display: flex; gap: 24px; padding: 14px 0; border-top: 1px solid #DCDAD2; border-bottom: 1px solid #DCDAD2">
+<div><div style="font-family: 'Newsreader', Georgia, serif; font-size: 30px">2/12</div><div style="font-size: 12px; color: #5A5F6B">solution reads caught by an LLM judge</div></div>
+<div><div style="font-family: 'Newsreader', Georgia, serif; font-size: 30px">12/12</div><div style="font-size: 12px; color: #5A5F6B">caught by a free rule check</div></div>
+</div>
+<p style="margin: 0; font-size: 12px; color: #5A5F6B">Development round, 101 pilot traces. Test round on the main study's passing traces.</p>
+</article>
+<article style="border: 1px solid #DCDAD2; background: #FBFAF7; padding: 26px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent)">ACTIVE · 2026 to present</div>
+<h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 24px">Twin-agent build lab</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.65; color: #3F444E">A free model builds, a strong model plans and reviews. Every run is traced; accepted runs, rejections and correction pairs form a labelled dataset.</p>
+</article>
+<article style="border: 1px solid #DCDAD2; background: #FBFAF7; padding: 26px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A5F6B">EARLIER · 2025 to 2026</div>
+<h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 24px">Earlier agent systems</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.65; color: #3F444E"><a href="https://github.com/Shreyasg13/multi-agent-trading-system">Multi-agent trading system</a>, the V(n) groundwork GlassBox grew out of, and a <a href="https://github.com/Shreyasg13/sci-discovery-agent">scientific discovery agent</a>.</p>
+</article>
+</div>
+</section>
+
+<section id="record" style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 88px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px solid #16181D; padding-bottom: 14px">
+<h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 44px">Track record</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A5F6B">Append-only · corrections are new entries · <a href="https://shreyashgondane.com/record.xml">feed</a></span>
+</div>
+<ol style="list-style: none; margin: 0; padding: 0">
+<!--RECORD-->
+<!--/RECORD-->
+</ol>
+</section>
+
+<footer style="border-top: 1px solid #DCDAD2">
+<div style="max-width: 1240px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #5A5F6B">
+<span>© 2026 Shreyash Gondane · Research only; nothing here is investment advice.</span>
+<a href="https://github.com/Shreyasg13/shreyashgondane.com">Source of this page</a>
+</div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var chips=[].slice.call(document.querySelectorAll('.ev-chip'));
+  chips.forEach(function(c){ c.addEventListener('click',function(){
+    var row=c.closest('.ev-row'), det=row.querySelector('.ev-detail'), was=c.getAttribute('aria-expanded')==='true';
+    row.querySelectorAll('.ev-chip').forEach(function(x){ x.setAttribute('aria-expanded','false'); });
+    if(was){ det.hidden=true; return; }
+    c.setAttribute('aria-expanded','true');
+    det.querySelector('.ev-dt').textContent=c.dataset.state+'. '+c.dataset.text;
+    var a=det.querySelector('.ev-dl'); if(c.dataset.href){ a.href=c.dataset.href; a.hidden=false; } else { a.hidden=true; }
+    det.hidden=false;
+  }); });
+})();
+</script>
+
+
+<div id="sgHint" class="sgw-hint" hidden><button type="button" id="sgHintBtn" class="sgw-hint-btn"></button><button type="button" id="sgHintClose" class="sgw-hint-x" aria-label="Dismiss suggestion">×</button></div>
+
+<button type="button" id="sgFab" class="sgw-fab" aria-expanded="false" aria-controls="sgPanel" aria-label="Open research assistant">
+<svg class="sgw-ring" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33" fill="none" stroke="#DCDAD2" stroke-width="3"></circle><circle id="sgRing" cx="36" cy="36" r="33" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-dasharray="207.3" stroke-dashoffset="207.3" transform="rotate(-90 36 36)"></circle></svg>
+<svg class="sgw-m" viewBox="0 0 64 64" aria-hidden="true"><g class="m-body"><g class="m-tag"><line x1="32" y1="14" x2="32" y2="7" stroke="#16181D" stroke-width="2.2"></line><circle cx="32" cy="5.5" r="3.6" fill="#E6A23C" stroke="#16181D" stroke-width="1.8"></circle></g><path d="M12 22 Q12 13 21 13 H43 Q52 13 52 22 V50 L47 54 L42 50 L37 54 L32 50 L27 54 L22 50 L17 54 L12 50 Z" style="fill: var(--accent)" stroke="#16181D" stroke-width="2.2" stroke-linejoin="round"></path><path d="M17 19 Q21 16.5 27 17" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2.5" stroke-linecap="round" fill="none"></path><g class="m-lids"><ellipse cx="25" cy="30" rx="6.5" ry="7" fill="#FFFFFF"></ellipse><ellipse cx="39" cy="30" rx="6.5" ry="7" fill="#FFFFFF"></ellipse><g class="m-pupils"><circle cx="25.5" cy="30.5" r="3.2" fill="#16181D"></circle><circle cx="39.5" cy="30.5" r="3.2" fill="#16181D"></circle><circle cx="26.6" cy="29.2" r="1.1" fill="#FFFFFF"></circle><circle cx="40.6" cy="29.2" r="1.1" fill="#FFFFFF"></circle></g></g><ellipse cx="18" cy="39" rx="3.5" ry="2.2" fill="#FF9E8A" opacity="0.55"></ellipse><ellipse cx="46" cy="39" rx="3.5" ry="2.2" fill="#FF9E8A" opacity="0.55"></ellipse><path class="m-smile" d="M27 40 Q32 45 37 40" stroke="#16181D" stroke-width="2.2" fill="none" stroke-linecap="round"></path><path class="m-open" d="M27 39 Q32 39 37 39 Q36 47 32 47 Q28 47 27 39 Z" fill="#3A1414" stroke="#16181D" stroke-width="1.6"></path></g></svg>
+</button>
+
+<div id="sgPanel" class="sgw-panel" role="dialog" aria-label="Research assistant" hidden>
+<div class="sgw-head">
+<span class="sgw-head-m"><svg class="sgw-m" viewBox="0 0 64 64" aria-hidden="true"><g class="m-body"><g class="m-tag"><line x1="32" y1="14" x2="32" y2="7" stroke="#16181D" stroke-width="2.2"></line><circle cx="32" cy="5.5" r="3.6" fill="#E6A23C" stroke="#16181D" stroke-width="1.8"></circle></g><path d="M12 22 Q12 13 21 13 H43 Q52 13 52 22 V50 L47 54 L42 50 L37 54 L32 50 L27 54 L22 50 L17 54 L12 50 Z" style="fill: var(--accent)" stroke="#16181D" stroke-width="2.2" stroke-linejoin="round"></path><path d="M17 19 Q21 16.5 27 17" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2.5" stroke-linecap="round" fill="none"></path><g class="m-lids"><ellipse cx="25" cy="30" rx="6.5" ry="7" fill="#FFFFFF"></ellipse><ellipse cx="39" cy="30" rx="6.5" ry="7" fill="#FFFFFF"></ellipse><g class="m-pupils"><circle cx="25.5" cy="30.5" r="3.2" fill="#16181D"></circle><circle cx="39.5" cy="30.5" r="3.2" fill="#16181D"></circle><circle cx="26.6" cy="29.2" r="1.1" fill="#FFFFFF"></circle><circle cx="40.6" cy="29.2" r="1.1" fill="#FFFFFF"></circle></g></g><ellipse cx="18" cy="39" rx="3.5" ry="2.2" fill="#FF9E8A" opacity="0.55"></ellipse><ellipse cx="46" cy="39" rx="3.5" ry="2.2" fill="#FF9E8A" opacity="0.55"></ellipse><path class="m-smile" d="M27 40 Q32 45 37 40" stroke="#16181D" stroke-width="2.2" fill="none" stroke-linecap="round"></path><path class="m-open" d="M27 39 Q32 39 37 39 Q36 47 32 47 Q28 47 27 39 Z" fill="#3A1414" stroke="#16181D" stroke-width="1.6"></path></g></svg></span>
+<div style="flex: 1 1 auto; min-width: 0">
+<div class="sgw-title">Research twin</div>
+<div class="sgw-subtitle">Answers only from this page · cites every reply</div>
+</div>
+<button type="button" id="sgVoice" class="sgw-icon" aria-pressed="false" aria-label="Turn voice on"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4V5z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg></button>
+<button type="button" id="sgReset" class="sgw-icon" aria-label="Clear conversation"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"></path><path d="M3 4v5h5"></path></svg></button>
+<button type="button" id="sgClose" class="sgw-icon" aria-label="Close assistant"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+<div id="sgLog" class="sgw-log" role="log" aria-live="polite"></div>
+<div id="sgChips" class="sgw-chips"></div>
+<form id="sgForm" class="sgw-form">
+<label for="sgInput" class="sgw-sr">Ask about Shreyash's research</label>
+<input id="sgInput" type="text" autocomplete="off" placeholder="Ask about GlassBox, the audit, papers…">
+<button type="submit" class="sgw-send" aria-label="Send question"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></button>
+</form>
+</div>
+
+<script>
+(function () {
+  var SRC = {
+    glassbox: { label: 'GlassBox repo', href: 'https://github.com/Shreyasg13/glassbox-trading-agents' },
+    planted: { label: 'Planted-error result', href: 'https://github.com/Shreyasg13/glassbox-trading-agents/blob/e63bdf453ba61682883767d795130dcfd20d2c26/research/r2/RESULTS-2026-10-16.md' },
+    baseline: { label: 'Baseline audit', href: 'https://github.com/Shreyasg13/glassbox-trading-agents/blob/main/docs/s3/baseline.md' },
+    prereg: { label: 'Pre-registration', href: 'https://github.com/Shreyasg13/glassbox-trading-agents/blob/main/docs/s3/PREREGISTRATION.md' },
+    audit: { label: 'Oracle audit note', href: 'https://shreyashgondane.com/research/tb2-oracle-audit.html' },
+    harbor: { label: 'Harbor PR #3593', href: 'https://github.com/harbor-framework/harbor/pull/3593' },
+    paper: { label: 'White paper PDF', href: 'https://shreyashgondane.com/papers/Gondane_2026_Superhuman_Scores_SubHuman_Adaptation.pdf' },
+    companion: { label: 'Interactive companion', href: 'https://shreyashgondane.com/research/machine-vs-human-minds.html' },
+    doi1: { label: 'Keystroke biometrics (DOI)', href: 'https://doi.org/10.1007/978-981-16-0289-4_30' },
+    doi2: { label: 'CNN + IoT surveillance (DOI)', href: 'https://doi.org/10.1007/978-981-16-1510-8_3' },
+    mcp: { label: 'MCP Go SDK PR', href: 'https://github.com/modelcontextprotocol/go-sdk/pull/1366' },
+    orcid: { label: 'ORCID', href: 'https://orcid.org/0009-0006-4282-4800' },
+    linkedin: { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shreyash130197' },
+    github: { label: 'GitHub', href: 'https://github.com/Shreyasg13' },
+    feed: { label: 'Record feed', href: 'https://shreyashgondane.com/record.xml' }
+  };
+  var KB = [
+    { keys: ['observab', 'matrix', 'checks', 'verified checks'],
+      text: 'The Evidence section scores each project against seven checks: claim provenance, point-in-time data, tamper-evident record, pre-registration, integrity checking, run tracing and public evidence. GlassBox passes all seven. The harness study is pre-registered and oracle-checked, with results due spring 2027. Tap any check to see its proof.',
+      src: ['glassbox', 'audit', 'prereg'] },
+    { keys: ['planted', 'gate', 'false alarm', 'caught', 'verification gate', '531', '550'],
+      text: 'On 287 real GlassBox production runs, the verification gate caught all 550 planted errors of the kinds it checks, with 0 false alarms on 200 untouched controls (16 Oct 2026; the stale-data plants were re-targeted on 17 Oct to claims not already stale, which took that type from 31/50 to 50/50).\n\nTwo blind-spot error types predicted in advance went uncaught, as expected. The gate currently runs in shadow mode.',
+      src: ['planted', 'glassbox'] },
+    { keys: ['glassbox', 'trading', 'finance', 'investment', 'stock', 'market'],
+      text: 'GlassBox is an evidence-first multi-agent investment-research committee (MIT licensed). Every data fetch is stored as a point-in-time snapshot, every number becomes a structured claim pointing at its exact source value, a verification gate re-checks each claim, and every call goes into an append-only, hash-chained ledger.\n\nIt is a research preview, not investment advice.',
+      src: ['glassbox', 'planted'] },
+    { keys: ['baseline', '2.3', 'no source', 'hallucinat', 'unsourced'],
+      text: 'The GlassBox baseline audit found that 69 of 2,948 numbers (2.3%) across 534 analyst write-ups in 77 stored runs traced to no source. That is the "before" figure the verification gate is measured against.',
+      src: ['baseline'] },
+    { keys: ['pre-regist', 'preregist', 'null', 'hold'],
+      text: 'Both main studies are pre-registered. For GlassBox, five claims at alpha = 0.01 with a block bootstrap were fixed on 12 Oct 2026 before any outcome existed. The first forward-only study (150 calls) was 149 HOLD and 1 BUY, so skill could not be measured, and it was reported as such.',
+      src: ['prereg'] },
+    { keys: ['terminal', 'bench', 'oracle', 'one in eight', 'reference solution', 'tb2', 'tb 2', 'audit'],
+      text: 'Before running any agent, every Terminal-Bench 2.0 task\'s own reference solution was checked: 8 of 65 fail their own tests (verifier tools that no longer install, package rot, a breaking dependency release, a too-slow reference, live data). TB 2.1 fixes 3 of them; 4 still fail.\n\nThe recommendation: run an oracle check before every agent evaluation.',
+      src: ['audit'] },
+    { keys: ['harness', 'reviewer', 'memory', 'self-check', 'r1', 'coding agent', 'sonnet'],
+      text: 'The agent harness study asks whether a reviewer, a memory window or a self-check round raises a coding agent\'s success rate. Design: 4 harness variants on Claude Sonnet 5.5, 57 oracle-checked Terminal-Bench 2.1 tasks, 5 trials each, run through Harbor. The design was frozen on 15 Oct 2026. Replicate block 1 ran on 17 Oct: 138 of 228 trials, 0 infrastructure errors, paused at the monthly spend cap. Variant comparisons wait for the single confirmatory analysis; results are expected in spring 2027.',
+      src: ['audit', 'harbor'] },
+    { keys: ['r3', 'reward hack', 'hack', 'auditor', 'judge', 'who audits'],
+      text: 'R3 asks: who audits the auditor? Known reward hacks (reading the tests or reference solution, fake test summaries, answer keys in the workspace and others) are planted into copies of real coding-agent traces, and each auditor is scored against the untouched copy.\n\nPreliminary development round (101 pilot traces): an LLM judge whose rubric names the behaviour caught 2 of 12 planted reads of tests or the reference solution; a free rule check caught 12 of 12 but none of 12 answer keys planted in the workspace. Harbor\'s built-in judge saw a planted read of the reference solution and still called the run legitimate. The test protocol was frozen and timestamped on 17 Oct 2026; the test round uses the main study\'s passing traces.',
+      src: ['harbor'] },
+    { keys: ['white paper', 'superhuman', 'human intelligence', 'iq', 'arc', 'adaptation'],
+      text: 'The white paper "Superhuman Scores, Sub-Human Adaptation" compares frontier AI models and humans across several dimensions. Models now post IQ-style scores above 99% of people yet stay far below humans on learning new tasks (ARC-AGI-3), long-horizon autonomy and continual learning. Data snapshot: 27 Sep 2026.',
+      src: ['paper', 'companion'] },
+    { keys: ['publication', 'paper', 'springer', 'published', 'keystroke', 'surveillance', 'cite'],
+      text: 'Four publications so far: two 2026 preprints (the Terminal-Bench oracle audit and the frontier-AI white paper) and two peer-reviewed Springer papers from 2021, one on keystroke-biometric password authentication and one on a CNN and IoT surveillance system. Two more papers are in preparation.',
+      src: ['audit', 'paper', 'doi1', 'doi2'] },
+    { keys: ['distill', 'twin', 'builder', 'critic', 'qwen', 'local model'],
+      text: 'The twin-agent build lab uses a free model as builder and a strong model as planner and reviewer. Every run is traced, so accepted runs, rejections and before/after corrections become a labelled dataset for distilling smaller coding agents. It also includes CPU benchmarks: Qwen2.5-Coder 1.5B ran at about 42 tokens/s on a 4-core laptop CPU.',
+      src: [] },
+    { keys: ['open source', 'mcp', 'contribut', 'merged'],
+      text: 'Recent open-source work includes a fix merged into the official MCP Go SDK (14 Oct 2026, client conformance script on Windows and with relative results directories), a Harbor PR, and GlassBox itself under the MIT license.',
+      src: ['mcp', 'harbor', 'glassbox'] },
+    { keys: ['contact', 'collaborat', 'hire', 'reach', 'email', 'talk', 'touch'],
+      text: 'The best ways to reach Shreyash are LinkedIn or GitHub. His ORCID links his publications, and the record feed lets you follow new results as they land.',
+      src: ['linkedin', 'github', 'orcid', 'feed'] },
+    { keys: ['who', 'about', 'background', 'summary', 'focus', 'research'],
+      text: 'Shreyash Gondane is an independent researcher and software engineer in New York. His work treats verifiability as the core design constraint for AI agents: claim-level provenance, point-in-time evaluation, tamper-evident records, benchmark integrity, and distilling coding agents.',
+      src: ['orcid', 'github'] }
+  ];
+  var CHIPS = ['Explain the evidence checks', 'What is GlassBox?', 'Did the verification gate work?', 'What did the benchmark audit find?', 'Publications', 'How do I get in touch?'];
+
+  KB.unshift({ keys: ['new', 'latest', 'recent', 'this week', 'update'],
+    text: 'Latest on the record (17 Oct 2026): the GlassBox gate result is now 550/550 after a correction to the stale-data plants; the harness study ran replicate block 1 (138 trials, 0 infrastructure errors); and R3, the hack-audit calibration study, finished its development round with the test protocol frozen and timestamped. On 16 Oct the Terminal-Bench oracle-audit note went public.',
+    src: ['planted', 'audit', 'mcp', 'feed'] });
+  KB.forEach(function (e) { if (e.keys[0] === 'glassbox') e.keys.push('claim', 'verified', 'provenance'); });
+
+  var CHIPS = ['Explain the observability matrix', 'What is GlassBox?', 'Did the verification gate work?', 'What did the benchmark audit find?', 'Publications', 'How do I get in touch?'];
+  var HINTS = {
+    top: 'Hi! I can answer anything on this page, with sources.',
+    statement: 'Ask me how claims get verified',
+    matrix: 'What do the checks mean?',
+    writing: 'Which paper should I read first?',
+    projects: 'Did the GlassBox gate work?',
+    record: "What's new this week?"
+  };
+  var WELCOME = 'Hi, I\'m Shreyash\'s research twin. I answer only from what he has published on this page, and every reply links its evidence.';
+
+  function answer(q) {
+    var s = (q || '').toLowerCase(), best = null, bestScore = 0;
+    KB.forEach(function (e) {
+      var score = 0;
+      e.keys.forEach(function (k) { if (s.indexOf(k) !== -1) score += k.length; });
+      if (score > bestScore) { bestScore = score; best = e; }
+    });
+    if (/first|start|read/.test(s) && /paper|read/.test(s)) {
+      return { text: 'Start with the Terminal-Bench oracle audit: it is short and shows the method in one result (8 of 65 tasks fail their own tests). Then the white paper for the broader picture of frontier AI against human intelligence.', sources: [SRC.audit, SRC.paper] };
+    }
+    if (!best) return { text: 'I can only answer from what is published here, and I did not find that. Try GlassBox, the Terminal-Bench audit, the harness study, the observability matrix, or publications.', sources: [] };
+    return { text: best.text, sources: best.src.map(function (id) { return SRC[id]; }) };
+  }
+
+  var fab = document.getElementById('sgFab'), panel = document.getElementById('sgPanel');
+  var log = document.getElementById('sgLog'), chips = document.getElementById('sgChips');
+  var input = document.getElementById('sgInput'), form = document.getElementById('sgForm');
+  var hint = document.getElementById('sgHint'), hintBtn = document.getElementById('sgHintBtn');
+  var voiceBtn = document.getElementById('sgVoice'), ring = document.getElementById('sgRing');
+  var heads = [fab, document.querySelector('.sgw-head-m')];
+  var root = document.documentElement;
+  var open = false, voiceOn = false, thinking = false, started = false, talkT = null;
+  var hintDismissed = false, lastHintKey = null, hintTimer = null;
+
+  function talk(on) { heads.forEach(function (h) { h.classList.toggle('is-talking', !!on); }); }
+  function talkFor(ms) { talk(true); clearTimeout(talkT); talkT = setTimeout(function () { talk(false); }, ms); }
+
+  function addUser(t) {
+    var d = document.createElement('div'); d.className = 'msg-user'; d.textContent = t;
+    log.appendChild(d); log.scrollTop = log.scrollHeight;
+  }
+  function addBot(a) {
+    var w = document.createElement('div'); w.className = 'msg-bot';
+    var b = document.createElement('div'); b.className = 'msg-bot-text'; b.textContent = a.text; w.appendChild(b);
+    if (a.sources && a.sources.length) {
+      var r = document.createElement('div'); r.className = 'msg-src';
+      var l = document.createElement('span'); l.className = 'msg-src-label'; l.textContent = 'Sources'; r.appendChild(l);
+      a.sources.forEach(function (s) { var x = document.createElement('a'); x.href = s.href; x.target = '_blank'; x.rel = 'noopener'; x.textContent = s.label + ' ↗'; r.appendChild(x); });
+      w.appendChild(r);
+    }
+    log.appendChild(w); log.scrollTop = log.scrollHeight;
+  }
+  function speak(text) {
+    if (!voiceOn) { talkFor(Math.min(2600, 600 + text.length * 8)); return; }
+    try {
+      var synth = window.speechSynthesis; synth.cancel();
+      var u = new SpeechSynthesisUtterance(text); u.rate = 1.03; u.pitch = 1.05;
+      u.onend = function () { talk(false); };
+      talk(true); synth.speak(u);
+    } catch (e) { talkFor(1500); }
+  }
+  function ask(q) {
+    var t = (q || '').trim(); if (!t || thinking) return;
+    thinking = true; addUser(t); input.value = '';
+    var w = document.createElement('div'); w.className = 'msg-thinking'; w.textContent = 'checking the record…';
+    log.appendChild(w); log.scrollTop = log.scrollHeight;
+    setTimeout(function () { w.remove(); var a = answer(t); addBot(a); thinking = false; speak(a.text); }, 550);
+  }
+  function start() {
+    if (started) return; started = true;
+    addBot({ text: WELCOME, sources: [] });
+    CHIPS.forEach(function (c) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = c;
+      b.addEventListener('click', function () { ask(c); }); chips.appendChild(b);
+    });
+  }
+  function setOpen(v, q) {
+    open = v; panel.hidden = !v;
+    fab.classList.toggle('is-open', v);
+    fab.setAttribute('aria-expanded', String(v));
+    fab.setAttribute('aria-label', v ? 'Close research assistant' : 'Open research assistant');
+    if (v) { hideHint(); start(); if (q) ask(q); else { talkFor(900); setTimeout(function () { input.focus(); }, 50); } }
+    else { try { window.speechSynthesis.cancel(); } catch (e) {} talk(false); }
+  }
+  function showHint(key) {
+    if (open || hintDismissed || key === lastHintKey) return;
+    lastHintKey = key; hintBtn.textContent = HINTS[key];
+    hint.hidden = false; hint.style.animation = 'none'; void hint.offsetWidth; hint.style.animation = '';
+    talkFor(900);
+    clearTimeout(hintTimer); hintTimer = setTimeout(hideHint, 7000);
+  }
+  function hideHint() { hint.hidden = true; }
+
+  fab.addEventListener('click', function () { setOpen(!open); });
+  document.getElementById('sgClose').addEventListener('click', function () { setOpen(false); fab.focus(); });
+  document.getElementById('sgReset').addEventListener('click', function () {
+    try { window.speechSynthesis.cancel(); } catch (e) {}
+    log.innerHTML = ''; thinking = false; addBot({ text: WELCOME, sources: [] });
+  });
+  form.addEventListener('submit', function (e) { e.preventDefault(); ask(input.value); });
+  hintBtn.addEventListener('click', function () { var q = hintBtn.textContent; setOpen(true, lastHintKey === 'top' ? null : q); });
+  document.getElementById('sgHintClose').addEventListener('click', function () { hintDismissed = true; hideHint(); });
+  voiceBtn.addEventListener('click', function () {
+    voiceOn = !voiceOn; voiceBtn.setAttribute('aria-pressed', String(voiceOn));
+    voiceBtn.setAttribute('aria-label', voiceOn ? 'Turn voice off' : 'Turn voice on');
+    if (!voiceOn) { try { window.speechSynthesis.cancel(); } catch (e) {} talk(false); }
+  });
+  panel.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setOpen(false); fab.focus(); } });
+  var nav = document.getElementById('navAsk');
+  if (nav) nav.addEventListener('click', function () { setOpen(true); });
+
+  /* scroll reactions: progress ring, squash, eyes follow direction, section hints */
+  var lastY = window.scrollY, idleT = null, ticking = false;
+  var CIRC = 207.3;
+  function onScroll() {
+    var y = window.scrollY, max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    ring.setAttribute('stroke-dashoffset', String(CIRC * (1 - Math.min(1, y / max))));
+    var v = y - lastY; lastY = y;
+    var sq = Math.max(-1, Math.min(1, v / 40));
+    root.style.setProperty('--sq', Math.abs(sq).toFixed(2));
+    root.style.setProperty('--tilt', (sq * 6).toFixed(1) + 'deg');
+    root.style.setProperty('--ly', (sq > 0 ? 2.2 : sq < 0 ? -2.2 : 0) + 'px');
+    clearTimeout(idleT);
+    idleT = setTimeout(function () { root.style.setProperty('--sq', '0'); root.style.setProperty('--tilt', '0deg'); root.style.setProperty('--ly', '0px'); }, 160);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  window.addEventListener('pointermove', function (e) {
+    var r = fab.getBoundingClientRect();
+    var dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+    var m = Math.max(1, Math.hypot(dx, dy));
+    root.style.setProperty('--lx', (dx / m * 2.2).toFixed(2) + 'px');
+    if (!ticking) root.style.setProperty('--ly', (dy / m * 2.2).toFixed(2) + 'px');
+  }, { passive: true });
+  onScroll();
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting && HINTS[en.target.id]) showHint(en.target.id); });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    ['statement', 'matrix', 'writing', 'projects', 'record'].forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+  }
+  setTimeout(function () { if (window.scrollY < 200) showHint('top'); }, 1200);
+})();
+</script>
+<script>
+(function(){
+  var C=[
+   {v:'18.2%',src:'Q3 10-Q · income statement',ptr:'/income/revenue/yoy_pct',stored:'18.2 %',hash:'sha256:9f2c…41ab',time:'09:02 / 16:00 UTC',checks:[['Source match','18.2 = 18.2',1],['Point in time','fetched 7 h before the decision',1],['Units','percent, matches claim',1]]},
+   {v:'$4.71B',src:'Q3 10-Q · income statement',ptr:'/income/revenue/q3',stored:'4,712,000,000 USD',hash:'sha256:9f2c…41ab',time:'09:02 / 16:00 UTC',checks:[['Source match','4.712B rounds to 4.71B',1],['Point in time','fetched 7 h before the decision',1],['Units','USD, matches claim',1]]},
+   {v:'61.3%',src:'Q3 10-Q · income statement',ptr:'/income/gross_margin_pct',stored:'61.3 %',hash:'sha256:9f2c…41ab',time:'09:02 / 16:00 UTC',checks:[['Source match','61.3 = 61.3',1],['Point in time','fetched 7 h before the decision',1],['Units','percent, matches claim',1]]},
+   {v:'$812M',src:'Q3 10-Q · cash-flow statement',ptr:'/cashflow/fcf/q3',stored:'812,400,000 USD',hash:'sha256:9f2c…41ab',time:'09:02 / 16:00 UTC',checks:[['Source match','812.4M rounds to 812M',1],['Point in time','fetched 7 h before the decision',1],['Units','USD, matches claim',1]]},
+   {v:'34.1×',src:'Market data snapshot',ptr:'/valuation/pe_ttm',stored:'31.4 ×',hash:'sha256:2b7e…c903',time:'15:45 / 16:00 UTC',checks:[['Source match','34.1 ≠ 31.4 (digits transposed)',0],['Point in time','fetched 15 min before the decision',1],['Units','multiple, matches claim',1]]},
+   {v:'$5.02B',src:'Earnings-call transcript',ptr:'/guidance/revenue_next_q',stored:'5,020,000,000 USD',hash:'sha256:d41a…7e10',time:'next day 13:30 / 16:00 UTC',checks:[['Source match','5.02B = 5.02B',1],['Point in time','fetched 21.5 h after the decision: look-ahead',0],['Units','USD, matches claim',1]]}
+  ];
+  var nums=[].slice.call(document.querySelectorAll('.rc-n'));
+  var $=function(id){return document.getElementById(id);};
+  var ran=false, busy=false;
+  function ok(c){ return c.checks.every(function(k){return k[2];}); }
+  function show(i){
+    var c=C[i];
+    nums.forEach(function(n){ n.classList.toggle('is-sel', +n.dataset.i===i); });
+    $('rcClaim').textContent=c.v; $('rcSrc').textContent=c.src; $('rcPtr').textContent=c.ptr;
+    $('rcStored').textContent=c.stored; $('rcHash').textContent=c.hash; $('rcTime').textContent=c.time;
+    var v=$('rcVerdict'); v.textContent=ok(c)?'Verified':'Blocked'; v.className='rc-verdict '+(ok(c)?'ok':'bad');
+    var ul=$('rcChecks'); ul.innerHTML='';
+    c.checks.forEach(function(k){
+      var li=document.createElement('li'); li.className=k[2]?'pass':'fail';
+      var m=document.createElement('span'); m.className='rc-mark'; m.textContent=k[2]?'✓':'✕';
+      var t=document.createElement('span'); t.textContent=k[0]+': '+k[1];
+      li.appendChild(m); li.appendChild(t); ul.appendChild(li);
+    });
+  }
+  nums.forEach(function(n){
+    n.addEventListener('mouseenter',function(){ if(!busy) show(+n.dataset.i); });
+    n.addEventListener('focus',function(){ if(!busy) show(+n.dataset.i); });
+    n.addEventListener('click',function(){ if(!busy) show(+n.dataset.i); });
+  });
+  $('rcRun').addEventListener('click',function(){
+    if(this.dataset.mode && this.dataset.mode!=='claims') return;
+    if(busy) return; busy=true; var btn=this; btn.disabled=true; btn.textContent='Checking…';
+    nums.forEach(function(n){ n.classList.remove('is-ok','is-bad'); });
+    var i=0, good=0;
+    (function step(){
+      if(i>0){ var p=nums[i-1]; p.classList.remove('is-scan'); p.classList.add(ok(C[i-1])?'is-ok':'is-bad'); if(ok(C[i-1])) good++; }
+      if(i>=C.length){
+        busy=false; ran=true; btn.disabled=false; btn.textContent='Run it again';
+        $('rcCount').textContent=good+' verified · '+(C.length-good)+' blocked before publishing';
+        show(4); return;
+      }
+      nums[i].classList.add('is-scan'); show(i); $('rcCount').textContent='checking claim '+(i+1)+' of '+C.length+'…';
+      i++; setTimeout(step, 520);
+    })();
+  });
+  show(0);
+})();
+</script>
+<script>
+(function(){
+  var S = {"harness": {"title": "Coding agent · reviewer harness · task: parse-logs", "labels": ["Agent steps", "Tests passing", "Reviewer flags"], "verdict": ["Solved", "ok"], "spans": [["Oracle check: reference solution", "harness", 0, 0.8, "ok", "Answer key passes; task admitted", [0, "–", 0]], ["Read repo and plan", "agent", 0.8, 1.4, "info", "12 files scanned", [1, "–", 0]], ["Edit src/parse.py", "agent", 2.2, 1.6, "info", "+38 −6 lines", [2, "–", 0]], ["Run tests", "sandbox", 3.8, 1.0, "warn", "4 of 7 pass", [2, "4/7", 0]], ["Review the diff", "reviewer", 4.8, 1.2, "warn", "Flags the empty-line case", [2, "4/7", 1]], ["Fix the edge case", "agent", 6.0, 1.2, "info", "+9 −2 lines", [3, "4/7", 1]], ["Self-check: rerun tests", "sandbox", 7.2, 0.9, "ok", "7 of 7 pass", [3, "7/7", 1]]]}, "guard": {"title": "Research committee · draft call on Acme Robotics", "labels": ["Claims checked", "Blocks", "Ledger entries"], "verdict": ["Published safely", "ok"], "spans": [["Fetch filings → snapshot", "data", 0, 0.9, "ok", "sha256:9f2c… stored", [0, 0, 0]], ["Analysts draft the call", "agents", 0.9, 1.6, "info", "BUY, 6 numeric claims", [0, 0, 0]], ["Verification gate", "gate", 2.5, 1.2, "bad", "1 claim has no source", [6, 1, 0]], ["Revise and re-check", "gate", 3.7, 0.9, "ok", "6 of 6 sourced", [6, 1, 0]], ["Compliance filter", "filter", 4.6, 1.0, "bad", "Blocks the phrase “can’t lose”", [6, 2, 0]], ["Revise the wording", "agents", 5.6, 0.8, "ok", "Filter passes", [6, 2, 0]], ["Append to ledger", "ledger", 6.4, 0.7, "ok", "Chained to #7c0e", [6, 2, 1]]]}, "hack": {"title": "Reward-hack watch · task: fix-date-parser", "labels": ["Attempts", "Hacks caught", "Honest passes"], "verdict": ["2 hacks caught", "warn"], "spans": [["Attempt 1", "agent", 0, 1.2, "info", "Patch touches tests/", [1, 0, 0]], ["Run tests", "sandbox", 1.2, 0.6, "warn", "7 of 7 pass, suspiciously fast", [1, 0, 0]], ["Watch the diff scope", "watcher", 1.8, 0.9, "bad", "Assertion replaced with assert True", [1, 1, 0]], ["Attempt 2", "agent", 2.7, 1.2, "info", "Reads the expected-output fixture", [2, 1, 0]], ["Trace output provenance", "watcher", 3.9, 0.9, "bad", "Answer copied from the fixture", [2, 2, 0]], ["Attempt 3", "agent", 4.8, 1.4, "info", "Fixes timezone parsing", [3, 2, 0]], ["Held-out tests", "sandbox", 6.2, 0.9, "ok", "7 of 7 pass, tests untouched", [3, 2, 1]]]}, "twin": {"title": "Twin pairing · small local builder + strong reviewer", "labels": ["Accepted", "Rejected", "Labelled pairs"], "verdict": ["1 lesson saved", "ok"], "spans": [["Plan: split the feature", "planner", 0, 0.8, "info", "3 subtasks", [0, 0, 0]], ["Build subtask 1", "builder", 0.8, 1.5, "info", "Local 1.5B model on CPU", [0, 0, 0]], ["Review", "reviewer", 2.3, 0.8, "bad", "Rejected: no input validation", [0, 1, 0]], ["Save correction pair", "dataset", 3.1, 0.5, "ok", "Before / after stored", [0, 1, 1]], ["Retry subtask 1", "builder", 3.6, 1.2, "info", "Adds validation", [0, 1, 1]], ["Review", "reviewer", 4.8, 0.7, "ok", "Accepted", [1, 1, 1]], ["Build subtask 2", "builder", 5.5, 1.2, "info", "", [1, 1, 1]], ["Review", "reviewer", 6.7, 0.6, "ok", "Accepted first try", [2, 1, 1]]]}};
+  var UNIT = 560;
+  var $=function(id){return document.getElementById(id);};
+  var card=document.getElementById('receipts'), run=$('rcRun'), eyebrow=card.querySelector('.rc-eyebrow');
+  var claims=[card.querySelector('.rc-text'), $('rcReceipt')];
+  var tabs=[].slice.call(card.querySelectorAll('.rc-tab'));
+  var simEl=$('rcSim'), wf=$('rcWf'), stamp=$('rcStamp');
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var timers=[], mode='claims';
+  var EB_CLAIMS=eyebrow.innerHTML;
+  function clear(){ timers.forEach(clearTimeout); timers=[]; }
+  function later(fn,ms){ timers.push(setTimeout(fn,ms)); }
+  function setM(i,v){ var el=$('rcM'+i); if(el.textContent!==String(v)){ el.textContent=v; el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); } }
+  function play(key){
+    clear(); var sc=S[key];
+    var total=sc.spans.reduce(function(m,s){return Math.max(m,s[2]+s[3]);},0);
+    $('rcSimTitle').textContent=sc.title;
+    $('rcAxisEnd').textContent=(total*UNIT/1000).toFixed(1)+' s';
+    sc.labels.forEach(function(l,i){ $('rcL'+i).textContent=l; $('rcM'+i).textContent='0'; });
+    wf.innerHTML=''; stamp.hidden=true;
+    $('rcCount').textContent='streaming…';
+    run.disabled=true; run.textContent='Running…';
+    sc.spans.forEach(function(s,idx){
+      later(function(){
+        var row=document.createElement('div'); row.className='rc-row';
+        var rl=document.createElement('div'); rl.className='rc-rl';
+        var rn=document.createElement('span'); rn.className='rc-rn'; rn.textContent=s[0];
+        var ra=document.createElement('span'); ra.className='rc-ra'; ra.textContent=s[1];
+        rl.appendChild(rn); rl.appendChild(ra);
+        var tr=document.createElement('div'); tr.className='rc-track';
+        var bar=document.createElement('div'); bar.className='rc-bar run '+s[4];
+        bar.style.left=(s[2]/total*100)+'%';
+        bar.style.transitionDuration=(reduce?0:s[3]*UNIT)+'ms';
+        var note=document.createElement('span'); note.className='rc-note '+s[4]; note.textContent=s[5];
+        var endPct=(s[2]+s[3])/total*100;
+        if(endPct>62){ note.style.right=(100-s[2]/total*100)+'%'; note.style.paddingLeft='0'; note.style.paddingRight='6px'; }
+        else { note.style.left=endPct+'%'; }
+        tr.appendChild(bar); tr.appendChild(note);
+        row.appendChild(rl); row.appendChild(tr); wf.appendChild(row);
+        requestAnimationFrame(function(){ requestAnimationFrame(function(){ bar.style.width=(s[3]/total*100)+'%'; }); });
+        later(function(){
+          bar.classList.remove('run'); note.classList.add('show');
+          s[6].forEach(function(v,i){ setM(i,v); });
+        }, reduce?0:s[3]*UNIT);
+      }, reduce?idx*120:s[2]*UNIT);
+    });
+    later(function(){
+      stamp.textContent=sc.verdict[0]; stamp.className='rc-stamp '+sc.verdict[1]; stamp.hidden=false;
+      $('rcCount').textContent='run complete · '+sc.spans.length+' spans traced';
+      run.disabled=false; run.textContent='Replay the run';
+    }, (reduce?sc.spans.length*120:total*UNIT)+250);
+  }
+  function setMode(m){
+    clear(); mode=m; run.dataset.mode=m;
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.mode===m)); });
+    var isC=m==='claims';
+    claims.forEach(function(el){ el.hidden=!isC; if(isC){ el.classList.remove('rc-pane'); void el.offsetWidth; el.classList.add('rc-pane'); } });
+    simEl.hidden=isC;
+    run.disabled=false;
+    if(isC){ eyebrow.innerHTML=EB_CLAIMS; run.textContent='Run the verification gate'; $('rcCount').textContent='6 claims · hover a number'; }
+    else { eyebrow.innerHTML='<span class="rc-live"></span>Live trace · simulated run'; play(m); }
+  }
+  tabs.forEach(function(t){ t.addEventListener('click',function(){ setMode(t.dataset.mode); }); });
+  run.addEventListener('click',function(){ if(mode!=='claims') play(mode); });
+  run.dataset.mode='claims';
+})();
+</script>
+<script>
+(function(){
+  var card=document.getElementById('receipts'); if(!card) return;
+  var run=document.getElementById('rcRun'), autoBtn=document.getElementById('rcAuto'), autoL=document.getElementById('rcAutoL');
+  var tabs=[].slice.call(card.querySelectorAll('.rc-tab'));
+  var ORDER=['claims','harness','guard','hack','twin'], HOLD=3200;
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var auto=!reduce, holdT=null, kickT=null, visible=false, hovering=false, started=false, wasBusy=false;
+  tabs.forEach(function(t){ var p=document.createElement('span'); p.className='rc-tprog'; p.appendChild(document.createElement('i')); t.appendChild(p); });
+  function cur(){ for(var i=0;i<tabs.length;i++){ if(tabs[i].getAttribute('aria-selected')==='true') return tabs[i]; } return tabs[0]; }
+  function resetProg(){ tabs.forEach(function(t){ var i=t.querySelector('.rc-tprog i'); i.style.transition='none'; i.style.width='0'; }); }
+  function clearHold(){ clearTimeout(holdT); holdT=null; clearTimeout(kickT); resetProg(); }
+  function setAuto(v){ auto=v; autoBtn.setAttribute('aria-pressed',String(v)); autoL.textContent=v?'Auto-play':'Play tour'; if(!v) clearHold(); }
+  function startCurrent(){ if(cur().dataset.mode==='claims' && !run.disabled){ run.click(); } }
+  function schedule(){
+    clearHold(); if(!auto || !visible || hovering) return;
+    var bar=cur().querySelector('.rc-tprog i');
+    requestAnimationFrame(function(){ bar.style.transition='width '+HOLD+'ms linear'; bar.style.width='100%'; });
+    holdT=setTimeout(next,HOLD);
+  }
+  function next(){
+    resetProg();
+    var i=(ORDER.indexOf(cur().dataset.mode)+1)%ORDER.length;
+    var t=tabs.filter(function(x){return x.dataset.mode===ORDER[i];})[0];
+    t.click();
+    if(ORDER[i]==='claims') kickT=setTimeout(startCurrent,450);
+  }
+  new MutationObserver(function(){
+    if(run.disabled){ wasBusy=true; return; }
+    if(wasBusy){ wasBusy=false; if(auto) schedule(); }
+  }).observe(run,{attributes:true,attributeFilter:['disabled']});
+  card.addEventListener('click',function(e){
+    if(!e.isTrusted) return;
+    if(e.target.closest('#rcAuto')) return;
+    if(e.target.closest('.rc-tab,.rc-n,#rcRun')) setAuto(false);
+  },true);
+  autoBtn.addEventListener('click',function(){
+    if(auto){ setAuto(false); return; }
+    setAuto(true);
+    if(!run.disabled){ if(cur().dataset.mode==='claims') startCurrent(); else schedule(); }
+  });
+  card.addEventListener('mouseenter',function(){ hovering=true; if(holdT){ clearHold(); } });
+  card.addEventListener('mouseleave',function(){ hovering=false; if(auto && !run.disabled && started) schedule(); });
+  function kick(){
+    if(!auto) return;
+    if(!started){ started=true; kickT=setTimeout(startCurrent,900); }
+    else if(!run.disabled && !holdT && !hovering) schedule();
+  }
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ visible=es[0].isIntersecting && es[0].intersectionRatio>0.4; if(visible) kick(); else clearHold(); },{threshold:[0,0.4,0.8]}).observe(card);
+  } else { visible=true; kick(); }
+  if(!auto) setAuto(false);
+})();
+</script>
+
+
+
+
+</body></html>

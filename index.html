@@ -333,6 +333,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .ev-detail[hidden]{display:none!important}
 .ev-dt{margin:0 0 6px;font-size:15px;line-height:1.6;color:#16181D;max-width:760px}
 .ev-dl{font-size:14px}
+.ev.ev-anim .ev-row{opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease}
+.ev.ev-anim .ev-row.ev-in{opacity:1;transform:none}
+.ev.ev-anim .ev-chip{opacity:0;transform:scale(.92);transition:opacity .25s ease,transform .25s ease}
+.ev.ev-anim .ev-row.ev-in .ev-chip{opacity:1;transform:none}
 @media (max-width:760px){.ev-row{grid-template-columns:minmax(0,1fr) auto}.ev-chips{grid-column:1/-1;grid-row:2}}
 
 .hero-id{display:flex;flex-direction:column;gap:14px}
@@ -362,9 +366,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .rc-tab{position:relative}
 .rc-tprog{position:absolute;left:10px;right:10px;bottom:-1px;height:2px;background:transparent;overflow:hidden;pointer-events:none}
 .rc-tprog i{display:block;height:100%;width:0;background:#16181D}
-.rc-sim:not([hidden]){animation:rc-slide 0.45s cubic-bezier(.2,.8,.2,1)}
-.rc-text.rc-pane,.rc-receipt.rc-pane{animation:rc-slide 0.45s cubic-bezier(.2,.8,.2,1)}
-@keyframes rc-slide{from{opacity:0;transform:translateX(18px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
+.rc-sim:not([hidden]){animation:rc-slide 0.3s cubic-bezier(.2,.8,.2,1)}
+.rc-text.rc-pane,.rc-receipt.rc-pane{animation:rc-slide 0.3s cubic-bezier(.2,.8,.2,1)}
+@keyframes rc-slide{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){.rc-sim:not([hidden]),.rc-text.rc-pane,.rc-receipt.rc-pane{animation:none}}
 </style>
 <div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #16181D; background: #F6F5F0; min-height: 100vh">
@@ -390,7 +394,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
 <div class="hero-id">
 <h1 class="hero-name">Shreyash Gondane</h1>
-<div class="hero-role"><span>Independent researcher &amp; research engineer</span><span>AI evaluation, oversight &amp; agentic systems</span><span>New York</span></div>
+<div class="hero-role"><span>Technical Lead, AI platform engineering · EngineersMind</span><span>Independent research: AI evaluation, oversight &amp; agentic systems</span><span>New York</span></div>
 </div>
 <p class="hero-thesis">AI agents you can <em>check</em>.</p>
 <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #2C3038; max-width: 600px">I build and study agents whose outputs can be audited. In finance, every number is traced to its source and every call is recorded before its outcome. In agent evaluation, benchmarks and harnesses produce scores that measure the agent, not the plumbing.</p>
@@ -414,12 +418,14 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 <div class="rc-tabs" role="tablist" aria-label="Observability views">
 <button type="button" role="tab" class="rc-tab" data-mode="claims" aria-selected="true">Claims</button>
 <button type="button" role="tab" class="rc-tab" data-mode="harness" aria-selected="false">Harness</button>
-<button type="button" role="tab" class="rc-tab" data-mode="guard" aria-selected="false">Guardrails</button>
+<button type="button" role="tab" class="rc-tab" data-mode="guard" aria-selected="false">Governance</button>
 <button type="button" role="tab" class="rc-tab" data-mode="hack" aria-selected="false">Reward hacking</button>
 <button type="button" role="tab" class="rc-tab" data-mode="twin" aria-selected="false">Twin pairing</button>
+<button type="button" role="tab" class="rc-tab" data-mode="multi" aria-selected="false">Multi-model</button>
+<button type="button" role="tab" class="rc-tab" data-mode="platform" aria-selected="false">AI platform</button>
 </div>
 
-<p class="rc-text">Analyst note on <b>Acme Robotics</b>: revenue rose <button type="button" class="rc-n" data-i="0">18.2%</button> to <button type="button" class="rc-n" data-i="1">$4.71B</button> this quarter, with gross margin at <button type="button" class="rc-n" data-i="2">61.3%</button>. Free cash flow reached <button type="button" class="rc-n" data-i="3">$812M</button>. Shares trade at <button type="button" class="rc-n" data-i="4">34.1×</button> earnings, and management guides next quarter to <button type="button" class="rc-n" data-i="5">$5.02B</button>.</p>
+<p class="rc-text">Eval note on a <b>Terminal-Bench 2.1 harness pilot</b>: <button type="button" class="rc-n" data-i="0">60</button> trials cost <button type="button" class="rc-n" data-i="1">$2.62</button>. <button type="button" class="rc-n" data-i="2">15</button> passed, a <button type="button" class="rc-n" data-i="3">52.0%</button> pass rate, and <button type="button" class="rc-n" data-i="4">25</button> ended in a timeout. Before any agent ran, <button type="button" class="rc-n" data-i="5">57 of 61</button> Terminal-Bench 2.0 tasks passed their oracle check.</p>
 <div class="rc-receipt" id="rcReceipt" aria-live="polite">
 <div class="rc-r-top"><span class="rc-r-label">Receipt</span><span id="rcVerdict" class="rc-verdict">Select a number</span></div>
 <dl class="rc-dl">
@@ -441,7 +447,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 </div>
 <div class="rc-wfwrap"><div class="rc-wf" id="rcWf" role="log" aria-live="polite"></div><div class="rc-axis"><span>0 s</span><span id="rcAxisEnd"></span></div><div class="rc-stamp" id="rcStamp" hidden></div></div>
 </div>
-<div class="rc-foot"><span id="rcCount">6 claims · not yet checked</span><span>Simulated runs, real methods. Illustrative numbers, not results.</span></div>
+<div class="rc-foot"><span id="rcCount">6 claims · not yet checked</span><span>Claims: my real pilot numbers with two planted errors. Other tabs: simulated runs, real methods.</span></div>
 </div>
 </section>
 
@@ -704,7 +710,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
       text: 'The best ways to reach Shreyash are LinkedIn or GitHub. His ORCID links his publications, and the record feed lets you follow new results as they land.',
       src: ['linkedin', 'github', 'orcid', 'feed'] },
     { keys: ['who', 'about', 'background', 'summary', 'focus', 'research', 'role', 'title', 'engineer', 'scientist'],
-      text: 'Shreyash Gondane is an independent researcher and research engineer in New York, working on AI evaluation, oversight and agentic systems. His work treats verifiability as the core design constraint for AI agents: claim-level provenance, point-in-time evaluation, tamper-evident records, benchmark integrity, agent orchestration and runtimes, and auditing the judges that check agents for reward hacking.',
+      text: 'Shreyash Gondane is a technical lead in AI platform engineering at EngineersMind, and in his own time an independent researcher in New York working on AI evaluation, oversight and agentic systems. At work he builds LLM infrastructure: inference serving, retrieval, agent frameworks with audited tool calls, AI agent identity and observability. His research treats verifiability as the core design constraint for AI agents: claim-level provenance, point-in-time evaluation, tamper-evident records, benchmark integrity, agent orchestration and runtimes, and auditing the judges that check agents for reward hacking.',
       src: ['orcid', 'github'] }
   ];
   var CHIPS = ['Explain the evidence checks', 'What is GlassBox?', 'Did the verification gate work?', 'What did the benchmark audit find?', 'Publications', 'How do I get in touch?'];
@@ -863,12 +869,12 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 <script>
 (function(){
   var C=[
-   {v:'18.2%',src:'Q3 10-Q · income statement',ptr:'/income/revenue/yoy_pct',stored:'18.2 %',hash:'sha256:9f2c…41ab',time:'09:02 / 16:00 UTC',checks:[['Source match','18.2 = 18.2',1],['Point in time','fetched 7 h before the decision',1],['Units','percent, matches claim',1]]},
-   {v:'$4.71B',src:'Q3 10-Q · income statement',ptr:'/income/revenue/q3',stored:'4,712,000,000 USD',hash:'sha256:9f2c…41ab',time:'09:02 / 16:00 UTC',checks:[['Source match','4.712B rounds to 4.71B',1],['Point in time','fetched 7 h before the decision',1],['Units','USD, matches claim',1]]},
-   {v:'61.3%',src:'Q3 10-Q · income statement',ptr:'/income/gross_margin_pct',stored:'61.3 %',hash:'sha256:9f2c…41ab',time:'09:02 / 16:00 UTC',checks:[['Source match','61.3 = 61.3',1],['Point in time','fetched 7 h before the decision',1],['Units','percent, matches claim',1]]},
-   {v:'$812M',src:'Q3 10-Q · cash-flow statement',ptr:'/cashflow/fcf/q3',stored:'812,400,000 USD',hash:'sha256:9f2c…41ab',time:'09:02 / 16:00 UTC',checks:[['Source match','812.4M rounds to 812M',1],['Point in time','fetched 7 h before the decision',1],['Units','USD, matches claim',1]]},
-   {v:'34.1×',src:'Market data snapshot',ptr:'/valuation/pe_ttm',stored:'31.4 ×',hash:'sha256:2b7e…c903',time:'15:45 / 16:00 UTC',checks:[['Source match','34.1 ≠ 31.4 (digits transposed)',0],['Point in time','fetched 15 min before the decision',1],['Units','multiple, matches claim',1]]},
-   {v:'$5.02B',src:'Earnings-call transcript',ptr:'/guidance/revenue_next_q',stored:'5,020,000,000 USD',hash:'sha256:d41a…7e10',time:'next day 13:30 / 16:00 UTC',checks:[['Source match','5.02B = 5.02B',1],['Point in time','fetched 21.5 h after the decision: look-ahead',0],['Units','USD, matches claim',1]]}
+   {v:'60',src:'ledger · pilot-or-2 (60 trials)',ptr:'trials.count',stored:'60',hash:'sha256:a3bf…cdb9',time:'ledger closed 10 Oct / note 10 Oct',checks:[['Source match','60 = 60',1],['Recorded first','ledger closed before the note',1],['Denominator','trials, not attempts (61)',1]]},
+   {v:'$2.62',src:'OpenRouter billing · run key',ptr:'billing.total_usd',stored:'2.62 USD',hash:'sha256:a3bf…cdb9',time:'ledger closed 10 Oct / note 10 Oct',checks:[['Source match','2.62 = 2.62',1],['Cross-check','ledger: $0.044 per trial × 60',1],['Units','USD, matches claim',1]]},
+   {v:'15',src:'ledger · pilot-or-2 (60 trials)',ptr:'outcome = agent_pass',stored:'15',hash:'sha256:a3bf…cdb9',time:'ledger closed 10 Oct / note 10 Oct',checks:[['Source match','15 = 15',1],['Recorded first','ledger closed before the note',1],['Final attempt only','retries not double-counted',1]]},
+   {v:'52.0%',src:'ledger · pilot-or-2 (60 trials)',ptr:'agent_pass / trials',stored:'25.0 %',hash:'sha256:a3bf…cdb9',time:'ledger closed 10 Oct / note 10 Oct',checks:[['Source match','52.0 ≠ 25.0 (digits transposed)',0],['Recorded first','ledger closed before the note',1],['Units','percent, matches claim',1]]},
+   {v:'25',src:'ledger · pilot-or-2 (60 trials)',ptr:'outcome = agent_timeout',stored:'25',hash:'sha256:a3bf…cdb9',time:'ledger closed 10 Oct / note 10 Oct',checks:[['Source match','25 = 25',1],['Recorded first','ledger closed before the note',1],['Category','timeout kept apart from fail',1]]},
+   {v:'57 of 61',src:'Oracle check · terminal-bench-2-1@6',ptr:'oracle.kept / oracle.total',stored:'57 / 61',hash:'sha256:d51f…013c',time:'oracle 13 Oct / note 10 Oct',checks:[['Source match','57 / 61 = 57 / 61',1],['Benchmark version','note says 2.0, source is 2.1',0],['Point in time','oracle ran after the note was written',0]]}
   ];
   var nums=[].slice.call(document.querySelectorAll('.rc-n'));
   var $=function(id){return document.getElementById(id);};
@@ -903,7 +909,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
       if(i>=C.length){
         busy=false; ran=true; btn.disabled=false; btn.textContent='Run it again';
         $('rcCount').textContent=good+' verified · '+(C.length-good)+' blocked before publishing';
-        show(4); return;
+        show(3); return;
       }
       nums[i].classList.add('is-scan'); show(i); $('rcCount').textContent='checking claim '+(i+1)+' of '+C.length+'…';
       i++; setTimeout(step, 520);
@@ -914,7 +920,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 </script>
 <script>
 (function(){
-  var S = {"harness": {"title": "Coding agent · reviewer harness · task: parse-logs", "labels": ["Agent steps", "Tests passing", "Reviewer flags"], "verdict": ["Solved", "ok"], "spans": [["Oracle check: reference solution", "harness", 0, 0.8, "ok", "Answer key passes; task admitted", [0, "–", 0]], ["Read repo and plan", "agent", 0.8, 1.4, "info", "12 files scanned", [1, "–", 0]], ["Edit src/parse.py", "agent", 2.2, 1.6, "info", "+38 −6 lines", [2, "–", 0]], ["Run tests", "sandbox", 3.8, 1.0, "warn", "4 of 7 pass", [2, "4/7", 0]], ["Review the diff", "reviewer", 4.8, 1.2, "warn", "Flags the empty-line case", [2, "4/7", 1]], ["Fix the edge case", "agent", 6.0, 1.2, "info", "+9 −2 lines", [3, "4/7", 1]], ["Self-check: rerun tests", "sandbox", 7.2, 0.9, "ok", "7 of 7 pass", [3, "7/7", 1]]]}, "guard": {"title": "Research committee · draft call on Acme Robotics", "labels": ["Claims checked", "Blocks", "Ledger entries"], "verdict": ["Published safely", "ok"], "spans": [["Fetch filings → snapshot", "data", 0, 0.9, "ok", "sha256:9f2c… stored", [0, 0, 0]], ["Analysts draft the call", "agents", 0.9, 1.6, "info", "BUY, 6 numeric claims", [0, 0, 0]], ["Verification gate", "gate", 2.5, 1.2, "bad", "1 claim has no source", [6, 1, 0]], ["Revise and re-check", "gate", 3.7, 0.9, "ok", "6 of 6 sourced", [6, 1, 0]], ["Compliance filter", "filter", 4.6, 1.0, "bad", "Blocks the phrase “can’t lose”", [6, 2, 0]], ["Revise the wording", "agents", 5.6, 0.8, "ok", "Filter passes", [6, 2, 0]], ["Append to ledger", "ledger", 6.4, 0.7, "ok", "Chained to #7c0e", [6, 2, 1]]]}, "hack": {"title": "Reward-hack watch · task: fix-date-parser", "labels": ["Attempts", "Hacks caught", "Honest passes"], "verdict": ["2 hacks caught", "warn"], "spans": [["Attempt 1", "agent", 0, 1.2, "info", "Patch touches tests/", [1, 0, 0]], ["Run tests", "sandbox", 1.2, 0.6, "warn", "7 of 7 pass, suspiciously fast", [1, 0, 0]], ["Watch the diff scope", "watcher", 1.8, 0.9, "bad", "Assertion replaced with assert True", [1, 1, 0]], ["Attempt 2", "agent", 2.7, 1.2, "info", "Reads the expected-output fixture", [2, 1, 0]], ["Trace output provenance", "watcher", 3.9, 0.9, "bad", "Answer copied from the fixture", [2, 2, 0]], ["Attempt 3", "agent", 4.8, 1.4, "info", "Fixes timezone parsing", [3, 2, 0]], ["Held-out tests", "sandbox", 6.2, 0.9, "ok", "7 of 7 pass, tests untouched", [3, 2, 1]]]}, "twin": {"title": "Twin pairing · small local builder + strong reviewer", "labels": ["Accepted", "Rejected", "Labelled pairs"], "verdict": ["1 lesson saved", "ok"], "spans": [["Plan: split the feature", "planner", 0, 0.8, "info", "3 subtasks", [0, 0, 0]], ["Build subtask 1", "builder", 0.8, 1.5, "info", "Local 1.5B model on CPU", [0, 0, 0]], ["Review", "reviewer", 2.3, 0.8, "bad", "Rejected: no input validation", [0, 1, 0]], ["Save correction pair", "dataset", 3.1, 0.5, "ok", "Before / after stored", [0, 1, 1]], ["Retry subtask 1", "builder", 3.6, 1.2, "info", "Adds validation", [0, 1, 1]], ["Review", "reviewer", 4.8, 0.7, "ok", "Accepted", [1, 1, 1]], ["Build subtask 2", "builder", 5.5, 1.2, "info", "", [1, 1, 1]], ["Review", "reviewer", 6.7, 0.6, "ok", "Accepted first try", [2, 1, 1]]]}};
+  var S = {"harness": {"title": "Coding agent · reviewer harness · task: parse-logs", "labels": ["Agent steps", "Tests passing", "Reviewer flags"], "verdict": ["Solved", "ok"], "spans": [["Oracle check: reference solution", "harness", 0, 0.8, "ok", "Answer key passes; task admitted", [0, "–", 0]], ["Read repo and plan", "agent", 0.8, 1.4, "info", "12 files scanned", [1, "–", 0]], ["Edit src/parse.py", "agent", 2.2, 1.6, "info", "+38 −6 lines", [2, "–", 0]], ["Run tests", "sandbox", 3.8, 1.0, "warn", "4 of 7 pass", [2, "4/7", 0]], ["Review the diff", "reviewer", 4.8, 1.2, "warn", "Flags the empty-line case", [2, "4/7", 1]], ["Fix the edge case", "agent", 6.0, 1.2, "info", "+9 −2 lines", [3, "4/7", 1]], ["Self-check: rerun tests", "sandbox", 7.2, 0.9, "ok", "7 of 7 pass", [3, "7/7", 1]]]}, "guard": {"title": "Governance · rule-based checks before a call is published · fictional stock XMPL", "labels": ["Claims checked", "Blocks", "Ledger entries"], "verdict": ["Published safely", "ok"], "spans": [["Fetch filings → snapshot", "data", 0, 0.9, "ok", "sha256:9f2c… stored", [0, 0, 0]], ["Analysts draft the call", "agents", 0.9, 1.6, "info", "BUY, 6 numeric claims", [0, 0, 0]], ["Rule: every number sourced", "gate", 2.5, 1.2, "bad", "1 claim has no source", [6, 1, 0]], ["Revise and re-check", "gate", 3.7, 0.9, "ok", "6 of 6 sourced", [6, 1, 0]], ["Rule: banned-claim filter", "filter", 4.6, 1.0, "bad", "Blocks the phrase “can’t lose”", [6, 2, 0]], ["Revise the wording", "agents", 5.6, 0.8, "ok", "Filter passes", [6, 2, 0]], ["Append to ledger", "ledger", 6.4, 0.7, "ok", "Chained to #7c0e", [6, 2, 1]]]}, "hack": {"title": "Reward-hack audit · rule-based heuristics vs an LLM judge", "labels": ["Attempts", "Hacks caught", "Honest passes"], "verdict": ["2 hacks caught", "warn"], "spans": [["Attempt 1", "agent", 0, 1.2, "info", "Patch touches tests/", [1, 0, 0]], ["Run tests", "sandbox", 1.2, 0.6, "warn", "7 of 7 pass, suspiciously fast", [1, 0, 0]], ["Rule: tests/ edited", "rule check", 1.8, 0.9, "bad", "assert True swapped in", [1, 1, 0]], ["Attempt 2", "agent", 2.7, 1.2, "info", "Reads the fixture", [2, 1, 0]], ["Rule: answer read from fixture", "rule check", 3.9, 0.9, "bad", "Copied from fixture", [2, 2, 0]], ["Second opinion: LLM judge", "judge", 4.8, 0.7, "warn", "Calls the fixture read legitimate", [2, 2, 0]], ["Attempt 3", "agent", 5.5, 1.4, "info", "Fixes timezone parsing", [3, 2, 0]], ["Held-out tests", "sandbox", 6.9, 0.9, "ok", "Honest pass", [3, 2, 1]]]}, "twin": {"title": "Twin pairing · small local builder + strong reviewer", "labels": ["Accepted", "Rejected", "Labelled pairs"], "verdict": ["1 lesson saved", "ok"], "spans": [["Plan: split the feature", "planner", 0, 0.8, "info", "3 subtasks", [0, 0, 0]], ["Build subtask 1", "builder", 0.8, 1.5, "info", "Local 1.5B model on CPU", [0, 0, 0]], ["Review", "reviewer", 2.3, 0.8, "bad", "Rejected: no input validation", [0, 1, 0]], ["Save correction pair", "dataset", 3.1, 0.5, "ok", "Before / after stored", [0, 1, 1]], ["Retry subtask 1", "builder", 3.6, 1.2, "info", "Adds validation", [0, 1, 1]], ["Review", "reviewer", 4.8, 0.7, "ok", "Accepted", [1, 1, 1]], ["Build subtask 2", "builder", 5.5, 1.2, "info", "", [1, 1, 1]], ["Review", "reviewer", 6.7, 0.6, "ok", "Accepted first try", [2, 1, 1]]]}, "multi": {"title": "Multi-model committee · providers pinned, fallbacks logged", "labels": ["Models used", "Fallbacks logged", "Unsourced numbers"], "verdict": ["Recorded", "ok"], "spans": [["Pin model and host", "router", 0, 0.7, "ok", "Host pinned, silent fallbacks off", [0, 0, 0]], ["Analyst A drafts", "model 1", 0.7, 1.3, "info", "5 numeric claims", [1, 0, 0]], ["Analyst B drafts", "model 2", 0.7, 1.6, "info", "4 numeric claims", [2, 0, 0]], ["Analyst C: model unavailable", "provider", 0.9, 0.6, "warn", "Requested ≠ answered: logged", [2, 1, 0]], ["Analyst C drafts on fallback", "model 3", 1.5, 1.2, "info", "4 numeric claims", [3, 1, 0]], ["Debate and vote", "committee", 2.7, 1.0, "info", "2 BUY · 1 HOLD", [3, 1, 0]], ["Per-model claim audit", "gate", 3.7, 0.9, "warn", "1 unsourced number, from model 2", [3, 1, 1]], ["Append to ledger", "ledger", 4.6, 0.6, "ok", "Both models stored", [3, 1, 1]]]}, "platform": {"title": "AI platform · one agent request, traced end to end", "labels": ["Spans traced", "GPU nodes added", "Policy checks"], "verdict": ["Served", "ok"], "spans": [["Agent authenticates", "identity", 0, 0.6, "ok", "Agent token verified, scope checked", [1, 0, 1]], ["Tool-call policy", "gate", 0.6, 0.5, "ok", "Allowlisted tool, audit entry written", [2, 0, 2]], ["Retrieve context", "vector store", 1.1, 0.6, "info", "Top-k chunks retrieved", [3, 0, 2]], ["Queue spike: scale GPU pool", "autoscaler", 1.4, 0.9, "warn", "+1 GPU node", [4, 1, 2]], ["Serve on vLLM", "inference", 2.3, 1.0, "info", "FP8 model, time to first token logged", [5, 1, 2]], ["Trace the call", "observability", 3.3, 0.6, "ok", "Latency, tokens and cost recorded", [6, 1, 2]], ["Score a sample", "eval", 3.9, 0.6, "ok", "Scored", [7, 1, 3]]]}};
   var UNIT = 560;
   var $=function(id){return document.getElementById(id);};
   var card=document.getElementById('receipts'), run=$('rcRun'), eyebrow=card.querySelector('.rc-eyebrow');
@@ -968,7 +974,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   }
   function setMode(m){
     clear(); mode=m; run.dataset.mode=m;
-    tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.mode===m)); });
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.mode===m)); if(t.dataset.mode===m){ var row=t.parentNode; var x=t.offsetLeft-row.offsetLeft, w=t.offsetWidth; if(x<row.scrollLeft||x+w>row.scrollLeft+row.clientWidth){ row.scrollTo({left:Math.max(0,x-24),behavior:reduce?'auto':'smooth'}); } } });
     var isC=m==='claims';
     claims.forEach(function(el){ el.hidden=!isC; if(isC){ el.classList.remove('rc-pane'); void el.offsetWidth; el.classList.add('rc-pane'); } });
     simEl.hidden=isC;
@@ -986,7 +992,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   var card=document.getElementById('receipts'); if(!card) return;
   var run=document.getElementById('rcRun'), autoBtn=document.getElementById('rcAuto'), autoL=document.getElementById('rcAutoL');
   var tabs=[].slice.call(card.querySelectorAll('.rc-tab'));
-  var ORDER=['claims','harness','guard','hack','twin'], HOLD=3200;
+  var ORDER=['claims','harness','guard','hack','twin','multi','platform'], HOLD=3200;
   var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var auto=!reduce, holdT=null, kickT=null, visible=false, hovering=false, started=false, wasBusy=false;
   tabs.forEach(function(t){ var p=document.createElement('span'); p.className='rc-tprog'; p.appendChild(document.createElement('i')); t.appendChild(p); });
@@ -1037,7 +1043,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   card.addEventListener('mouseleave',function(){ hovering=false; if(auto && !run.disabled && started) schedule(); });
   function kick(){
     if(!auto) return;
-    if(!started){ started=true; kickT=setTimeout(startCurrent,900); }
+    if(!started){ started=true; kickT=setTimeout(startCurrent,400); }
     else if(!run.disabled && !holdT && !hovering) schedule();
   }
   if('IntersectionObserver' in window){
@@ -1050,4 +1056,22 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 
 
 
+<script>
+(function(){
+  var ul=document.querySelector('.ev'); if(!ul || !('IntersectionObserver' in window)) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(ul.getBoundingClientRect().top < window.innerHeight) return; // already on screen: show as is
+  var rows=[].slice.call(ul.querySelectorAll('.ev-row')), STEP=140;
+  ul.classList.add('ev-anim');
+  rows.forEach(function(row,i){
+    row.style.transitionDelay=(i*STEP)+'ms';
+    [].slice.call(row.querySelectorAll('.ev-chip')).forEach(function(c,j){ c.style.transitionDelay=(i*STEP+120+j*45)+'ms'; });
+  });
+  function done(){ ul.classList.remove('ev-anim'); [].slice.call(ul.querySelectorAll('.ev-row,.ev-chip')).forEach(function(el){ el.style.transitionDelay=''; }); }
+  function reveal(){ rows.forEach(function(r){ r.classList.add('ev-in'); }); setTimeout(done, rows.length*STEP+900); }
+  var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ io.disconnect(); reveal(); } },{threshold:0.12});
+  io.observe(ul);
+  window.addEventListener('beforeprint', function(){ io.disconnect(); done(); });
+})();
+</script>
 </body></html>

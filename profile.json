@@ -75,7 +75,7 @@
         "Terminal-Bench",
         "pre-registered"
       ],
-      "summary": "Does adding a reviewer, a memory window or a self-check round to a coding agent's loop raise its success rate? Four harness variants on one model (Claude Sonnet 5.5), 57 oracle-checked Terminal-Bench 2.1 tasks, 5 trials each, run through Harbor. Design frozen before the main data (15 Oct 2026); task-level bootstrap and permutation tests; infrastructure failures classified and retried, never scored. Main results expected spring 2027.",
+      "summary": "Does adding a reviewer, a memory window or a self-check round to a coding agent's loop raise its success rate? Four harness variants on one model (Claude Sonnet 5.5), 57 oracle-checked Terminal-Bench 2.1 tasks, 5 trials each, run through Harbor. Design frozen before the main data (15 Oct 2026); task-level bootstrap and permutation tests; infrastructure failures classified and retried, never scored. Replicate block 1: 138 of 228 trials run, 0 infrastructure errors (17 Oct 2026). Main results expected spring 2027.",
       "evidence": [
         {
           "label": "Oracle audit",
@@ -219,11 +219,24 @@
   "service": [],
   "record": [
     {
+      "date": "2026-10-17",
+      "type": "milestone",
+      "title": "GlassBox planted-error evaluation corrected to 550/550: stale-data plants re-targeted to claims not already stale",
+      "detail": "Same 287-run export and deployed gate. Only the stale-data plants changed: 31/50 became 50/50, because the 19 earlier misses were plants on claims already stale, which could not add a new flag. Controls still 0/200 false alarms.",
+      "url": "https://github.com/Shreyasg13/glassbox-trading-agents/blob/e63bdf453ba61682883767d795130dcfd20d2c26/research/r2/RESULTS-2026-10-16.md"
+    },
+    {
+      "date": "2026-10-17",
+      "type": "milestone",
+      "title": "Agent harness study: replicate block 1 run, 138 of 228 trials, 0 infrastructure errors",
+      "detail": "Paused at the monthly spend cap as designed; resumes in November. Variant comparisons wait for the single confirmatory analysis."
+    },
+    {
       "date": "2026-10-16",
       "type": "milestone",
-      "title": "GlassBox planted-error evaluation: the verification gate caught all 550 planted errors of the kinds it checks, with 0 false alarms on 200 controls",
-      "detail": "287 real production runs; detection measured against each run's untouched baseline. The two blind-spot types predicted in advance went uncaught, as expected; narrative errors untestable while narratives are off. The gate runs in shadow mode. Stale-data plants re-targeted to claims not already stale (Oct 17): 550/550.",
-      "url": "https://github.com/Shreyasg13/glassbox-trading-agents/blob/e63bdf453ba61682883767d795130dcfd20d2c26/research/r2/RESULTS-2026-10-16.md"
+      "title": "GlassBox planted-error evaluation: the verification gate caught all 531 planted errors of the kinds it checks, with 0 false alarms on 200 controls",
+      "detail": "287 real production runs; detection measured against each run's untouched baseline. The two blind-spot types predicted in advance went uncaught, as expected; narrative errors untestable while narratives are off. The gate runs in shadow mode.",
+      "url": "https://github.com/Shreyasg13/glassbox-trading-agents/blob/550cad2923a06f0bf16c3c658996a833a00a5860/research/r2/RESULTS-2026-10-16.md"
     },
     {
       "date": "2026-10-16",

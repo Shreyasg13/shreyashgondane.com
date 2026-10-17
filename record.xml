@@ -4,14 +4,28 @@
   <link href="https://shreyashgondane.com/record.xml" rel="self"/>
   <link href="https://shreyashgondane.com/#record"/>
   <id>https://shreyashgondane.com/record.xml</id>
-  <updated>2026-10-16T00:00:00Z</updated>
+  <updated>2026-10-17T00:00:00Z</updated>
   <author><name>Shreyash Gondane</name></author>
   <entry>
-    <title>Milestone: GlassBox planted-error evaluation: the verification gate caught all 550 planted errors of the kinds it checks, with 0 false alarms on 200 controls</title>
+    <title>Milestone: GlassBox planted-error evaluation corrected to 550/550: stale-data plants re-targeted to claims not already stale</title>
+    <id>https://shreyashgondane.com/#2026-10-17-glassbox-planted-error-evaluation-corrected-to-550-550-stale</id>
+    <updated>2026-10-17T00:00:00Z</updated>
+    <link href="https://github.com/Shreyasg13/glassbox-trading-agents/blob/e63bdf453ba61682883767d795130dcfd20d2c26/research/r2/RESULTS-2026-10-16.md"/>
+    <summary>Same 287-run export and deployed gate. Only the stale-data plants changed: 31/50 became 50/50, because the 19 earlier misses were plants on claims already stale, which could not add a new flag. Controls still 0/200 false alarms.</summary>
+  </entry>
+  <entry>
+    <title>Milestone: Agent harness study: replicate block 1 run, 138 of 228 trials, 0 infrastructure errors</title>
+    <id>https://shreyashgondane.com/#2026-10-17-agent-harness-study-replicate-block-1-run-138-of-228-trials-</id>
+    <updated>2026-10-17T00:00:00Z</updated>
+    
+    <summary>Paused at the monthly spend cap as designed; resumes in November. Variant comparisons wait for the single confirmatory analysis.</summary>
+  </entry>
+  <entry>
+    <title>Milestone: GlassBox planted-error evaluation: the verification gate caught all 531 planted errors of the kinds it checks, with 0 false alarms on 200 controls</title>
     <id>https://shreyashgondane.com/#2026-10-16-glassbox-planted-error-evaluation-the-verification-gate-caug</id>
     <updated>2026-10-16T00:00:00Z</updated>
-    <link href="https://github.com/Shreyasg13/glassbox-trading-agents/blob/e63bdf453ba61682883767d795130dcfd20d2c26/research/r2/RESULTS-2026-10-16.md"/>
-    <summary>287 real production runs; detection measured against each run's untouched baseline. The two blind-spot types predicted in advance went uncaught, as expected; narrative errors untestable while narratives are off. The gate runs in shadow mode. Stale-data plants re-targeted to claims not already stale (Oct 17): 550/550.</summary>
+    <link href="https://github.com/Shreyasg13/glassbox-trading-agents/blob/550cad2923a06f0bf16c3c658996a833a00a5860/research/r2/RESULTS-2026-10-16.md"/>
+    <summary>287 real production runs; detection measured against each run's untouched baseline. The two blind-spot types predicted in advance went uncaught, as expected; narrative errors untestable while narratives are off. The gate runs in shadow mode.</summary>
   </entry>
   <entry>
     <title>Preprint: Technical note: one in eight Terminal-Bench 2.0 reference solutions fail their own tests</title>

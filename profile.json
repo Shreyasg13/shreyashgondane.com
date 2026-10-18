@@ -1,7 +1,7 @@
 {
   "_how_to_update": "Page layout and text live in design.html. Track-record entries live here: edit this file, run `node build.mjs`, commit and push. Add new track-record entries at the TOP of `record`. Every entry needs a date (YYYY-MM-DD), a type, a title, and ideally an evidence link. Never list anything that did not happen.",
   "name": "Shreyash Gondane",
-  "role": "Independent researcher & research engineer · AI evaluation, oversight & agentic systems · New York",
+  "role": "Independent researcher (own time, unpaid) · AI evaluation, oversight & agentic systems · New York",
   "tagline": "I build and study AI agents that can be checked: in finance, every number traced to its source and every call recorded before its outcome; in agent evaluation, benchmarks and harnesses whose scores measure the agent, not the plumbing.",
   "links": [
     {

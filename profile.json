@@ -66,28 +66,6 @@
   ],
   "projects": [
     {
-      "title": "Agent harness study (R1)",
-      "url": "",
-      "period": "2026 – present",
-      "status": "active",
-      "tags": [
-        "agent evaluation",
-        "Terminal-Bench",
-        "pre-registered"
-      ],
-      "summary": "Does adding a reviewer, a memory window or a self-check round to a coding agent's loop raise its success rate? Four harness variants on one model (Claude Sonnet 5.5), 57 oracle-checked Terminal-Bench 2.1 tasks, 5 trials each, run through Harbor. Design frozen before the main data (15 Oct 2026); task-level bootstrap and permutation tests; infrastructure failures classified and retried, never scored. Replicate block 1: 138 of 228 trials run, 0 infrastructure errors (17 Oct 2026). Main results expected spring 2027.",
-      "evidence": [
-        {
-          "label": "Oracle audit",
-          "url": "/research/tb2-oracle-audit.html"
-        },
-        {
-          "label": "Harbor PR #3593",
-          "url": "https://github.com/harbor-framework/harbor/pull/3593"
-        }
-      ]
-    },
-    {
       "title": "GlassBox",
       "url": "https://github.com/Shreyasg13/glassbox-trading-agents",
       "period": "2026 – present",
@@ -186,13 +164,6 @@
       ]
     },
     {
-      "title": "Does the harness matter? A pre-registered comparison of reviewer, memory and self-check harnesses for coding agents on Terminal-Bench 2.1",
-      "status": "in preparation",
-      "venue": "",
-      "url": "",
-      "note": "Design frozen 15 October 2026 before the main data; results after the last replicate block (spring 2027)."
-    },
-    {
       "title": "Receipts for every number: claim-level provenance and point-in-time verification for LLM trading agents",
       "status": "in preparation",
       "venue": "",
@@ -233,12 +204,6 @@
       "url": "https://github.com/Shreyasg13/glassbox-trading-agents/blob/e63bdf453ba61682883767d795130dcfd20d2c26/research/r2/RESULTS-2026-10-16.md"
     },
     {
-      "date": "2026-10-17",
-      "type": "milestone",
-      "title": "Agent harness study: replicate block 1 run, 138 of 228 trials, 0 infrastructure errors",
-      "detail": "Paused at the monthly spend cap as designed; resumes in November. Variant comparisons wait for the single confirmatory analysis."
-    },
-    {
       "date": "2026-10-16",
       "type": "milestone",
       "title": "GlassBox planted-error evaluation: the verification gate caught all 531 planted errors of the kinds it checks, with 0 false alarms on 200 controls",
@@ -251,13 +216,6 @@
       "title": "Technical note: one in eight Terminal-Bench 2.0 reference solutions fail their own tests",
       "detail": "Oracle audit of 65 tasks: what breaks, what TB 2.1 fixes, and a check to run before every agent evaluation.",
       "url": "https://shreyashgondane.com/research/tb2-oracle-audit.html"
-    },
-    {
-      "date": "2026-10-15",
-      "type": "milestone",
-      "title": "Agent harness study: design frozen before the main data",
-      "detail": "57 oracle-checked Terminal-Bench 2.1 tasks × 4 harness variants × 5 trials on Claude Sonnet 5.5, after pilots of 94 trials.",
-      "url": ""
     },
     {
       "date": "2026-10-14",

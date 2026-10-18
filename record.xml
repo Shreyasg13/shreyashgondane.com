@@ -21,13 +21,6 @@
     <summary>Same 287-run export and deployed gate. Only the stale-data plants changed: 31/50 became 50/50, because the 19 earlier misses were plants on claims already stale, which could not add a new flag. Controls still 0/200 false alarms.</summary>
   </entry>
   <entry>
-    <title>Milestone: Agent harness study: replicate block 1 run, 138 of 228 trials, 0 infrastructure errors</title>
-    <id>https://shreyashgondane.com/#2026-10-17-agent-harness-study-replicate-block-1-run-138-of-228-trials-</id>
-    <updated>2026-10-17T00:00:00Z</updated>
-    
-    <summary>Paused at the monthly spend cap as designed; resumes in November. Variant comparisons wait for the single confirmatory analysis.</summary>
-  </entry>
-  <entry>
     <title>Milestone: GlassBox planted-error evaluation: the verification gate caught all 531 planted errors of the kinds it checks, with 0 false alarms on 200 controls</title>
     <id>https://shreyashgondane.com/#2026-10-16-glassbox-planted-error-evaluation-the-verification-gate-caug</id>
     <updated>2026-10-16T00:00:00Z</updated>
@@ -40,13 +33,6 @@
     <updated>2026-10-16T00:00:00Z</updated>
     <link href="https://shreyashgondane.com/research/tb2-oracle-audit.html"/>
     <summary>Oracle audit of 65 tasks: what breaks, what TB 2.1 fixes, and a check to run before every agent evaluation.</summary>
-  </entry>
-  <entry>
-    <title>Milestone: Agent harness study: design frozen before the main data</title>
-    <id>https://shreyashgondane.com/#2026-10-15-agent-harness-study-design-frozen-before-the-main-data</id>
-    <updated>2026-10-15T00:00:00Z</updated>
-    
-    <summary>57 oracle-checked Terminal-Bench 2.1 tasks × 4 harness variants × 5 trials on Claude Sonnet 5.5, after pilots of 94 trials.</summary>
   </entry>
   <entry>
     <title>Open source: Merged into the official MCP Go SDK</title>

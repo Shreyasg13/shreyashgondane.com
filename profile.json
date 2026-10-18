@@ -39,7 +39,6 @@
   "statement": [
     "LLM agents are increasingly asked to read markets and explain their calls, but their outputs are hard to audit: numbers appear in prose with no source, backtests quietly use data that did not exist yet, and track records can be edited after the fact.",
     "My work treats verifiability as the core design constraint. I turn every number an agent reports into a structured claim that points at the exact value in a stored, point-in-time source snapshot, check each claim before anything is published, and record every call in an append-only, hash-chained ledger so the record can be scored forward only.",
-    "The same standard applies to how agents are measured. I run a pre-registered study of coding-agent harnesses on Terminal-Bench 2.1, and before any agent ran I checked every task's own reference solution: 8 of 65 Terminal-Bench 2.0 tasks fail their own tests. A score is only as good as the environment that produced it.",
     "I also study how to build such systems cheaply and reliably with agents themselves: a builder/critic loop in which low-cost models write code and a stronger model plans and reviews, recording every attempt as labelled data for distillation."
   ],
   "focus": [
@@ -54,10 +53,6 @@
     {
       "title": "Tamper-evident records",
       "body": "Append-only, hash-chained call ledgers with database-level guards, so a track record cannot be edited after the outcome."
-    },
-    {
-      "title": "Benchmark integrity",
-      "body": "Oracle-checking every task before an agent run, so broken environments are dropped and reported instead of being scored as agent failures."
     },
     {
       "title": "Distilling coding agents",
@@ -132,20 +127,6 @@
   ],
   "writing": [
     {
-      "title": "One in eight: Terminal-Bench 2.0 tasks whose own reference solution fails",
-      "status": "preprint",
-      "venue": "Technical note",
-      "year": "2026",
-      "url": "/research/tb2-oracle-audit.html",
-      "note": "8 of 65 candidate tasks fail their own tests (verifier tools that no longer install, package rot, a breaking dependency release, a too-slow reference, live data). TB 2.1 fixes 3 of them; 4 still fail. Recommends an oracle check before every run.",
-      "links": [
-        {
-          "label": "Read",
-          "url": "/research/tb2-oracle-audit.html"
-        }
-      ]
-    },
-    {
       "title": "Superhuman Scores, Sub-Human Adaptation: A Multi-Dimensional, Growth-Aware Comparison of Frontier AI Models and Human Intelligence",
       "status": "preprint",
       "venue": "White paper",
@@ -209,13 +190,6 @@
       "title": "GlassBox planted-error evaluation: the verification gate caught all 531 planted errors of the kinds it checks, with 0 false alarms on 200 controls",
       "detail": "287 real production runs; detection measured against each run's untouched baseline. The two blind-spot types predicted in advance went uncaught, as expected; narrative errors untestable while narratives are off. The gate runs in shadow mode.",
       "url": "https://github.com/Shreyasg13/glassbox-trading-agents/blob/550cad2923a06f0bf16c3c658996a833a00a5860/research/r2/RESULTS-2026-10-16.md"
-    },
-    {
-      "date": "2026-10-16",
-      "type": "preprint",
-      "title": "Technical note: one in eight Terminal-Bench 2.0 reference solutions fail their own tests",
-      "detail": "Oracle audit of 65 tasks: what breaks, what TB 2.1 fixes, and a check to run before every agent evaluation.",
-      "url": "https://shreyashgondane.com/research/tb2-oracle-audit.html"
     },
     {
       "date": "2026-10-14",

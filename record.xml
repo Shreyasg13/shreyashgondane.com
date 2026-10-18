@@ -28,13 +28,6 @@
     <summary>287 real production runs; detection measured against each run's untouched baseline. The two blind-spot types predicted in advance went uncaught, as expected; narrative errors untestable while narratives are off. The gate runs in shadow mode.</summary>
   </entry>
   <entry>
-    <title>Preprint: Technical note: one in eight Terminal-Bench 2.0 reference solutions fail their own tests</title>
-    <id>https://shreyashgondane.com/#2026-10-16-technical-note-one-in-eight-terminal-bench-2-0-reference-sol</id>
-    <updated>2026-10-16T00:00:00Z</updated>
-    <link href="https://shreyashgondane.com/research/tb2-oracle-audit.html"/>
-    <summary>Oracle audit of 65 tasks: what breaks, what TB 2.1 fixes, and a check to run before every agent evaluation.</summary>
-  </entry>
-  <entry>
     <title>Open source: Merged into the official MCP Go SDK</title>
     <id>https://shreyashgondane.com/#2026-10-14-merged-into-the-official-mcp-go-sdk</id>
     <updated>2026-10-14T00:00:00Z</updated>

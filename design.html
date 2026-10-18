@@ -636,8 +636,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
       text: 'Three publications so far: a 2026 preprint (the frontier-AI white paper) and two peer-reviewed Springer papers from 2021, one on keystroke-biometric password authentication and one on a CNN and IoT surveillance system. Two more papers are in preparation.',
       src: ['paper', 'doi1', 'doi2'] },
     { keys: ['open source', 'mcp', 'contribut', 'merged'],
-      text: 'Recent open-source work includes a fix merged into the official MCP Go SDK (14 Oct 2026, client conformance script on Windows and with relative results directories), a Harbor PR, and GlassBox itself under the MIT license.',
-      src: ['mcp', 'harbor', 'glassbox'] },
+      text: 'Open-source work: GlassBox itself, under the MIT license.',
+      src: ['glassbox'] },
     { keys: ['contact', 'collaborat', 'hire', 'reach', 'email', 'talk', 'touch'],
       text: 'The best ways to reach Shreyash are LinkedIn or GitHub. His ORCID links his publications, and the record feed lets you follow new results as they land.',
       src: ['linkedin', 'github', 'orcid', 'feed'] },
@@ -649,7 +649,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 
   KB.unshift({ keys: ['new', 'latest', 'recent', 'this week', 'update'],
     text: 'Latest on the record (17 Oct 2026): the GlassBox gate result is now 550/550 after a correction to the stale-data plants.',
-    src: ['planted', 'mcp', 'feed'] });
+    src: ['planted', 'feed'] });
   KB.forEach(function (e) { if (e.keys[0] === 'glassbox') e.keys.push('claim', 'verified', 'provenance'); });
 
   var CHIPS = ['Explain the observability matrix', 'What is GlassBox?', 'Did the verification gate work?', 'Publications', 'How do I get in touch?'];

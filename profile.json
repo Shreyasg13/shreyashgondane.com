@@ -174,13 +174,6 @@
       "url": "https://github.com/Shreyasg13/glassbox-trading-agents/blob/550cad2923a06f0bf16c3c658996a833a00a5860/research/r2/RESULTS-2026-10-16.md"
     },
     {
-      "date": "2026-10-14",
-      "type": "open-source",
-      "title": "Merged into the official MCP Go SDK",
-      "detail": "Fixed the client conformance script on Windows and with a relative results directory.",
-      "url": "https://github.com/modelcontextprotocol/go-sdk/pull/1366"
-    },
-    {
       "date": "2026-09-27",
       "type": "preprint",
       "title": "White paper: Superhuman Scores, Sub-Human Adaptation",

@@ -38,8 +38,7 @@
   ],
   "statement": [
     "LLM agents are increasingly asked to read markets and explain their calls, but their outputs are hard to audit: numbers appear in prose with no source, backtests quietly use data that did not exist yet, and track records can be edited after the fact.",
-    "My work treats verifiability as the core design constraint. I turn every number an agent reports into a structured claim that points at the exact value in a stored, point-in-time source snapshot, check each claim before anything is published, and record every call in an append-only, hash-chained ledger so the record can be scored forward only.",
-    "I also study how to build such systems cheaply and reliably with agents themselves: a builder/critic loop in which low-cost models write code and a stronger model plans and reviews, recording every attempt as labelled data for distillation."
+    "My work treats verifiability as the core design constraint. I turn every number an agent reports into a structured claim that points at the exact value in a stored, point-in-time source snapshot, check each claim before anything is published, and record every call in an append-only, hash-chained ledger so the record can be scored forward only."
   ],
   "focus": [
     {
@@ -53,10 +52,6 @@
     {
       "title": "Tamper-evident records",
       "body": "Append-only, hash-chained call ledgers with database-level guards, so a track record cannot be edited after the outcome."
-    },
-    {
-      "title": "Distilling coding agents",
-      "body": "Builder/critic twin loops that produce labelled trajectories, corrections and failure modes for training smaller models."
     }
   ],
   "projects": [
@@ -86,19 +81,6 @@
           "url": "https://github.com/Shreyasg13/glassbox-trading-agents/blob/main/CHANGELOG.md"
         }
       ]
-    },
-    {
-      "title": "Twin-agent build lab",
-      "url": "",
-      "period": "2026 – present",
-      "status": "active",
-      "tags": [
-        "agent orchestration",
-        "distillation",
-        "datasets"
-      ],
-      "summary": "Building production software with a free model as builder and a strong model as planner and reviewer. Every run is traced; accepted runs, rejections and before/after correction pairs form a labelled dataset. Includes CPU benchmarks of small local coding models (Qwen2.5-Coder 1.5B at ~42 tokens/s on a 4-core laptop CPU).",
-      "evidence": []
     },
     {
       "title": "Multi-agent trading system",
@@ -232,13 +214,6 @@
       "title": "GlassBox s3-part1: verification foundations",
       "detail": "Point-in-time snapshot store, structured claims, A6 verification gate, hash-chained call ledger, feature flags and kill switches.",
       "url": "https://github.com/Shreyasg13/glassbox-trading-agents/releases/tag/s3-part1"
-    },
-    {
-      "date": "2026-09-26",
-      "type": "benchmark",
-      "title": "Local coding-model benchmark on a laptop CPU",
-      "detail": "Qwen2.5-Coder 0.5B and 1.5B (Q4_K_M, llama.cpp): ~68 and ~42 tokens/s generation on an i7-1165G7.",
-      "url": ""
     },
     {
       "date": "2026-09-25",

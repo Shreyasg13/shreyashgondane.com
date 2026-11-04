@@ -412,6 +412,49 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 <div style="padding: 14px 0 0 0"><dt style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #5A5F6B">Years in AI</dt><dd style="margin: 4px 0 0; font-family: 'Newsreader', Georgia, serif; font-size: 36px">5+</dd></div>
 </dl>
 </div>
+
+
+
+<div class="rc" id="receipts">
+<div class="rc-head">
+<span class="rc-eyebrow"><span class="rc-live"></span>Try it · hover or tap a number</span>
+<button type="button" id="rcAuto" class="rc-auto" aria-pressed="true"><span class="rc-auto-i" aria-hidden="true"></span><span id="rcAutoL">Auto-play</span></button>
+<button type="button" id="rcRun" class="rc-run">Run the verification gate</button>
+</div>
+<div class="rc-tabs" role="tablist" aria-label="Observability views">
+<button type="button" role="tab" class="rc-tab" data-mode="harness" aria-selected="true">Harness</button>
+<button type="button" role="tab" class="rc-tab" data-mode="guard" aria-selected="false">Governance</button>
+<button type="button" role="tab" class="rc-tab" data-mode="hack" aria-selected="false">Reward hacking</button>
+<button type="button" role="tab" class="rc-tab" data-mode="twin" aria-selected="false">Twin pairing</button>
+<button type="button" role="tab" class="rc-tab" data-mode="multi" aria-selected="false">Multi-model</button>
+<button type="button" role="tab" class="rc-tab" data-mode="platform" aria-selected="false">AI platform</button>
+<button type="button" role="tab" class="rc-tab" data-mode="claims" aria-selected="false">Claims</button>
+</div>
+
+<p class="rc-text">Eval note on a <b>Terminal-Bench 2.1 harness pilot</b>: <button type="button" class="rc-n" data-i="0">60</button> trials cost <button type="button" class="rc-n" data-i="1">$2.62</button>. <button type="button" class="rc-n" data-i="2">15</button> passed, a <button type="button" class="rc-n" data-i="3">52.0%</button> pass rate, and <button type="button" class="rc-n" data-i="4">25</button> ended in a timeout. Before any agent ran, <button type="button" class="rc-n" data-i="5">57 of 61</button> Terminal-Bench 2.0 tasks passed their oracle check.</p>
+<div class="rc-receipt" id="rcReceipt" aria-live="polite">
+<div class="rc-r-top"><span class="rc-r-label">Receipt</span><span id="rcVerdict" class="rc-verdict">Select a number</span></div>
+<dl class="rc-dl">
+<div><dt>Claim</dt><dd id="rcClaim">–</dd></div>
+<div><dt>Source</dt><dd id="rcSrc">–</dd></div>
+<div><dt>Pointer</dt><dd id="rcPtr" class="rc-mono">–</dd></div>
+<div><dt>Stored value</dt><dd id="rcStored" class="rc-mono">–</dd></div>
+<div><dt>Snapshot</dt><dd id="rcHash" class="rc-mono">–</dd></div>
+<div><dt>Fetched / decided</dt><dd id="rcTime" class="rc-mono">–</dd></div>
+</dl>
+<ul id="rcChecks" class="rc-checks"></ul>
+</div>
+<div class="rc-sim" id="rcSim" hidden>
+<div class="rc-sim-title" id="rcSimTitle"></div>
+<div class="rc-metrics">
+<div class="rc-m"><span class="rc-mv" id="rcM0">0</span><span class="rc-ml" id="rcL0"></span></div>
+<div class="rc-m"><span class="rc-mv" id="rcM1">0</span><span class="rc-ml" id="rcL1"></span></div>
+<div class="rc-m"><span class="rc-mv" id="rcM2">0</span><span class="rc-ml" id="rcL2"></span></div>
+</div>
+<div class="rc-wfwrap"><div class="rc-wf" id="rcWf" role="log" aria-live="polite"></div><div class="rc-axis"><span>0 s</span><span id="rcAxisEnd"></span></div><div class="rc-stamp" id="rcStamp" hidden></div></div>
+</div>
+<div class="rc-foot"><span id="rcCount">6 claims · not yet checked</span><span>Claims: my real pilot numbers with two planted errors. Other tabs: simulated runs, real methods.</span></div>
+</div>
 </section>
 
 <section id="statement" style="background: #16181D; color: #EDEBE4">
@@ -542,50 +585,6 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 <!--RECORD-->
 <!--/RECORD-->
 </ol>
-</section>
-
-<section id="claims" style="max-width: 1240px; margin: 0 auto; padding: 0 24px 88px">
-<div style="border-bottom: 1px solid #16181D; padding-bottom: 14px; margin-bottom: 28px"><h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 44px">Claims</h2></div>
-<div class="rc" id="receipts">
-<div class="rc-head">
-<span class="rc-eyebrow"><span class="rc-live"></span>Try it · hover or tap a number</span>
-<button type="button" id="rcAuto" class="rc-auto" aria-pressed="true"><span class="rc-auto-i" aria-hidden="true"></span><span id="rcAutoL">Auto-play</span></button>
-<button type="button" id="rcRun" class="rc-run">Run the verification gate</button>
-</div>
-<div class="rc-tabs" role="tablist" aria-label="Observability views">
-<button type="button" role="tab" class="rc-tab" data-mode="claims" aria-selected="true">Claims</button>
-<button type="button" role="tab" class="rc-tab" data-mode="harness" aria-selected="false">Harness</button>
-<button type="button" role="tab" class="rc-tab" data-mode="guard" aria-selected="false">Governance</button>
-<button type="button" role="tab" class="rc-tab" data-mode="hack" aria-selected="false">Reward hacking</button>
-<button type="button" role="tab" class="rc-tab" data-mode="twin" aria-selected="false">Twin pairing</button>
-<button type="button" role="tab" class="rc-tab" data-mode="multi" aria-selected="false">Multi-model</button>
-<button type="button" role="tab" class="rc-tab" data-mode="platform" aria-selected="false">AI platform</button>
-</div>
-
-<p class="rc-text">Eval note on a <b>Terminal-Bench 2.1 harness pilot</b>: <button type="button" class="rc-n" data-i="0">60</button> trials cost <button type="button" class="rc-n" data-i="1">$2.62</button>. <button type="button" class="rc-n" data-i="2">15</button> passed, a <button type="button" class="rc-n" data-i="3">52.0%</button> pass rate, and <button type="button" class="rc-n" data-i="4">25</button> ended in a timeout. Before any agent ran, <button type="button" class="rc-n" data-i="5">57 of 61</button> Terminal-Bench 2.0 tasks passed their oracle check.</p>
-<div class="rc-receipt" id="rcReceipt" aria-live="polite">
-<div class="rc-r-top"><span class="rc-r-label">Receipt</span><span id="rcVerdict" class="rc-verdict">Select a number</span></div>
-<dl class="rc-dl">
-<div><dt>Claim</dt><dd id="rcClaim">–</dd></div>
-<div><dt>Source</dt><dd id="rcSrc">–</dd></div>
-<div><dt>Pointer</dt><dd id="rcPtr" class="rc-mono">–</dd></div>
-<div><dt>Stored value</dt><dd id="rcStored" class="rc-mono">–</dd></div>
-<div><dt>Snapshot</dt><dd id="rcHash" class="rc-mono">–</dd></div>
-<div><dt>Fetched / decided</dt><dd id="rcTime" class="rc-mono">–</dd></div>
-</dl>
-<ul id="rcChecks" class="rc-checks"></ul>
-</div>
-<div class="rc-sim" id="rcSim" hidden>
-<div class="rc-sim-title" id="rcSimTitle"></div>
-<div class="rc-metrics">
-<div class="rc-m"><span class="rc-mv" id="rcM0">0</span><span class="rc-ml" id="rcL0"></span></div>
-<div class="rc-m"><span class="rc-mv" id="rcM1">0</span><span class="rc-ml" id="rcL1"></span></div>
-<div class="rc-m"><span class="rc-mv" id="rcM2">0</span><span class="rc-ml" id="rcL2"></span></div>
-</div>
-<div class="rc-wfwrap"><div class="rc-wf" id="rcWf" role="log" aria-live="polite"></div><div class="rc-axis"><span>0 s</span><span id="rcAxisEnd"></span></div><div class="rc-stamp" id="rcStamp" hidden></div></div>
-</div>
-<div class="rc-foot"><span id="rcCount">6 claims · not yet checked</span><span>Claims: my real pilot numbers with two planted errors. Other tabs: simulated runs, real methods.</span></div>
-</div>
 </section>
 
 <footer style="border-top: 1px solid #DCDAD2">
@@ -975,7 +974,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   }
   tabs.forEach(function(t){ t.addEventListener('click',function(){ setMode(t.dataset.mode); }); });
   run.addEventListener('click',function(){ if(mode!=='claims') play(mode); });
-  run.dataset.mode='claims';
+  setMode('harness');
 })();
 </script>
 <script>
@@ -983,7 +982,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   var card=document.getElementById('receipts'); if(!card) return;
   var run=document.getElementById('rcRun'), autoBtn=document.getElementById('rcAuto'), autoL=document.getElementById('rcAutoL');
   var tabs=[].slice.call(card.querySelectorAll('.rc-tab'));
-  var ORDER=['claims','harness','guard','hack','twin','multi','platform'], HOLD=3200;
+  var ORDER=['harness','guard','hack','twin','multi','platform','claims'], HOLD=3200;
   var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var auto=!reduce, holdT=null, kickT=null, visible=false, hovering=false, started=false, wasBusy=false;
   tabs.forEach(function(t){ var p=document.createElement('span'); p.className='rc-tprog'; p.appendChild(document.createElement('i')); t.appendChild(p); });
@@ -1034,7 +1033,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   card.addEventListener('mouseleave',function(){ hovering=false; if(auto && !run.disabled && started) schedule(); });
   function kick(){
     if(!auto) return;
-    if(!started){ started=true; kickT=setTimeout(startCurrent,400); }
+    if(!started){ started=true; if(run.disabled) wasBusy=true; else if(cur().dataset.mode==='claims') kickT=setTimeout(startCurrent,400); else schedule(); }
     else if(!run.disabled && !holdT && !hovering) schedule();
   }
   if('IntersectionObserver' in window){

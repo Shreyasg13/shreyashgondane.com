@@ -4,8 +4,15 @@
   <link href="https://shreyashgondane.com/record.xml" rel="self"/>
   <link href="https://shreyashgondane.com/#record"/>
   <id>https://shreyashgondane.com/record.xml</id>
-  <updated>2026-10-17T00:00:00Z</updated>
+  <updated>2026-11-11T00:00:00Z</updated>
   <author><name>Shreyash Gondane</name></author>
+  <entry>
+    <title>Preprint: Preliminary note: who audits the auditor? Planted reward hacks give trace auditors a ground truth</title>
+    <id>https://shreyashgondane.com/#2026-11-11-preliminary-note-who-audits-the-auditor-planted-reward-hacks</id>
+    <updated>2026-11-11T00:00:00Z</updated>
+    <link href="https://shreyashgondane.com/research/r3-auditor-calibration.html"/>
+    <summary>Development round on 101 pilot traces: a free rule check caught 12/12 planted solution reads but 0/12 answer keys; an LLM judge caught 2/12 and 7/12; Harbor's built-in judge read a planted solve.sh and called the run legitimate.</summary>
+  </entry>
   <entry>
     <title>Preprint: White paper archived on Zenodo with a DOI: Superhuman Scores, Sub-Human Adaptation</title>
     <id>https://shreyashgondane.com/#2026-10-17-white-paper-archived-on-zenodo-with-a-doi-superhuman-scores-</id>

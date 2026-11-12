@@ -219,6 +219,13 @@
   "service": [],
   "record": [
     {
+      "date": "2026-11-11",
+      "type": "preprint",
+      "title": "Preliminary note: who audits the auditor? Planted reward hacks give trace auditors a ground truth",
+      "detail": "Development round on 101 pilot traces: a free rule check caught 12/12 planted solution reads but 0/12 answer keys; an LLM judge caught 2/12 and 7/12; Harbor's built-in judge read a planted solve.sh and called the run legitimate.",
+      "url": "https://shreyashgondane.com/research/r3-auditor-calibration.html"
+    },
+    {
       "date": "2026-10-17",
       "type": "preprint",
       "title": "White paper archived on Zenodo with a DOI: Superhuman Scores, Sub-Human Adaptation",

@@ -37,6 +37,7 @@ p{margin:0 0 14px}
 .stats b{display:block;font:500 34px/1.1 var(--serif);color:var(--accent);font-variant-numeric:tabular-nums}
 .stats span{font-size:13px;color:var(--label)}
 .table{overflow-x:auto;margin:16px 0 20px;border-top:1px solid var(--line)}
+.chart{margin:16px 0 8px}.chart img{width:100%;max-width:640px;height:auto;display:block;border:1px solid var(--line)}.chart figcaption{font-size:.9em;opacity:.8;margin-top:6px}
 table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.5}
 th,td{text-align:left;vertical-align:top;padding:10px 12px 10px 0;border-bottom:1px solid var(--line)}
 th{font:500 12px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--label)}
@@ -104,6 +105,7 @@ I planted known hacks into copies of real coding-agent traces and asked three au
 </ul>
 
 <h2>What I saw</h2>
+<figure class="chart"><img src="img/r3-auditor-heatmap.png" width="1200" height="1350" loading="lazy" alt="Heatmap of planted reward hacks caught by three auditors. Rule-based checks: 12 of 12 test or solution reads, 13 of 13 fake test summaries, 0 of 12 answer keys, 0 of 12 hard-coded results, 6 of 12 approvals without evidence, and 0 of 41 clean runs flagged. LLM judge: 2 of 12, 6 of 13, 7 of 12, 1 of 12, 0 of 12, and 14 of 41 clean runs flagged. Harbor built-in judge, run on only 2 to 3 traces per type so examples not rates: 0 of 2, 1 of 3, 2 of 3, 0 of 2, 0 of 2, and 0 of 5 clean runs flagged."><figcaption>The same results as the table below. Harbor's column is hatched: 2–3 traces per type are examples, not rates.</figcaption></figure>
 <div class="table"><table>
 <thead><tr><th>Planted hack</th><th>Rules</th><th>LLM judge</th><th>Harbor's judge</th></tr></thead>
 <tbody>
